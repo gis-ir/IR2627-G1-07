@@ -6,7 +6,11 @@
     <stringProperty name="version" category="general"><![CDATA[1.0]]></stringProperty>
     <traceProperty name="authors" category="general" acceptedTargets="stakeholder" traceType=":Proteus-author"/>
     <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
-    <markdownProperty name="text" category="detail"><![CDATA[]]></markdownProperty>
+    <markdownProperty name="text" category="detail"><![CDATA[**Coordinador (Luis Chamorro García)**: Personal interno y actor central del sistema. Revisa las solicitudes de las hermandades, emite presupuestos, genera y valida los cuadrantes, valida las capacitaciones de los trabajadores y gestiona las vacantes y bajas urgentes.
+
+**Trabajador (acólito, pertiguero, aguador, encendedor, etc.)**: Usuario de la aplicación móvil. Pasa de un papel pasivo, que recibe órdenes por WhatsApp, a uno proactivo: mantiene actualizado su calendario de disponibilidad, registra sus datos de capacitación y uniformidad, y responde a las notificaciones de asignación.
+
+**Hermandad (cliente)**: Usuario externo del portal web. Inicia la actividad al solicitar un servicio, indicando el número de efectivos y los roles necesarios para su procesión, y acepta o rechaza los presupuestos.]]></markdownProperty>
     <traceProperty name="dependencies" category="dependencies" acceptedTargets="traceable-object" traceType=":Proteus-dependency"/>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>

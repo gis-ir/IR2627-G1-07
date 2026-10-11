@@ -14,7 +14,11 @@ App: Abreviatura del inglés «application», utilizada para referirse a la apli
 
 BPMN: Business Process Model and Notation. Notación gráfica utilizada para representar los procesos de negocio.
 
-DOC: Abreviatura de documento, utilizada para identificar los documentos del apéndice B, como DOC-01.]]></markdownProperty>
+DOC: Abreviatura de documento, utilizada para identificar los documentos del apéndice B, como DOC-01.
+
+OBJ-NEG: Abreviatura de objetivo de negocio, utilizada para identificar los objetivos de negocio del proyecto.
+
+PR-NEG: Abreviatura de proceso de negocio, utilizada para identificar los procesos de negocio a implantar.]]></markdownProperty>
     <traceProperty name="dependencies" category="dependencies" acceptedTargets="traceable-object" traceType=":Proteus-dependency"/>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>

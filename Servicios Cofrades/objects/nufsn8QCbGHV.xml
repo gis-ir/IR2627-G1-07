@@ -4,10 +4,5 @@
     <stringProperty name=":Proteus-name" category="general"><![CDATA[Fortalezas de la situación actual]]></stringProperty>
     <markdownProperty name="comments" category="general"><![CDATA[]]></markdownProperty>
   </properties>
-  <children>
-    <child id="fBjbkpmvZi3n"/>
-    <child id="ZR8mJejfvaKV"/>
-    <child id="bwZS9BKDzmkS"/>
-    <child id="6wfhsZeAKuDn"/>
-  </children>
+  <children/>
 </object>

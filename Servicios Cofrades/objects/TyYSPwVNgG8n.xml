@@ -13,7 +13,7 @@
     <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
     <markdownProperty name="description" category="detail"><![CDATA[Una vez aceptado el presupuesto, el Coordinador solicita la generación del cuadrante. El sistema consulta los puestos del servicio y busca trabajadores que estén disponibles y tengan la capacitación necesaria para cubrirlos. Durante la asignación, comprueba que sus horarios no se solapen y que exista un margen suficiente para desplazarse entre servicios. Se propone un mínimo de 60 minutos, pendiente de confirmación con el cliente.
 El Coordinador revisa el cuadrante generado y realiza los ajustes necesarios. Los cambios deben cumplir las mismas condiciones de disponibilidad, capacitación y horario. Si quedan puestos sin cubrir, se mantienen pendientes de resolución. Cuando el cuadrante está completo y validado, se guarda y se inicia la comunicación de los turnos.]]></markdownProperty>
-    <fileProperty name="diagram" category="detail" tooltip="file-info"><![CDATA[mermaid-diagram-2026-10-20-132457.png]]></fileProperty>
+    <fileProperty name="diagram" category="detail" tooltip="file-info"><![CDATA[PR-NEG-02 Generación automatizada de cuadrantes.svg]]></fileProperty>
     <enumProperty name="importance" category="detail" tooltip="importance" choices="tbd critical high medium low optional">critical</enumProperty>
     <integerProperty name="width" category="detail" tooltip="width-info">98</integerProperty>
     <traceProperty name="dependencies" category="dependencies" acceptedTargets="traceable-object business-requirement" traceType=":Proteus-dependency"/>

@@ -13,7 +13,7 @@
     <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
     <markdownProperty name="description" category="detail"><![CDATA[El Coordinador consulta las condiciones acordadas con la hermandad y comprueba su cumplimiento durante la prestación del servicio. Esta revisión incluye el número de trabajadores, la uniformidad y la puntualidad.
 Si se cumplen las condiciones, se registra el resultado de la revisión. Si se detecta algún incumplimiento, se deja constancia de la incidencia. En caso de retraso, el Coordinador revisa lo establecido en el contrato para determinar si corresponde una penalización o un suplemento y registrar el ajuste que proceda.]]></markdownProperty>
-    <fileProperty name="diagram" category="detail" tooltip="file-info"><![CDATA[mermaid-diagram-2026-10-20-133225.png]]></fileProperty>
+    <fileProperty name="diagram" category="detail" tooltip="file-info"><![CDATA[PR-NEG-06 Control de condiciones contractuales.svg]]></fileProperty>
     <enumProperty name="importance" category="detail" tooltip="importance" choices="tbd critical high medium low optional">high</enumProperty>
     <integerProperty name="width" category="detail" tooltip="width-info">98</integerProperty>
     <traceProperty name="dependencies" category="dependencies" acceptedTargets="traceable-object business-requirement" traceType=":Proteus-dependency"/>

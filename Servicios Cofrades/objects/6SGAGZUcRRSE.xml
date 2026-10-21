@@ -6,7 +6,7 @@
     <stringProperty name="version" category="general"><![CDATA[1.0]]></stringProperty>
     <traceProperty name="authors" category="general" acceptedTargets="stakeholder" traceType=":Proteus-author"/>
     <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
-    <markdownProperty name="text" category="detail"><![CDATA[Los actores de negocio a implantar son los que interactúan con el sistema una vez desplegado. Frente a la situación actual, el Coordinador deja de depender de sus registros personales, el Trabajador pasa a un papel proactivo y la Hermandad dispone de un canal propio de relación con la organización.]]></markdownProperty>
+    <markdownProperty name="text" category="detail"><![CDATA[Para este apartado no añadiremos ningún actor de negocio nuevo, ya que no cambiaremos los procesos de negocio en gran medida, por lo que no habrá falta de añadir un nuevo actor al diagrama.]]></markdownProperty>
     <traceProperty name="dependencies" category="dependencies" acceptedTargets="traceable-object" traceType=":Proteus-dependency"/>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>

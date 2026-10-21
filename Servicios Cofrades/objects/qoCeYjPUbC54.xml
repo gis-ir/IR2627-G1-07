@@ -13,7 +13,7 @@
     <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
     <markdownProperty name="description" category="detail"><![CDATA[El proceso comienza cuando el Coordinador cierra el cuadrante. El sistema envía a cada trabajador una notificación con la hermandad, el puesto asignado y el lugar y la hora de citación.
 El trabajador consulta la información y confirma que la ha recibido. El sistema registra esa confirmación para que el Coordinador pueda comprobar quién está informado. Si termina el plazo establecido sin recibir respuesta, se avisa al Coordinador para que pueda contactar con el trabajador. La duración de este plazo queda pendiente de concretar.]]></markdownProperty>
-    <fileProperty name="diagram" category="detail" tooltip="file-info"><![CDATA[mermaid-diagram-2026-10-20-133021.png]]></fileProperty>
+    <fileProperty name="diagram" category="detail" tooltip="file-info"><![CDATA[PR-NEG-04 Comunicación oficial de turnos.svg]]></fileProperty>
     <enumProperty name="importance" category="detail" tooltip="importance" choices="tbd critical high medium low optional">high</enumProperty>
     <integerProperty name="width" category="detail" tooltip="width-info">98</integerProperty>
     <traceProperty name="dependencies" category="dependencies" acceptedTargets="traceable-object business-requirement" traceType=":Proteus-dependency"/>

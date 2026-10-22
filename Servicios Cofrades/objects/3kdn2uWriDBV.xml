@@ -2,12 +2,21 @@
 <object id="3kdn2uWriDBV" classes="traceable-object paragraph" acceptedChildren=":Proteus-none" acceptedParents=":Proteus-document section" selectedCategory="detail">
   <properties>
     <stringProperty name=":Proteus-name" category="general"><![CDATA[Párrafo]]></stringProperty>
-    <dateProperty name=":Proteus-date" category="general">2026-09-30</dateProperty>
+    <dateProperty name=":Proteus-date" category="general">2026-10-22</dateProperty>
     <stringProperty name="version" category="general"><![CDATA[1.0]]></stringProperty>
-    <traceProperty name="authors" category="general" acceptedTargets="stakeholder" traceType=":Proteus-author"/>
+    <traceProperty name="authors" category="general" acceptedTargets="stakeholder" traceType=":Proteus-author">
+      <trace target="4rUALYcRDsQ3" traceType=":Proteus-author"/>
+    </traceProperty>
     <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
-    <markdownProperty name="text" category="detail"><![CDATA[]]></markdownProperty>
-    <traceProperty name="dependencies" category="dependencies" acceptedTargets="traceable-object" traceType=":Proteus-dependency"/>
+    <markdownProperty name="text" category="detail"><![CDATA[A continuación se presentan los diagramas de navegación del sistema mediante diagramas de estados UML simplificados. Se dividen según los tres perfiles de usuario:
+
+* **Coordinador (Web):** Gestión de cuadrantes, atención a bajas urgentes, emisión de presupuestos y catálogo de personal.
+* **Operario / Trabajador (App Móvil):** Consulta de servicios asignados, confirmación de turnos, aviso de baja y disponibilidad.
+* **Hermandades (Web):** Solicitud formal de servicios, revisión de presupuestos y consulta del personal asignado.]]></markdownProperty>
+    <traceProperty name="dependencies" category="dependencies" acceptedTargets="traceable-object" traceType=":Proteus-dependency">
+      <trace target="rAJvmtjxafv2" traceType=":Proteus-dependency"/>
+      <trace target="wVu2FsDEHMSH" traceType=":Proteus-dependency"/>
+    </traceProperty>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>
   <children/>

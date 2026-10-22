@@ -8,7 +8,7 @@
     <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
     <markdownProperty name="text" category="detail"><![CDATA[---
 
-### DOC-04: Modelo contractual tipo de prestación de servicios a Hermandades
+### DOC-04: Cuadrante de trabajo y remuneración individual
 
 ---]]></markdownProperty>
     <traceProperty name="dependencies" category="dependencies" acceptedTargets="traceable-object" traceType=":Proteus-dependency"/>

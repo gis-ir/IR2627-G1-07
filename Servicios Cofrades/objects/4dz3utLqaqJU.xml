@@ -8,7 +8,7 @@
     <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
     <markdownProperty name="text" category="detail"><![CDATA[---
 
-### DOC-02: Ficha de disponibilidad y capacitaciones de personal
+### DOC-02: Oferta informal de puestos vacantes por mensajería
 
 ---]]></markdownProperty>
     <traceProperty name="dependencies" category="dependencies" acceptedTargets="traceable-object" traceType=":Proteus-dependency"/>

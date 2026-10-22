@@ -8,7 +8,7 @@
     <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
     <markdownProperty name="text" category="detail"><![CDATA[---
 
-### DOC-03: Protocolo operativo de bajas y cobertura de sustituciones
+### DOC-03: Solicitud de disponibilidad laboral y actualización de datos
 
 ---]]></markdownProperty>
     <traceProperty name="dependencies" category="dependencies" acceptedTargets="traceable-object" traceType=":Proteus-dependency"/>

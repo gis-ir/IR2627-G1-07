@@ -6,5 +6,8 @@
   </properties>
   <children>
     <child id="3kdn2uWriDBV"/>
+    <child id="figNavCoord1"/>
+    <child id="figNavOper1"/>
+    <child id="figNavHerm1"/>
   </children>
 </object>

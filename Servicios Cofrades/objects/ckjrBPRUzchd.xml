@@ -2,12 +2,21 @@
 <object id="ckjrBPRUzchd" classes="traceable-object paragraph" acceptedChildren=":Proteus-none" acceptedParents=":Proteus-document section" selectedCategory="detail">
   <properties>
     <stringProperty name=":Proteus-name" category="general"><![CDATA[Párrafo]]></stringProperty>
-    <dateProperty name=":Proteus-date" category="general">2026-09-30</dateProperty>
+    <dateProperty name=":Proteus-date" category="general">2026-10-20</dateProperty>
     <stringProperty name="version" category="general"><![CDATA[1.0]]></stringProperty>
-    <traceProperty name="authors" category="general" acceptedTargets="stakeholder" traceType=":Proteus-author"/>
+    <traceProperty name="authors" category="general" acceptedTargets="stakeholder" traceType=":Proteus-author">
+      <trace target="4rUALYcRDsQ3" traceType=":Proteus-author"/>
+    </traceProperty>
     <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
-    <markdownProperty name="text" category="detail"><![CDATA[]]></markdownProperty>
-    <traceProperty name="dependencies" category="dependencies" acceptedTargets="traceable-object" traceType=":Proteus-dependency"/>
+    <markdownProperty name="text" category="detail"><![CDATA[A continuación se presentan los diagramas que definen la arquitectura técnica y lógica del sistema de información para **Chamorro Servicios Cofrades**. 
+
+En primer lugar, se expone el **Diagrama de la Arquitectura Lógica del Sistema**, modelado mediante diagramas de componentes y paquetes según el estándar UML. En él se ilustra la separación de responsabilidades en tres capas fundamentales (Capa de Presentación, Capa de Lógica de Negocio y Capa de Persistencia y Datos), así como su vinculación con los servicios externos de mensajería Push en la nube, servidores de correo y sistemas contables.
+
+En segundo lugar, se detalla el **Diagrama de Despliegue de la Arquitectura**, el cual especifica la topología de ejecución y conectividad de los clientes (móviles y navegadores web) con la infraestructura de servidores contenerizada mediante tecnología Docker, garantizando alta disponibilidad, seguridad SSL/TLS y copias de seguridad automatizadas de los datos.]]></markdownProperty>
+    <traceProperty name="dependencies" category="dependencies" acceptedTargets="traceable-object" traceType=":Proteus-dependency">
+      <trace target="EVM4sAKcGLA3" traceType=":Proteus-dependency"/>
+      <trace target="BQeu8craH4bB" traceType=":Proteus-dependency"/>
+    </traceProperty>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>
   <children/>

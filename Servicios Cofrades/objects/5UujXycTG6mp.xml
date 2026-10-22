@@ -6,5 +6,10 @@
   </properties>
   <children>
     <child id="STAcnw7mzkzu"/>
+    <child id="SFjFW5oTscqw"/>
+    <child id="mckBajCoord1"/>
+    <child id="mckPresCoord"/>
+    <child id="mckAppTrabaj"/>
+    <child id="mckPortHerm1"/>
   </children>
 </object>

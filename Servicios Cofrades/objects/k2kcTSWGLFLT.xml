@@ -13,7 +13,6 @@
 La arquitectura lógica de la plataforma para **Chamorro Servicios Cofrades** sigue un **estilo arquitectónico en capas desacopladas (*Layered Architecture*)** complementado con una interfaz de servicios de tipo **API RESTful**. Este enfoque favorece una clara separación de responsabilidades, facilitando el mantenimiento y la evolución independiente de la interfaz de usuario, la lógica de negocio y el almacenamiento de datos.
 
 La comunicación entre las capas se realiza mediante interfaces bien definidas:
-
 * **Presentación → Negocio:** Peticiones seguras mediante HTTPS / REST con intercambio de datos en formato JSON.
 * **Negocio → Datos:** Acceso transaccional al motor de base de datos relacional y consultas de alta velocidad a la memoria caché.
 * **Negocio → Servicios Externos:** Invocación de interfaces y protocolos para mensajería push, correo y exportación documental.

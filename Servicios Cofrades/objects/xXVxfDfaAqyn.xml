@@ -23,8 +23,6 @@
 ---
 
 ### DOC-04: Modelo contractual tipo de prestación de servicios a Hermandades]]></markdownProperty>
-    <traceProperty name="dependencies" category="dependencies" acceptedTargets="traceable-object" traceType=":Proteus-dependency"/>
-    <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>
   <children/>
 </object>

@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="rrPzohGkrbRA" classes="attribute" acceptedChildren=":Proteus-none" acceptedParents="entity-class association">
+  <properties>
+    <stringProperty name=":Proteus-name" category="general"><![CDATA[fechaAcuse]]></stringProperty>
+    <stringProperty name="type" category="general"><![CDATA[DateTime]]></stringProperty>
+    <markdownProperty name="description" category="detail"><![CDATA[Momento en el que el trabajador confirma haber recibido la información del turno]]></markdownProperty>
+    <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children/>
+</object>

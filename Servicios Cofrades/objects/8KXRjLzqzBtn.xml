@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="8KXRjLzqzBtn" classes="attribute" acceptedChildren=":Proteus-none" acceptedParents="entity-class association">
+  <properties>
+    <stringProperty name=":Proteus-name" category="general"><![CDATA[fechaEnvio]]></stringProperty>
+    <stringProperty name="type" category="general"><![CDATA[DateTime]]></stringProperty>
+    <markdownProperty name="description" category="detail"><![CDATA[Momento en el que se envía la oferta]]></markdownProperty>
+    <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children/>
+</object>

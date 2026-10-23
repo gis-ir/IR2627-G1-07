@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="5RyB3vEBdXMp" classes="attribute" acceptedChildren=":Proteus-none" acceptedParents="entity-class association">
+  <properties>
+    <stringProperty name=":Proteus-name" category="general"><![CDATA[funcion]]></stringProperty>
+    <stringProperty name="type" category="general"><![CDATA[TipoFuncion]]></stringProperty>
+    <markdownProperty name="description" category="detail"><![CDATA[Función que deben desempeñar los trabajadores solicitados]]></markdownProperty>
+    <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children/>
+</object>

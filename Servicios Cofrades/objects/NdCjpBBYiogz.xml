@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="NdCjpBBYiogz" classes="model-element entity-class" acceptedChildren="attribute" acceptedParents=":Proteus-any">
+  <properties>
+    <codeProperty name=":Proteus-code" category="general" inmutable="true">
+      <prefix><![CDATA[ENT-]]></prefix>
+      <number>017</number>
+      <suffix><![CDATA[]]></suffix>
+    </codeProperty>
+    <stringProperty name=":Proteus-name" category="general"><![CDATA[Capacitacion]]></stringProperty>
+    <dateProperty name=":Proteus-date" category="general">2026-10-23</dateProperty>
+    <stringProperty name="version" category="general"><![CDATA[1.0]]></stringProperty>
+    <traceProperty name="authors" category="general" acceptedTargets="stakeholder" traceType=":Proteus-author"/>
+    <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
+    <booleanProperty name="is-abstract" category="detail" tooltip="is-abstract">false</booleanProperty>
+    <traceProperty name="superclass" category="detail" acceptedTargets="entity-class" traceType=":Proteus-dependency" maxTargetsNumber="1"/>
+    <markdownProperty name="description" category="detail"><![CDATA[Registra la solicitud y el resultado de la validación de un trabajador para desempeñar una función.]]></markdownProperty>
+    <traceProperty name="dependencies" category="dependencies" acceptedTargets="traceable-object business-requirement software-requirement model-element" traceType=":Proteus-dependency"/>
+    <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children>
+    <child id="a4MZSQJmAVjs"/>
+    <child id="jcZB2XaEh4CN"/>
+    <child id="CrDGatEFjQQV"/>
+    <child id="TjWZENMP5PJb"/>
+  </children>
+</object>

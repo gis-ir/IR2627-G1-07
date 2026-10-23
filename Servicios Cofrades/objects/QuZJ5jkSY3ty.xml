@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="QuZJ5jkSY3ty" classes="model-element enumeration" acceptedChildren="enum-value" acceptedParents=":Proteus-any">
+  <properties>
+    <codeProperty name=":Proteus-code" category="general" inmutable="true">
+      <prefix><![CDATA[ENUM-]]></prefix>
+      <number>006</number>
+      <suffix><![CDATA[]]></suffix>
+    </codeProperty>
+    <stringProperty name=":Proteus-name" category="general"><![CDATA[EstadoOfertaSustitucion]]></stringProperty>
+    <dateProperty name=":Proteus-date" category="general">2026-10-23</dateProperty>
+    <stringProperty name="version" category="general"><![CDATA[1.0]]></stringProperty>
+    <traceProperty name="authors" category="general" acceptedTargets="stakeholder" traceType=":Proteus-author"/>
+    <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
+    <markdownProperty name="description" category="detail"><![CDATA[Este enumerado representa la situación de una propuesta para cubrir una vacante.]]></markdownProperty>
+    <traceProperty name="dependencies" category="dependencies" acceptedTargets="traceable-object business-requirement software-requirement model-element" traceType=":Proteus-dependency"/>
+    <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children>
+    <child id="oBALMsPjxmUj"/>
+    <child id="mSPKuyjAYTHz"/>
+    <child id="5BgGrfTNwfzZ"/>
+    <child id="uNM2BkCAnHho"/>
+  </children>
+</object>

@@ -6,5 +6,7 @@
   </properties>
   <children>
     <child id="ckjrBPRUzchd"/>
+    <child id="figArquiLog1"/>
+    <child id="figArquiDes1"/>
   </children>
 </object>

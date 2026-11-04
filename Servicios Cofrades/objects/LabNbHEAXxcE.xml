@@ -2,11 +2,23 @@
 <object id="LabNbHEAXxcE" classes="traceable-object paragraph" acceptedChildren=":Proteus-none" acceptedParents=":Proteus-document section" selectedCategory="detail">
   <properties>
     <stringProperty name=":Proteus-name" category="general"><![CDATA[Párrafo]]></stringProperty>
-    <dateProperty name=":Proteus-date" category="general">2026-09-30</dateProperty>
+    <dateProperty name=":Proteus-date" category="general">2026-10-23</dateProperty>
     <stringProperty name="version" category="general"><![CDATA[1.0]]></stringProperty>
     <traceProperty name="authors" category="general" acceptedTargets="stakeholder" traceType=":Proteus-author"/>
     <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
-    <markdownProperty name="text" category="detail"><![CDATA[]]></markdownProperty>
+    <markdownProperty name="text" category="detail"><![CDATA[El sistema se estructura en siete subsistemas que agrupan los casos de uso y los requisitos funcionales del documento. La división se basa en la afinidad funcional, en el conjunto de actores que los utilizan y en la estabilidad prevista de sus fronteras, de modo que cada subsistema pueda evolucionar con un impacto reducido sobre los restantes.
+
+Los subsistemas SUBS-001 a SUBS-003 cubren la gestión del personal y la planificación de los servicios; SUBS-004 se centra en la comunicación con los trabajadores; SUBS-005 y SUBS-006 agrupan la relación comercial con las hermandades; y SUBS-007 proporciona los servicios transversales de administración, seguridad y auditoría.
+
+* **SUBS-001 Gestión de perfiles y disponibilidad.** Gestiona la ficha del trabajador, sus roles, capacitaciones y disponibilidad.
+* **SUBS-002 Organización y generación de cuadrantes.** Genera, valida, publica y exporta los cuadrantes de cada servicio.
+* **SUBS-003 Vacantes y sustituciones urgentes.** Cubre las bajas de última hora con candidatos habilitados y disponibles.
+* **SUBS-004 Comunicación y notificaciones.** Gestiona la comunicación de turnos y avisos de forma individual y trazable.
+* **SUBS-005 Presupuestación y control contractual.** Elabora, envía y controla los presupuestos y las incidencias contractuales.
+* **SUBS-006 Portal de hermandades.** Proporciona un cauce oficial para las solicitudes y consultas de las hermandades.
+* **SUBS-007 Administración, seguridad y auditoría.** Gestiona usuarios, permisos, sesiones, auditoría y monitorización.
+
+Cada subsistema se detalla en los apartados 5.1 a 5.7, junto a los requisitos de negocio que satisface y los casos de uso que agrupa. El detalle de estos casos de uso se recoge en la sección 6.2.3.]]></markdownProperty>
     <traceProperty name="dependencies" category="dependencies" acceptedTargets="traceable-object" traceType=":Proteus-dependency"/>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>

@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="6z9kop5nMtbE" classes="section" acceptedChildren=":Proteus-any" acceptedParents=":Proteus-document section">
+  <properties>
+    <stringProperty name=":Proteus-name" category="general"><![CDATA[SUB-05 Presupuestación y control contractual]]></stringProperty>
+    <markdownProperty name="comments" category="general"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children>
+    <child id="9psnPQBjma4q"/>
+    <child id="AnERVenF4Ks5"/>
+    <child id="YrHtbYoe3zZR"/>
+    <child id="c2wo7qfog2YG"/>
+    <child id="QkjTzYKzcFRP"/>
+  </children>
+</object>

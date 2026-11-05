@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="20.0 -10.0 976.0 765.0" width="976" height="765">
+<rect x="20.0" y="-10.0" width="976.0" height="765.0" fill="#ffffff"/>
+<line x1="126.0" y1="279.6" x2="447.6" y2="165.7" stroke="#000000" stroke-width="1"/>
+<line x1="126.0" y1="291.4" x2="438.8" y2="385.6" stroke="#000000" stroke-width="1"/>
+<line x1="850.0" y1="311.6" x2="611.7" y2="252.7" stroke="#000000" stroke-width="1"/>
+<line x1="850.0" y1="316.2" x2="659.8" y2="318.4" stroke="#000000" stroke-width="1"/>
+<line x1="850.0" y1="325.5" x2="572.6" y2="472.2" stroke="#000000" stroke-width="1"/>
+<line x1="850.0" y1="467.9" x2="580.4" y2="347.1" stroke="#000000" stroke-width="1"/>
+<polyline points="660.0,320.0 686.0,320.0 686.0,230.0 660.0,230.0" fill="none" stroke="#000000" stroke-width="1" stroke-dasharray="6 4"/>
+<polyline points="669.0,225.0 660.0,230.0 669.0,235.0" fill="none" stroke="#000000" stroke-width="1"/>
+<text x="240.0" y="37.9" font-family="Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" fill="#000000" font-weight="bold">Diagrama de casos de uso · SUB-03: Vacantes y sustituciones (Sección 6.2 del ERS)</text>
+<rect x="240.0" y="60.0" width="560.0" height="540.0" fill="none" stroke="#000000" stroke-width="1"/>
+<text x="520.0" y="80.9" font-family="Helvetica, Arial, sans-serif" font-size="14" text-anchor="middle" fill="#000000" font-weight="bold"><tspan x="520.0">SUB-03: Vacantes y sustituciones</tspan></text>
+<circle cx="108.0" cy="262.6" r="9.0" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+<line x1="108.0" y1="271.6" x2="108.0" y2="294.6" stroke="#000000" stroke-width="1.2"/>
+<line x1="94.3" y1="278.5" x2="121.7" y2="278.5" stroke="#000000" stroke-width="1.2"/>
+<line x1="108.0" y1="294.6" x2="97.2" y2="320.0" stroke="#000000" stroke-width="1.2"/>
+<line x1="108.0" y1="294.6" x2="118.8" y2="320.0" stroke="#000000" stroke-width="1.2"/>
+<text x="108.0" y="335.9" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" fill="#000000"><tspan x="108.0">ACT-02 Trabajador</tspan></text>
+<circle cx="868.0" cy="292.6" r="9.0" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+<line x1="868.0" y1="301.6" x2="868.0" y2="324.6" stroke="#000000" stroke-width="1.2"/>
+<line x1="854.3" y1="308.5" x2="881.7" y2="308.5" stroke="#000000" stroke-width="1.2"/>
+<line x1="868.0" y1="324.6" x2="857.2" y2="350.0" stroke="#000000" stroke-width="1.2"/>
+<line x1="868.0" y1="324.6" x2="878.8" y2="350.0" stroke="#000000" stroke-width="1.2"/>
+<text x="868.0" y="365.9" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" fill="#000000"><tspan x="868.0">ACT-01 Coordinador</tspan></text>
+<circle cx="868.0" cy="452.6" r="9.0" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+<line x1="868.0" y1="461.6" x2="868.0" y2="484.6" stroke="#000000" stroke-width="1.2"/>
+<line x1="854.3" y1="468.5" x2="881.7" y2="468.5" stroke="#000000" stroke-width="1.2"/>
+<line x1="868.0" y1="484.6" x2="857.2" y2="510.0" stroke="#000000" stroke-width="1.2"/>
+<line x1="868.0" y1="484.6" x2="878.8" y2="510.0" stroke="#000000" stroke-width="1.2"/>
+<text x="868.0" y="525.8" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" fill="#000000"><tspan x="868.0">ACT-05 Servicio de</tspan><tspan x="868.0" dy="13.4">notificaciones push</tspan></text>
+<ellipse cx="520.0" cy="140.0" rx="140.0" ry="30.0" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+<text x="520.0" y="144.2" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#000000"><tspan x="520.0">CU-10 Comunicar baja de última hora</tspan></text>
+<ellipse cx="520.0" cy="230.0" rx="140.0" ry="30.0" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+<text x="520.0" y="234.2" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#000000"><tspan x="520.0">CU-11 Proponer candidatos a sustitución</tspan></text>
+<ellipse cx="520.0" cy="320.0" rx="140.0" ry="30.0" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+<text x="520.0" y="324.2" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#000000"><tspan x="520.0">CU-12 Enviar alerta de cobertura urgente</tspan></text>
+<ellipse cx="520.0" cy="410.0" rx="140.0" ry="30.0" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+<text x="520.0" y="414.2" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#000000"><tspan x="520.0">CU-13 Aceptar sustitución</tspan></text>
+<ellipse cx="520.0" cy="500.0" rx="140.0" ry="30.0" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+<text x="520.0" y="496.9" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#000000"><tspan x="520.0">CU-14 Registrar sustitución y actualizar</tspan><tspan x="520.0" dy="14.6">cuadrante</tspan></text>
+<polygon points="240.0,620.0 786.0,620.0 800.0,634.0 800.0,690.0 240.0,690.0" fill="#fff2cc" stroke="#d6b656" stroke-width="1"/>
+<polyline points="786.0,620.0 786.0,634.0 800.0,634.0" fill="none" stroke="#d6b656" stroke-width="1"/>
+<text x="250.0" y="638.0" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" fill="#000000">Nota: CU-14 actualiza el cuadrante de servicio (SUB-02) y notifica al trabajador designado</text>
+<text x="250.0" y="651.0" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" fill="#000000">(SUB-04). Todos los casos de uso autenticados incluyen CU-29 Iniciar y cerrar sesión (SUB-07).</text>
+<text x="694.0" y="279.0" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" fill="#000000" font-style="italic">«include»</text>
+</svg>

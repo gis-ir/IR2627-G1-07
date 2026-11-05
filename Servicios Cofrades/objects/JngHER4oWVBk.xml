@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="JngHER4oWVBk" classes="section" acceptedChildren=":Proteus-any" acceptedParents=":Proteus-document section">
+  <properties>
+    <stringProperty name=":Proteus-name" category="general"><![CDATA[SUB-02 Organización y generación de cuadrantes]]></stringProperty>
+    <markdownProperty name="comments" category="general"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children>
+    <child id="R39XR7m3cYeY"/>
+    <child id="GxRqTYZyKUvz"/>
+    <child id="rVXfWw3Xsqoe"/>
+    <child id="AFpHgfSkZkD8"/>
+  </children>
+</object>

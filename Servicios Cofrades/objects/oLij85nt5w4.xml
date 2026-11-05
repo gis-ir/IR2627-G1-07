@@ -20,6 +20,10 @@
     <enumProperty name="stability" category="priority" tooltip="stability" choices="tbd low medium high">tbd</enumProperty>
     <traceProperty name="dependencies" category="dependencies" acceptedTargets="traceable-object business-requirement software-requirement" traceType=":Proteus-dependency">
       <trace target="enDUp3HFpBD" traceType=":Proteus-dependency"/>
+      <trace target="R39XR7m3cYeY" traceType=":Proteus-dependency"/>
+      <trace target="GxRqTYZyKUvz" traceType=":Proteus-dependency"/>
+      <trace target="rVXfWw3Xsqoe" traceType=":Proteus-dependency"/>
+      <trace target="daNfHKAUosXo" traceType=":Proteus-dependency"/>
     </traceProperty>
     <markdownProperty name="comments" category="comments"><![CDATA[El margen de 60 minutos es una propuesta pendiente de confirmar con el cliente (Luis Chamorro).]]></markdownProperty>
   </properties>

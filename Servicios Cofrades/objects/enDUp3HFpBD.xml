@@ -18,7 +18,31 @@
     <enumProperty name="urgency" category="priority" tooltip="urgency" choices="tbd high medium low">high</enumProperty>
     <enumProperty name="status" category="priority" tooltip="status" choices="tbd draft awaiting-qa awaiting-validation validated">tbd</enumProperty>
     <enumProperty name="stability" category="priority" tooltip="stability" choices="tbd low medium high">tbd</enumProperty>
-    <traceProperty name="dependencies" category="dependencies" acceptedTargets="traceable-object business-requirement software-requirement" traceType=":Proteus-dependency"/>
+    <traceProperty name="dependencies" category="dependencies" acceptedTargets="traceable-object business-requirement software-requirement" traceType=":Proteus-dependency">
+      <trace target="nzIKtDDRe7c" traceType=":Proteus-dependency"/>
+      <trace target="Fgakf0xDxqZ" traceType=":Proteus-dependency"/>
+      <trace target="MmVKP1wG2o0" traceType=":Proteus-dependency"/>
+      <trace target="oLij85nt5w4" traceType=":Proteus-dependency"/>
+      <trace target="LLETeiDmE9B" traceType=":Proteus-dependency"/>
+      <trace target="9lzeAYBJ7k3" traceType=":Proteus-dependency"/>
+      <trace target="IgZtvbsw4rj" traceType=":Proteus-dependency"/>
+      <trace target="LbCQGFK8BDD" traceType=":Proteus-dependency"/>
+      <trace target="eLWXjByk58yJ" traceType=":Proteus-dependency"/>
+      <trace target="Z6A4VyfzDiA4" traceType=":Proteus-dependency"/>
+      <trace target="HeBRxUEVAuhE" traceType=":Proteus-dependency"/>
+      <trace target="xucSiePbTrvY" traceType=":Proteus-dependency"/>
+      <trace target="mRuTWkM8AqB4" traceType=":Proteus-dependency"/>
+      <trace target="R39XR7m3cYeY" traceType=":Proteus-dependency"/>
+      <trace target="GxRqTYZyKUvz" traceType=":Proteus-dependency"/>
+      <trace target="rVXfWw3Xsqoe" traceType=":Proteus-dependency"/>
+      <trace target="AFpHgfSkZkD8" traceType=":Proteus-dependency"/>
+      <trace target="i7LWUSzSbPzE" traceType=":Proteus-dependency"/>
+      <trace target="daNfHKAUosXo" traceType=":Proteus-dependency"/>
+      <trace target="zRk5gjtpJDrL" traceType=":Proteus-dependency"/>
+      <trace target="HfZrHgqRw4ov" traceType=":Proteus-dependency"/>
+      <trace target="nSZKybU4D23m" traceType=":Proteus-dependency"/>
+      <trace target="dWprm3onJdd4" traceType=":Proteus-dependency"/>
+    </traceProperty>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>
   <children>

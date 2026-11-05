@@ -6,7 +6,7 @@
     <stringProperty name="version" category="general"><![CDATA[1.0]]></stringProperty>
     <traceProperty name="authors" category="general" acceptedTargets="stakeholder" traceType=":Proteus-author"/>
     <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
-    <markdownProperty name="text" category="detail"><![CDATA[]]></markdownProperty>
+    <markdownProperty name="text" category="detail"><![CDATA[En este apartado se describen los requisitos de información del sistema, es decir, todos los datos que el sistema debe guardar para poder prestar cada uno de los servicios que la hermandad y los trabajadores necesitan. Cada requisito recoge la información de un concepto del negocio —los usuarios, las hermandades, las solicitudes, los presupuestos, los cuadrantes, los pagos, las notificaciones…— y, dentro de él, se detallan uno a uno los datos concretos que se deben almacenar sobre ese concepto y para qué sirven.]]></markdownProperty>
     <traceProperty name="dependencies" category="dependencies" acceptedTargets="traceable-object" traceType=":Proteus-dependency"/>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>

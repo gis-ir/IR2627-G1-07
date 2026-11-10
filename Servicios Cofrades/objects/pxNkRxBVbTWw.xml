@@ -15,7 +15,7 @@
     </traceProperty>
     <stringProperty name="as-role" category="detail"><![CDATA[Trabajador]]></stringProperty>
     <markdownProperty name="i-want-to" category="detail"><![CDATA[Poder marcar en un calendario de la aplicación las franjas de tiempo en las que estoy disponible para trabajar.]]></markdownProperty>
-    <markdownProperty name="so-that" category="detail"><![CDATA[El Coordinador sepa siempre cuándo puedo acudir al servicio sin tener que llamarme ni escribirme por mensajería, y haya un registro actualizado de la disponibilidad de los más de 90 trabajadores.]]></markdownProperty>
+    <markdownProperty name="so-that" category="detail"><![CDATA[Que el coordinador sepa siempre cuándo puedo acudir al servicio sin tener que llamarme ni escribirme por mensajería, y haya un registro actualizado de la disponibilidad de los más de 90 trabajadores.]]></markdownProperty>
     <enumProperty name="importance" category="detail" tooltip="importance" choices="tbd critical high medium low optional">high</enumProperty>
     <enumProperty name="priority" category="detail" tooltip="priority" choices="tbd high medium low">high</enumProperty>
     <traceProperty name="dependencies" category="dependencies" acceptedTargets="traceable-object business-requirement" traceType=":Proteus-dependency"/>

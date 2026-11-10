@@ -15,7 +15,7 @@
     </traceProperty>
     <stringProperty name="as-role" category="detail"><![CDATA[Hermandad (cliente)]]></stringProperty>
     <markdownProperty name="i-want-to" category="detail"><![CDATA[Un espacio propio y seguro en la aplicación desde el que consultar la oferta de servicios, solicitar el número y tipo de trabajadores por rol, y aceptar o rechazar el presupuesto.]]></markdownProperty>
-    <markdownProperty name="so-that" category="detail"><![CDATA[Mis peticiones como hermandad entren por un cauce oficial y queden registradas, en lugar de depender de llamadas o avisos informales.]]></markdownProperty>
+    <markdownProperty name="so-that" category="detail"><![CDATA[Que mis peticiones como hermandad entren por un cauce oficial y queden registradas, en lugar de depender de llamadas o avisos informales.]]></markdownProperty>
     <enumProperty name="importance" category="detail" tooltip="importance" choices="tbd critical high medium low optional">medium</enumProperty>
     <enumProperty name="priority" category="detail" tooltip="priority" choices="tbd high medium low">medium</enumProperty>
     <traceProperty name="dependencies" category="dependencies" acceptedTargets="traceable-object business-requirement" traceType=":Proteus-dependency">

@@ -11,7 +11,7 @@
     <stringProperty name="version" category="general"><![CDATA[1.0]]></stringProperty>
     <traceProperty name="authors" category="general" acceptedTargets="stakeholder" traceType=":Proteus-author"/>
     <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
-    <markdownProperty name="description" category="detail"><![CDATA[Este caso de uso describe el Coordinador necesite conocer qué trabajadores han confirmado sus turnos y cuáles no.]]></markdownProperty>
+    <markdownProperty name="description" category="detail"><![CDATA[Este caso de uso describe lo que ocurre cuando el Coordinador necesita conocer qué trabajadores han confirmado sus turnos y cuáles no.]]></markdownProperty>
     <markdownProperty name="precondition" category="pre-post"><![CDATA[Existe al menos un turno comunicado y el plazo de confirmación está definido.]]></markdownProperty>
     <markdownProperty name="postcondition" category="pre-post"><![CDATA[El Coordinador dispone del estado de los acuses y se han enviado los avisos a los turnos sin confirmar.]]></markdownProperty>
     <enumProperty name="importance" category="priority" tooltip="importance" choices="tbd critical high medium low optional">medium</enumProperty>

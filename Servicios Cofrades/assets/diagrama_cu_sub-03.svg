@@ -39,9 +39,5 @@
 <text x="520.0" y="414.2" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#000000"><tspan x="520.0">CU-13 Aceptar sustitución</tspan></text>
 <ellipse cx="520.0" cy="500.0" rx="140.0" ry="30.0" fill="#ffffff" stroke="#000000" stroke-width="1"/>
 <text x="520.0" y="496.9" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#000000"><tspan x="520.0">CU-14 Registrar sustitución y actualizar</tspan><tspan x="520.0" dy="14.6">cuadrante</tspan></text>
-<polygon points="240.0,620.0 786.0,620.0 800.0,634.0 800.0,690.0 240.0,690.0" fill="#fff2cc" stroke="#d6b656" stroke-width="1"/>
-<polyline points="786.0,620.0 786.0,634.0 800.0,634.0" fill="none" stroke="#d6b656" stroke-width="1"/>
-<text x="250.0" y="638.0" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" fill="#000000">Nota: CU-14 actualiza el cuadrante de servicio (SUB-02) y notifica al trabajador designado</text>
-<text x="250.0" y="651.0" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" fill="#000000">(SUB-04). Todos los casos de uso autenticados incluyen CU-29 Iniciar y cerrar sesión (SUB-07).</text>
 <text x="694.0" y="279.0" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" fill="#000000" font-style="italic">«include»</text>
 </svg>

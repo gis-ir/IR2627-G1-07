@@ -11,7 +11,7 @@
     <stringProperty name="version" category="general"><![CDATA[1.0]]></stringProperty>
     <traceProperty name="authors" category="general" acceptedTargets="stakeholder" traceType=":Proteus-author"/>
     <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
-    <markdownProperty name="description" category="detail"><![CDATA[Este caso de uso describe la consulta, por parte de la hermandad, de los servicios contratados previamente.]]></markdownProperty>
+    <markdownProperty name="description" category="detail"><![CDATA[Este caso de uso describe lo que ocurre cuando la hermandad necesita consultar los servicios contratados previamente.]]></markdownProperty>
     <markdownProperty name="precondition" category="pre-post"><![CDATA[La hermandad está autenticada y tiene servicios contratados registrados.]]></markdownProperty>
     <markdownProperty name="postcondition" category="pre-post"><![CDATA[La hermandad visualiza el historial de servicios contratados con sus datos principales.]]></markdownProperty>
     <enumProperty name="importance" category="priority" tooltip="importance" choices="tbd critical high medium low optional">medium</enumProperty>

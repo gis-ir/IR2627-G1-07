@@ -2,7 +2,7 @@
 <object id="BDpK5PAvJYo3" classes="use-case-step" acceptedChildren=":Proteus-none" acceptedParents="use-case">
   <properties>
     <stringProperty name=":Proteus-name" category="general"><![CDATA[Paso 5]]></stringProperty>
-    <markdownProperty name="description" category="general"><![CDATA[El sistema registra la decisión, la fecha y el usuario que la adoptó.]]></markdownProperty>
+    <markdownProperty name="description" category="general"><![CDATA[El sistema actualiza el estado del presupuesto a aceptado y avisa al Coordinador.]]></markdownProperty>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>
   <children/>

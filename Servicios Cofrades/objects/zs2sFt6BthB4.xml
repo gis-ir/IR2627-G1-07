@@ -2,7 +2,7 @@
 <object id="zs2sFt6BthB4" classes="use-case-step" acceptedChildren=":Proteus-none" acceptedParents="use-case">
   <properties>
     <stringProperty name=":Proteus-name" category="general"><![CDATA[Paso 4]]></stringProperty>
-    <markdownProperty name="description" category="general"><![CDATA[El sistema valida que los campos obligatorios estén completos y que no exista otro trabajador con la misma identificación; si falta algún dato o la identificación está duplicada, muestra el error y no guarda la ficha.]]></markdownProperty>
+    <markdownProperty name="description" category="general"><![CDATA[El sistema valida que los campos obligatorios estén completos y que no exista otro trabajador con la misma identificación.]]></markdownProperty>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>
   <children/>

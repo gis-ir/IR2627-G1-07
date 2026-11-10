@@ -34,8 +34,4 @@
 <text x="520.0" y="316.9" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#000000"><tspan x="520.0">CU-17 Supervisar acuses y avisar turnos</tspan><tspan x="520.0" dy="14.6">sin confirmar</tspan></text>
 <ellipse cx="520.0" cy="410.0" rx="140.0" ry="30.0" fill="#ffffff" stroke="#000000" stroke-width="1"/>
 <text x="520.0" y="414.2" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#000000"><tspan x="520.0">CU-18 Publicar aviso general en el tablón</tspan></text>
-<polygon points="240.0,510.0 786.0,510.0 800.0,524.0 800.0,580.0 240.0,580.0" fill="#fff2cc" stroke="#d6b656" stroke-width="1"/>
-<polyline points="786.0,510.0 786.0,524.0 800.0,524.0" fill="none" stroke="#d6b656" stroke-width="1"/>
-<text x="250.0" y="528.0" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" fill="#000000">Nota: el servicio de notificaciones push entrega las alertas de turno generadas por CU-15 y</text>
-<text x="250.0" y="541.0" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" fill="#000000">CU-16. Todos los casos de uso autenticados incluyen CU-29 Iniciar y cerrar sesión (SUB-07).</text>
 </svg>

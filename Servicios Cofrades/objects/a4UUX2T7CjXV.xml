@@ -9,7 +9,8 @@
     <markdownProperty name="text" category="detail"><![CDATA[*  **Modelo de clases**, que sustentará la base de datos (trabajadores, hermandades, presupuestos, cuadrantes y capacitaciones).
 * **Arquitectura lógica del software:** dividida en subsistemas.
 *  **Diseño de la UI y diagramas de navegación:** tanto para el entorno móvil de los operarios como para el portal web de las hermandades.
-Quedan **fuera** del alcance de este documento los detalles de implementación a nivel de código fuente y la configuración física de los servidores.]]></markdownProperty>
+Quedan **fuera** del alcance de este documento los detalles de implementación a nivel de código fuente y la configuración física de los servidores.
+* **Pagos:** Quedan fuera del alcance la integración con pasarelas de pago externas  y la ejecución automática de transferencias bancarias. El módulo de pagos gestiona únicamente el registro lógico, estado administrativo y seguimiento de cobros y pagos.]]></markdownProperty>
     <traceProperty name="dependencies" category="dependencies" acceptedTargets="traceable-object" traceType=":Proteus-dependency"/>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>

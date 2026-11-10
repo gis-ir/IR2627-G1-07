@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <object id="eEWwxDNeyvur" classes="enum-value" acceptedChildren=":Proteus-none" acceptedParents="enumeration">
   <properties>
-    <stringProperty name=":Proteus-name" category="general"><![CDATA[EnProceso]]></stringProperty>
-    <markdownProperty name="description" category="detail"><![CDATA[El proveedor está procesando la operación]]></markdownProperty>
+    <stringProperty name=":Proteus-name" category="general"><![CDATA[En Proceso]]></stringProperty>
+    <markdownProperty name="description" category="detail"><![CDATA[La operación ha sido tramitada internamente y se encuentra en espera de verificación o conciliación bancaria]]></markdownProperty>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>
   <children/>

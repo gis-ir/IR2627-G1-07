@@ -3,7 +3,7 @@
   <properties>
     <stringProperty name=":Proteus-name" category="general"><![CDATA[importeTotal]]></stringProperty>
     <stringProperty name="type" category="general"><![CDATA[Double]]></stringProperty>
-    <markdownProperty name="description" category="detail"><![CDATA[Importe calculado sumando los subtotales de sus líneas]]></markdownProperty>
+    <markdownProperty name="description" category="detail"><![CDATA[Importe final a cobrar a la hermandad, resultado de aplicar el IVA sobre la base total]]></markdownProperty>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>
   <children/>

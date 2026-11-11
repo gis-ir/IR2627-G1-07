@@ -6,7 +6,7 @@
     <stringProperty name="version" category="general"><![CDATA[1.0]]></stringProperty>
     <traceProperty name="authors" category="general" acceptedTargets="stakeholder" traceType=":Proteus-author"/>
     <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
-    <markdownProperty name="text" category="detail"><![CDATA[Para este apartado no añadiremos ningún actor de negocio nuevo, ya que no cambiaremos los procesos de negocio en gran medida, por lo que no habrá falta de añadir un nuevo actor al diagrama.]]></markdownProperty>
+    <markdownProperty name="text" category="detail"><![CDATA[Para este apartado no añadiremos ningún actor de negocio nuevo, ya que no cambiaremos los procesos de negocio en gran medida, por lo que no hará falta añadir un nuevo actor al diagrama.]]></markdownProperty>
     <traceProperty name="dependencies" category="dependencies" acceptedTargets="traceable-object" traceType=":Proteus-dependency"/>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>

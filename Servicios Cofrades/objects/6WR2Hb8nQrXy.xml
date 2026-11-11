@@ -31,7 +31,7 @@
       <trace target="QkjTzYKzcFRP" traceType=":Proteus-dependency"/>
       <trace target="bNsqnR3pvfsq" traceType=":Proteus-dependency"/>
     </traceProperty>
-    <markdownProperty name="description" category="detail"><![CDATA[Persona de la empresa que planifica y supervisa la prestación de los servicios cofrades. Da de alta y valida al personal, genera y publica los cuadrantes, cubre las bajas, comunica los turnos, elabora y envía los presupuestos y mantiene las condiciones contractuales con las hermandades. Es el actor principal de los subsistemas SUB-01 a SUB-05.]]></markdownProperty>
+    <markdownProperty name="description" category="detail"><![CDATA[Persona de la empresa que planifica y supervisa la prestación de los servicios cofrades. Da de alta y valida al personal, genera y publica los cuadrantes, cubre las bajas, comunica los turnos, elabora y envía los presupuestos y mantiene las condiciones contractuales con las hermandades. Es el actor principal de los subsistemas SUBS-001 a SUBS-005.]]></markdownProperty>
     <traceProperty name="dependencies" category="dependencies" acceptedTargets="traceable-object business-requirement" traceType=":Proteus-dependency">
       <trace target="9xaksjxhhy6W" traceType=":Proteus-dependency"/>
       <trace target="pxNkRxBVbTWw" traceType=":Proteus-dependency"/>

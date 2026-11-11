@@ -9,7 +9,7 @@
     <fileProperty name="file" category="detail" tooltip="file-info"><![CDATA[whatsapp3.jpg]]></fileProperty>
     <urlProperty name="url" category="detail"><![CDATA[]]></urlProperty>
     <integerProperty name="width" category="detail" tooltip="width-info">30</integerProperty>
-    <markdownProperty name="description" category="detail"><![CDATA[]]></markdownProperty>
+    <markdownProperty name="description" category="detail"><![CDATA[DOC-03: Solicitud de disponibilidad laboral y actualización de datos (captura de WhatsApp).]]></markdownProperty>
     <traceProperty name="dependencies" category="dependencies" acceptedTargets="traceable-object" traceType=":Proteus-dependency"/>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>

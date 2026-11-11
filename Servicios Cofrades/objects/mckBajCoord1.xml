@@ -13,7 +13,7 @@
       <trace target="4rUALYcRDsQ3" traceType=":Proteus-author"/>
     </traceProperty>
     <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
-    <markdownProperty name="description" category="detail"><![CDATA[Dentro de esta pantalla se gestionan las incidencias y bajas imprevistas de última hora aplicando el algoritmo de contingencia (PR-NEG-05). Se detalla la vacante urgente (hermandad, puesto y hora de citación) y se muestra la lista priorizada de candidatos sustitutos según compatibilidad del rol, inmediatez y cercanía geográfica en km. Permite enviar alertas push individuales o masivas y registrar sustituciones manuales.]]></markdownProperty>
+    <markdownProperty name="description" category="detail"><![CDATA[Dentro de esta pantalla se gestionan las incidencias y bajas imprevistas de última hora aplicando el algoritmo de contingencia (PRON-005). Se detalla la vacante urgente (hermandad, puesto y hora de citación) y se muestra la lista priorizada de candidatos sustitutos según compatibilidad del rol, inmediatez y cercanía geográfica en km. Permite enviar alertas push individuales o masivas y registrar sustituciones manuales.]]></markdownProperty>
     <fileProperty name="diagram" category="detail" tooltip="file-info"><![CDATA[mockup_bajas_coordinador.png]]></fileProperty>
     <integerProperty name="width" category="detail" tooltip="width-info">70</integerProperty>
     <traceProperty name="dependencies" category="dependencies" acceptedTargets="traceable-object business-requirement software-requirement model-element" traceType=":Proteus-dependency">

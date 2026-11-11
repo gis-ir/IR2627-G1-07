@@ -5,33 +5,33 @@
 <line x1="850.0" y1="354.1" x2="646.1" y2="333.0" stroke="#000000" stroke-width="1"/>
 <line x1="850.0" y1="358.8" x2="633.4" y2="392.4" stroke="#000000" stroke-width="1"/>
 <line x1="850.0" y1="145.7" x2="659.5" y2="142.4" stroke="#000000" stroke-width="1"/>
-<text x="240.0" y="37.9" font-family="Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" fill="#000000" font-weight="bold">Diagrama de casos de uso · SUB-04: Comunicación y notificaciones (Sección 6.2 del ERS)</text>
+<text x="240.0" y="37.9" font-family="Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" fill="#000000" font-weight="bold">Diagrama de casos de uso · SUBS-004: Comunicación y notificaciones (Sección 6.2 del ERS)</text>
 <rect x="240.0" y="60.0" width="560.0" height="430.0" fill="none" stroke="#000000" stroke-width="1"/>
-<text x="520.0" y="80.9" font-family="Helvetica, Arial, sans-serif" font-size="14" text-anchor="middle" fill="#000000" font-weight="bold"><tspan x="520.0">SUB-04: Comunicación y notificaciones</tspan></text>
+<text x="520.0" y="80.9" font-family="Helvetica, Arial, sans-serif" font-size="14" text-anchor="middle" fill="#000000" font-weight="bold"><tspan x="520.0">SUBS-004: Comunicación y notificaciones</tspan></text>
 <circle cx="108.0" cy="162.6" r="9.0" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
 <line x1="108.0" y1="171.6" x2="108.0" y2="194.6" stroke="#000000" stroke-width="1.2"/>
 <line x1="94.3" y1="178.5" x2="121.7" y2="178.5" stroke="#000000" stroke-width="1.2"/>
 <line x1="108.0" y1="194.6" x2="97.2" y2="220.0" stroke="#000000" stroke-width="1.2"/>
 <line x1="108.0" y1="194.6" x2="118.8" y2="220.0" stroke="#000000" stroke-width="1.2"/>
-<text x="108.0" y="235.8" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" fill="#000000"><tspan x="108.0">ACT-02 Trabajador</tspan></text>
+<text x="108.0" y="235.8" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" fill="#000000"><tspan x="108.0">ACT-002 Trabajador</tspan></text>
 <circle cx="868.0" cy="332.6" r="9.0" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
 <line x1="868.0" y1="341.6" x2="868.0" y2="364.6" stroke="#000000" stroke-width="1.2"/>
 <line x1="854.3" y1="348.5" x2="881.7" y2="348.5" stroke="#000000" stroke-width="1.2"/>
 <line x1="868.0" y1="364.6" x2="857.2" y2="390.0" stroke="#000000" stroke-width="1.2"/>
 <line x1="868.0" y1="364.6" x2="878.8" y2="390.0" stroke="#000000" stroke-width="1.2"/>
-<text x="868.0" y="405.9" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" fill="#000000"><tspan x="868.0">ACT-01 Coordinador</tspan></text>
+<text x="868.0" y="405.9" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" fill="#000000"><tspan x="868.0">ACT-001 Coordinador</tspan></text>
 <circle cx="868.0" cy="122.6" r="9.0" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
 <line x1="868.0" y1="131.6" x2="868.0" y2="154.6" stroke="#000000" stroke-width="1.2"/>
 <line x1="854.3" y1="138.5" x2="881.7" y2="138.5" stroke="#000000" stroke-width="1.2"/>
 <line x1="868.0" y1="154.6" x2="857.2" y2="180.0" stroke="#000000" stroke-width="1.2"/>
 <line x1="868.0" y1="154.6" x2="878.8" y2="180.0" stroke="#000000" stroke-width="1.2"/>
-<text x="868.0" y="195.8" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" fill="#000000"><tspan x="868.0">ACT-05 Servicio de</tspan><tspan x="868.0" dy="13.4">notificaciones push</tspan></text>
+<text x="868.0" y="195.8" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" fill="#000000"><tspan x="868.0">ACT-005 Servicio de</tspan><tspan x="868.0" dy="13.4">notificaciones push</tspan></text>
 <ellipse cx="520.0" cy="140.0" rx="140.0" ry="30.0" fill="#ffffff" stroke="#000000" stroke-width="1"/>
-<text x="520.0" y="144.2" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#000000"><tspan x="520.0">CU-15 Consultar turno asignado</tspan></text>
+<text x="520.0" y="144.2" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#000000"><tspan x="520.0">CU-015 Consultar turno asignado</tspan></text>
 <ellipse cx="520.0" cy="230.0" rx="140.0" ry="30.0" fill="#ffffff" stroke="#000000" stroke-width="1"/>
-<text x="520.0" y="234.2" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#000000"><tspan x="520.0">CU-16 Confirmar recepción del turno</tspan></text>
+<text x="520.0" y="234.2" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#000000"><tspan x="520.0">CU-016 Confirmar recepción del turno</tspan></text>
 <ellipse cx="520.0" cy="320.0" rx="140.0" ry="30.0" fill="#ffffff" stroke="#000000" stroke-width="1"/>
-<text x="520.0" y="316.9" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#000000"><tspan x="520.0">CU-17 Supervisar acuses y avisar turnos</tspan><tspan x="520.0" dy="14.6">sin confirmar</tspan></text>
+<text x="520.0" y="316.9" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#000000"><tspan x="520.0">CU-017 Supervisar acuses y avisar turnos</tspan><tspan x="520.0" dy="14.6">sin confirmar</tspan></text>
 <ellipse cx="520.0" cy="410.0" rx="140.0" ry="30.0" fill="#ffffff" stroke="#000000" stroke-width="1"/>
-<text x="520.0" y="414.2" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#000000"><tspan x="520.0">CU-18 Publicar aviso general en el tablón</tspan></text>
+<text x="520.0" y="414.2" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#000000"><tspan x="520.0">CU-018 Publicar aviso general en el tablón</tspan></text>
 </svg>

@@ -6,7 +6,7 @@
       <number>004</number>
       <suffix><![CDATA[]]></suffix>
     </codeProperty>
-    <stringProperty name=":Proteus-name" category="general"><![CDATA[RepresentateHermanadad]]></stringProperty>
+    <stringProperty name=":Proteus-name" category="general"><![CDATA[RepresentanteHermandad]]></stringProperty>
     <dateProperty name=":Proteus-date" category="general">2026-10-23</dateProperty>
     <stringProperty name="version" category="general"><![CDATA[1.0]]></stringProperty>
     <traceProperty name="authors" category="general" acceptedTargets="stakeholder" traceType=":Proteus-author"/>

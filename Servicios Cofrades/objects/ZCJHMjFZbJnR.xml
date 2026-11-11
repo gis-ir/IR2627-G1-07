@@ -2,7 +2,7 @@
 <object id="ZCJHMjFZbJnR" classes="attribute" acceptedChildren=":Proteus-none" acceptedParents="entity-class association">
   <properties>
     <stringProperty name=":Proteus-name" category="general"><![CDATA[estado]]></stringProperty>
-    <stringProperty name="type" category="general"><![CDATA[EstadoAsignaicon]]></stringProperty>
+    <stringProperty name="type" category="general"><![CDATA[EstadoAsignacion]]></stringProperty>
     <markdownProperty name="description" category="detail"><![CDATA[Situación actual de la asignación]]></markdownProperty>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>

@@ -15,7 +15,7 @@
     </traceProperty>
     <stringProperty name="as-role" category="detail"><![CDATA[Trabajador]]></stringProperty>
     <markdownProperty name="i-want-to" category="detail"><![CDATA[Recibir mi horario y mi puesto de cada servicio de forma privada en la aplicación, con un aviso cuando haya novedades y con acuse de recepción registrado.]]></markdownProperty>
-    <markdownProperty name="so-that" category="detail"><![CDATA[La información importante no se pierda entre los mensajes del grupo de WhatsApp y cada trabajador vea solo lo que es suyo.]]></markdownProperty>
+    <markdownProperty name="so-that" category="detail"><![CDATA[No perder información importante entre los mensajes del grupo de WhatsApp y cada trabajador vea solo lo que es suyo.]]></markdownProperty>
     <enumProperty name="importance" category="detail" tooltip="importance" choices="tbd critical high medium low optional">high</enumProperty>
     <enumProperty name="priority" category="detail" tooltip="priority" choices="tbd high medium low">high</enumProperty>
     <traceProperty name="dependencies" category="dependencies" acceptedTargets="traceable-object business-requirement" traceType=":Proteus-dependency">

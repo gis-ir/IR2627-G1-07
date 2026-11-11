@@ -2,7 +2,7 @@
 <object id="jcZB2XaEh4CN" classes="attribute" acceptedChildren=":Proteus-none" acceptedParents="entity-class association">
   <properties>
     <stringProperty name=":Proteus-name" category="general"><![CDATA[funcion]]></stringProperty>
-    <stringProperty name="type" category="general"><![CDATA[tipoFuncion]]></stringProperty>
+    <stringProperty name="type" category="general"><![CDATA[TipoFuncion]]></stringProperty>
     <markdownProperty name="description" category="detail"><![CDATA[Función que el trabajador solicita desempeñar]]></markdownProperty>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>

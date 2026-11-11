@@ -19,64 +19,64 @@
 <rect x="280.0" y="60.0" width="700.0" height="640.0" fill="none" stroke="#000000" stroke-width="1"/>
 <text x="630.0" y="81.2" font-family="Helvetica, Arial, sans-serif" font-size="15" text-anchor="middle" fill="#000000" font-weight="bold"><tspan x="630.0">Sistema de gestión de Chamorro Servicios Cofrades</tspan></text>
 <rect x="310.0" y="110.0" width="290.0" height="80.0" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1"/>
-<text x="455.0" y="146.9" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#000000" font-weight="bold"><tspan x="455.0">SUB-01 Gestión de perfiles y</tspan><tspan x="455.0" dy="14.6">disponibilidad</tspan></text>
+<text x="455.0" y="146.9" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#000000" font-weight="bold"><tspan x="455.0">SUBS-001 Gestión de perfiles y</tspan><tspan x="455.0" dy="14.6">disponibilidad</tspan></text>
 <rect x="310.0" y="230.0" width="290.0" height="80.0" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1"/>
-<text x="455.0" y="266.9" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#000000" font-weight="bold"><tspan x="455.0">SUB-02 Organización y generación de</tspan><tspan x="455.0" dy="14.6">cuadrantes</tspan></text>
+<text x="455.0" y="266.9" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#000000" font-weight="bold"><tspan x="455.0">SUBS-002 Organización y generación de</tspan><tspan x="455.0" dy="14.6">cuadrantes</tspan></text>
 <rect x="310.0" y="350.0" width="290.0" height="80.0" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1"/>
-<text x="455.0" y="394.2" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#000000" font-weight="bold"><tspan x="455.0">SUB-03 Vacantes y sustituciones urgentes</tspan></text>
+<text x="455.0" y="394.2" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#000000" font-weight="bold"><tspan x="455.0">SUBS-003 Vacantes y sustituciones urgentes</tspan></text>
 <rect x="310.0" y="470.0" width="290.0" height="80.0" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1"/>
-<text x="455.0" y="514.2" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#000000" font-weight="bold"><tspan x="455.0">SUB-04 Comunicación y notificaciones</tspan></text>
+<text x="455.0" y="514.2" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#000000" font-weight="bold"><tspan x="455.0">SUBS-004 Comunicación y notificaciones</tspan></text>
 <rect x="650.0" y="110.0" width="290.0" height="80.0" fill="#d5e8d4" stroke="#82b366" stroke-width="1"/>
-<text x="795.0" y="146.9" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#000000" font-weight="bold"><tspan x="795.0">SUB-05 Presupuestación y control</tspan><tspan x="795.0" dy="14.6">contractual</tspan></text>
+<text x="795.0" y="146.9" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#000000" font-weight="bold"><tspan x="795.0">SUBS-005 Presupuestación y control</tspan><tspan x="795.0" dy="14.6">contractual</tspan></text>
 <rect x="650.0" y="290.0" width="290.0" height="80.0" fill="#d5e8d4" stroke="#82b366" stroke-width="1"/>
-<text x="795.0" y="334.2" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#000000" font-weight="bold"><tspan x="795.0">SUB-06 Portal de hermandades</tspan></text>
+<text x="795.0" y="334.2" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#000000" font-weight="bold"><tspan x="795.0">SUBS-006 Portal de hermandades</tspan></text>
 <rect x="650.0" y="470.0" width="290.0" height="80.0" fill="#ffe6cc" stroke="#d79b00" stroke-width="1"/>
-<text x="795.0" y="506.9" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#000000" font-weight="bold"><tspan x="795.0">SUB-07 Administración, seguridad y</tspan><tspan x="795.0" dy="14.6">auditoría</tspan></text>
+<text x="795.0" y="506.9" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#000000" font-weight="bold"><tspan x="795.0">SUBS-007 Administración, seguridad y</tspan><tspan x="795.0" dy="14.6">auditoría</tspan></text>
 <circle cx="138.0" cy="242.6" r="9.0" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
 <line x1="138.0" y1="251.6" x2="138.0" y2="274.6" stroke="#000000" stroke-width="1.2"/>
 <line x1="124.3" y1="258.5" x2="151.7" y2="258.5" stroke="#000000" stroke-width="1.2"/>
 <line x1="138.0" y1="274.6" x2="127.2" y2="300.0" stroke="#000000" stroke-width="1.2"/>
 <line x1="138.0" y1="274.6" x2="148.8" y2="300.0" stroke="#000000" stroke-width="1.2"/>
-<text x="138.0" y="315.9" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" fill="#000000"><tspan x="138.0">ACT-01 Coordinador</tspan></text>
+<text x="138.0" y="315.9" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" fill="#000000"><tspan x="138.0">ACT-001 Coordinador</tspan></text>
 <circle cx="138.0" cy="482.6" r="9.0" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
 <line x1="138.0" y1="491.6" x2="138.0" y2="514.6" stroke="#000000" stroke-width="1.2"/>
 <line x1="124.3" y1="498.5" x2="151.7" y2="498.5" stroke="#000000" stroke-width="1.2"/>
 <line x1="138.0" y1="514.6" x2="127.2" y2="540.0" stroke="#000000" stroke-width="1.2"/>
 <line x1="138.0" y1="514.6" x2="148.8" y2="540.0" stroke="#000000" stroke-width="1.2"/>
-<text x="138.0" y="555.9" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" fill="#000000"><tspan x="138.0">ACT-02 Trabajador</tspan></text>
+<text x="138.0" y="555.9" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" fill="#000000"><tspan x="138.0">ACT-002 Trabajador</tspan></text>
 <circle cx="1058.0" cy="142.6" r="9.0" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
 <line x1="1058.0" y1="151.6" x2="1058.0" y2="174.6" stroke="#000000" stroke-width="1.2"/>
 <line x1="1044.3" y1="158.5" x2="1071.7" y2="158.5" stroke="#000000" stroke-width="1.2"/>
 <line x1="1058.0" y1="174.6" x2="1047.2" y2="200.0" stroke="#000000" stroke-width="1.2"/>
 <line x1="1058.0" y1="174.6" x2="1068.8" y2="200.0" stroke="#000000" stroke-width="1.2"/>
-<text x="1058.0" y="215.8" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" fill="#000000"><tspan x="1058.0">ACT-03 Hermandad</tspan></text>
+<text x="1058.0" y="215.8" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" fill="#000000"><tspan x="1058.0">ACT-003 Hermandad</tspan></text>
 <circle cx="1058.0" cy="342.6" r="9.0" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
 <line x1="1058.0" y1="351.6" x2="1058.0" y2="374.6" stroke="#000000" stroke-width="1.2"/>
 <line x1="1044.3" y1="358.5" x2="1071.7" y2="358.5" stroke="#000000" stroke-width="1.2"/>
 <line x1="1058.0" y1="374.6" x2="1047.2" y2="400.0" stroke="#000000" stroke-width="1.2"/>
 <line x1="1058.0" y1="374.6" x2="1068.8" y2="400.0" stroke="#000000" stroke-width="1.2"/>
-<text x="1058.0" y="415.8" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" fill="#000000"><tspan x="1058.0">ACT-01.1 Administrador del</tspan><tspan x="1058.0" dy="13.4">sistema</tspan></text>
+<text x="1058.0" y="415.8" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" fill="#000000"><tspan x="1058.0">ACT-001.1 Administrador del</tspan><tspan x="1058.0" dy="13.4">sistema</tspan></text>
 <circle cx="1058.0" cy="542.6" r="9.0" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
 <line x1="1058.0" y1="551.6" x2="1058.0" y2="574.6" stroke="#000000" stroke-width="1.2"/>
 <line x1="1044.3" y1="558.5" x2="1071.7" y2="558.5" stroke="#000000" stroke-width="1.2"/>
 <line x1="1058.0" y1="574.6" x2="1047.2" y2="600.0" stroke="#000000" stroke-width="1.2"/>
 <line x1="1058.0" y1="574.6" x2="1068.8" y2="600.0" stroke="#000000" stroke-width="1.2"/>
-<text x="1058.0" y="615.8" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" fill="#000000"><tspan x="1058.0">ACT-04 Servicio de correo</tspan><tspan x="1058.0" dy="13.4">electrónico</tspan></text>
+<text x="1058.0" y="615.8" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" fill="#000000"><tspan x="1058.0">ACT-004 Servicio de correo</tspan><tspan x="1058.0" dy="13.4">electrónico</tspan></text>
 <circle cx="1058.0" cy="662.6" r="9.0" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
 <line x1="1058.0" y1="671.6" x2="1058.0" y2="694.6" stroke="#000000" stroke-width="1.2"/>
 <line x1="1044.3" y1="678.5" x2="1071.7" y2="678.5" stroke="#000000" stroke-width="1.2"/>
 <line x1="1058.0" y1="694.6" x2="1047.2" y2="720.0" stroke="#000000" stroke-width="1.2"/>
 <line x1="1058.0" y1="694.6" x2="1068.8" y2="720.0" stroke="#000000" stroke-width="1.2"/>
-<text x="1058.0" y="735.8" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" fill="#000000"><tspan x="1058.0">ACT-05 Servicio de</tspan><tspan x="1058.0" dy="13.4">notificaciones push</tspan></text>
+<text x="1058.0" y="735.8" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" fill="#000000"><tspan x="1058.0">ACT-005 Servicio de</tspan><tspan x="1058.0" dy="13.4">notificaciones push</tspan></text>
 <circle cx="1058.0" cy="782.6" r="9.0" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
 <line x1="1058.0" y1="791.6" x2="1058.0" y2="814.6" stroke="#000000" stroke-width="1.2"/>
 <line x1="1044.3" y1="798.5" x2="1071.7" y2="798.5" stroke="#000000" stroke-width="1.2"/>
 <line x1="1058.0" y1="814.6" x2="1047.2" y2="840.0" stroke="#000000" stroke-width="1.2"/>
 <line x1="1058.0" y1="814.6" x2="1068.8" y2="840.0" stroke="#000000" stroke-width="1.2"/>
-<text x="1058.0" y="855.8" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" fill="#000000"><tspan x="1058.0">ACT-06 Software de</tspan><tspan x="1058.0" dy="13.4">contabilidad externo</tspan></text>
+<text x="1058.0" y="855.8" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" fill="#000000"><tspan x="1058.0">ACT-006 Software de</tspan><tspan x="1058.0" dy="13.4">contabilidad externo</tspan></text>
 <polygon points="280.0,730.0 966.0,730.0 980.0,744.0 980.0,820.0 280.0,820.0" fill="#fff2cc" stroke="#d6b656" stroke-width="1"/>
 <polyline points="966.0,730.0 966.0,744.0 980.0,744.0" fill="none" stroke="#d6b656" stroke-width="1"/>
 <text x="290.0" y="748.0" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" fill="#000000">Leyenda: los rectángulos azules/verdes/naranjas son subsistemas &lt;&lt;subsystem&gt;&gt; del sistema a desarrollar. El detalle de</text>
-<text x="290.0" y="761.0" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" fill="#000000">los casos de uso de cada uno se encuentra en los diagramas SUB-01 a SUB-07. Todos los casos de uso incluyen CU-29 Iniciar</text>
-<text x="290.0" y="774.0" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" fill="#000000">y cerrar sesión (SUB-07).</text>
+<text x="290.0" y="761.0" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" fill="#000000">los casos de uso de cada uno se encuentra en los diagramas SUBS-001 a SUBS-007. Todos los casos de uso incluyen CU-029 Iniciar</text>
+<text x="290.0" y="774.0" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" fill="#000000">y cerrar sesión (SUBS-007).</text>
 </svg>

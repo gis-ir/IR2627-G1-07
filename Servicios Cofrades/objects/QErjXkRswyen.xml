@@ -13,6 +13,8 @@
     <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
     <traceProperty name="participates-in" category="detail" acceptedTargets="business-process" traceType=":Proteus-dependency">
       <trace target="rAJvmtjxafv2" traceType=":Proteus-dependency"/>
+      <trace target="cKZztQooSza" traceType=":Proteus-dependency"/>
+      <trace target="JwUcSSARAqU" traceType=":Proteus-dependency"/>
       <trace target="wVu2FsDEHMSH" traceType=":Proteus-dependency"/>
     </traceProperty>
     <markdownProperty name="description" category="detail"><![CDATA[Este actor de negocio representa a cualquiera de los trabajadores pertenecientes a la bolsa de empleo de la organización Chamorro Servicios Cofrades.]]></markdownProperty>

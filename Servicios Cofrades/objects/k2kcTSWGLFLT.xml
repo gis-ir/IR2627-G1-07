@@ -30,7 +30,7 @@ La comunicación entre las capas se realiza mediante interfaces bien definidas:
 #### 2. Capa de Lógica de Negocio
 * **API Gateway / Controlador:** Actúa como punto de entrada centralizado para las peticiones de los clientes frontend, gestionando la autenticación, la autorización por perfiles y la validación de peticiones.
 * **Módulo de Cuadrantes y Asignación:** Gestiona la planificación de los servicios, asegurando la correcta asignación de roles y el cumplimiento de compatibilidades horarias.
-* **Módulo de Contingencias y Bajas:** Implementa el algoritmo de cobertura urgente (requisito **PR-NEG-05**), filtrando y ordenando sustitutos según compatibilidad del puesto, inmediatez y cercanía geográfica.
+* **Módulo de Contingencias y Bajas:** Implementa el algoritmo de cobertura urgente (proceso de negocio **PRON-005**), filtrando y ordenando sustitutos según compatibilidad del puesto, inmediatez y cercanía geográfica.
 * **Módulo de Presupuestos y Facturación:** Aplica los baremos y tarifas según el tipo de servicio cofrade, genera los presupuestos en formato estándar y prepara los volcados contables.
 * **Módulo de Personal y Disponibilidad:** Centraliza la información de los trabajadores (perfiles, tallas, experiencia) y su calendario de disponibilidad declarada.
 * **Módulo de Notificaciones y Eventos:** Despacha avisos y alertas asíncronas ante sustituciones de urgencia y confirmaciones de servicio.
@@ -50,16 +50,16 @@ La comunicación entre las capas se realiza mediante interfaces bien definidas:
 
 | Requisito No Funcional | Identificador en ERS | Decisión Arquitectónica Adoptada |
 | :--- | :--- | :--- |
-| **Modularidad del sistema** | `EVM4sAKcGLA3` | Organización en subsistemas desacoplados con comunicación estructurada vía API REST. |
-| **Despliegue mediante contenedores** | `BQeu8craH4bB` | Infraestructura modular empaquetada en contenedores (Servidor Web, API Backend, Base de Datos, Caché). |
-| **Operabilidad en redes saturadas** | `24Qgovtvraz4` | App móvil con soporte local y peticiones ligeras de baja sobrecarga en situaciones de aglomeración. |
-| **Bajo consumo de datos y recursos** | `9w8FDEQyaUrx` / `EFcEL6vUVaEd` | Interfaces simplificadas y transferencia eficiente de datos adaptada a terminales móviles estándar. |
-| **Copias de seguridad periódicas** | `J5Zhi8y8WuLY` | Proceso automatizado de respaldo diario de la base de datos hacia volúmenes independientes. |
-| **Límite de pérdida de datos** | `unAQNoNw936e` | Persistencia transaccional que asegura la durabilidad de las confirmaciones de turnos. |
-| **Seguridad y protección de datos (RGPD)** | `rye3YxU9AY8J` | Comunicaciones cifradas bajo protocolo seguro HTTPS y control de accesos basado en roles. |
-| **Búsqueda inmediata de sustitutos** | `wwcSc8Ga2n6k` | Procesamiento eficiente en el módulo de contingencias para responder en menos de un segundo ante imprevistos. |
-| **Alertas Push en tiempo real** | `o9DpQjmJwn42` | Canal dedicado de mensajería push para la recepción de sustituciones urgentes en movilidad. |
-| **Accesibilidad web** | `6UhAWt4fnjwi` | Portal web para hermandades desarrollado conforme a directrices internacionales de accesibilidad. |]]></markdownProperty>
+| **Modularidad del sistema** | RQNF-009 | Organización en subsistemas desacoplados con comunicación estructurada vía API REST. |
+| **Despliegue mediante contenedores** | RQNF-017 | Infraestructura modular empaquetada en contenedores (Servidor Web, API Backend, Base de Datos, Caché). |
+| **Operabilidad en redes saturadas** | RQNF-024 | App móvil con soporte local y peticiones ligeras de baja sobrecarga en situaciones de aglomeración. |
+| **Bajo consumo de datos y recursos** | RQNF-012 / RQNF-025 | Interfaces simplificadas y transferencia eficiente de datos adaptada a terminales móviles estándar. |
+| **Copias de seguridad periódicas** | RQNF-002 | Proceso automatizado de respaldo diario de la base de datos hacia volúmenes independientes. |
+| **Límite de pérdida de datos** | RQNF-004 | Persistencia transaccional que asegura la durabilidad de las confirmaciones de turnos. |
+| **Seguridad y protección de datos (RGPD)** | RQNF-019 | Comunicaciones cifradas bajo protocolo seguro HTTPS y control de accesos basado en roles. |
+| **Búsqueda inmediata de sustitutos** | RQNF-015 | Procesamiento eficiente en el módulo de contingencias para responder en menos de un segundo ante imprevistos. |
+| **Alertas Push en tiempo real** | RQNF-027 | Canal dedicado de mensajería push para la recepción de sustituciones urgentes en movilidad. |
+| **Accesibilidad web** | RQNF-007 | Portal web para hermandades desarrollado conforme a directrices internacionales de accesibilidad. |]]></markdownProperty>
     <traceProperty name="dependencies" category="dependencies" acceptedTargets="traceable-object" traceType=":Proteus-dependency">
       <trace target="EVM4sAKcGLA3" traceType=":Proteus-dependency"/>
       <trace target="BQeu8craH4bB" traceType=":Proteus-dependency"/>

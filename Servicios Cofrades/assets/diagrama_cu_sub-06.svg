@@ -21,9 +21,4 @@
 <text x="520.0" y="316.9" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#000000"><tspan x="520.0">CU-026 Consultar estado de solicitudes y</tspan><tspan x="520.0" dy="14.6">presupuestos</tspan></text>
 <ellipse cx="520.0" cy="410.0" rx="140.0" ry="30.0" fill="#ffffff" stroke="#000000" stroke-width="1"/>
 <text x="520.0" y="406.9" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#000000"><tspan x="520.0">CU-027 Consultar historial de servicios</tspan><tspan x="520.0" dy="14.6">contratados</tspan></text>
-<polygon points="240.0,510.0 786.0,510.0 800.0,524.0 800.0,580.0 240.0,580.0" fill="#fff2cc" stroke="#d6b656" stroke-width="1"/>
-<polyline points="786.0,510.0 786.0,524.0 800.0,524.0" fill="none" stroke="#d6b656" stroke-width="1"/>
-<text x="250.0" y="528.0" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" fill="#000000">Nota: CU-026 incluye CU-021 Aceptar o rechazar presupuesto (SUBS-005), que es el punto de entrada de</text>
-<text x="250.0" y="541.0" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" fill="#000000">la decisión de la hermandad. Todos los casos de uso incluyen CU-029 Iniciar y cerrar sesión</text>
-<text x="250.0" y="554.0" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" fill="#000000">(SUBS-007).</text>
 </svg>

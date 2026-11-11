@@ -74,9 +74,4 @@
 <line x1="1058.0" y1="814.6" x2="1047.2" y2="840.0" stroke="#000000" stroke-width="1.2"/>
 <line x1="1058.0" y1="814.6" x2="1068.8" y2="840.0" stroke="#000000" stroke-width="1.2"/>
 <text x="1058.0" y="855.8" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" fill="#000000"><tspan x="1058.0">ACT-006 Software de</tspan><tspan x="1058.0" dy="13.4">contabilidad externo</tspan></text>
-<polygon points="280.0,730.0 966.0,730.0 980.0,744.0 980.0,820.0 280.0,820.0" fill="#fff2cc" stroke="#d6b656" stroke-width="1"/>
-<polyline points="966.0,730.0 966.0,744.0 980.0,744.0" fill="none" stroke="#d6b656" stroke-width="1"/>
-<text x="290.0" y="748.0" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" fill="#000000">Leyenda: los rectángulos azules/verdes/naranjas son subsistemas &lt;&lt;subsystem&gt;&gt; del sistema a desarrollar. El detalle de</text>
-<text x="290.0" y="761.0" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" fill="#000000">los casos de uso de cada uno se encuentra en los diagramas SUBS-001 a SUBS-007. Todos los casos de uso incluyen CU-029 Iniciar</text>
-<text x="290.0" y="774.0" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" fill="#000000">y cerrar sesión (SUBS-007).</text>
 </svg>

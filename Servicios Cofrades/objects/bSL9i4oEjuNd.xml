@@ -20,7 +20,7 @@
       <trace target="6Yz3yqynRo23" traceType=":Proteus-dependency"/>
       <trace target="EWWz9zQ2mX5U" traceType=":Proteus-dependency"/>
     </traceProperty>
-    <markdownProperty name="comments" category="comments"><![CDATA[Casos de uso asociados: CU-010 a CU-014. Depende de la información de disponibilidad (SUBS-001) y del cuadrante vigente (SUBS-002).]]></markdownProperty>
+    <markdownProperty name="comments" category="comments"><![CDATA[Casos de uso asociados: CU-011 a CU-015. Depende de la información de disponibilidad (SUBS-001) y del cuadrante vigente (SUBS-002).]]></markdownProperty>
   </properties>
   <children/>
 </object>

@@ -3,7 +3,7 @@
   <properties>
     <codeProperty name=":Proteus-code" category="general" inmutable="true">
       <prefix><![CDATA[RQNF-]]></prefix>
-      <number>024</number>
+      <number>025</number>
       <suffix><![CDATA[]]></suffix>
     </codeProperty>
     <stringProperty name=":Proteus-name" category="general"><![CDATA[Operabilidad en redes saturadas]]></stringProperty>

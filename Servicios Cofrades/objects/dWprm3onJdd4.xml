@@ -3,7 +3,7 @@
   <properties>
     <codeProperty name=":Proteus-code" category="general" inmutable="true">
       <prefix><![CDATA[CU-]]></prefix>
-      <number>017</number>
+      <number>018</number>
       <suffix><![CDATA[]]></suffix>
     </codeProperty>
     <stringProperty name=":Proteus-name" category="general"><![CDATA[Supervisar acuses y avisar turnos sin confirmar]]></stringProperty>

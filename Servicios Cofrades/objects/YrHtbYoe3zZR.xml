@@ -3,7 +3,7 @@
   <properties>
     <codeProperty name=":Proteus-code" category="general" inmutable="true">
       <prefix><![CDATA[CU-]]></prefix>
-      <number>021</number>
+      <number>023</number>
       <suffix><![CDATA[]]></suffix>
     </codeProperty>
     <stringProperty name=":Proteus-name" category="general"><![CDATA[Aceptar o rechazar presupuesto]]></stringProperty>

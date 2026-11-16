@@ -20,7 +20,7 @@
       <trace target="cvHKHyCgcFvb" traceType=":Proteus-dependency"/>
       <trace target="TyYSPwVNgG8n" traceType=":Proteus-dependency"/>
     </traceProperty>
-    <markdownProperty name="comments" category="comments"><![CDATA[Casos de uso asociados: CU-006 a CU-009. El margen de desplazamiento se propone en 60 minutos, pendiente de validación con el cliente (PRON-002).]]></markdownProperty>
+    <markdownProperty name="comments" category="comments"><![CDATA[Casos de uso asociados: CU-006 a CU-010. El margen de desplazamiento se propone en 60 minutos, pendiente de validación con el cliente (PRON-002).]]></markdownProperty>
   </properties>
   <children/>
 </object>

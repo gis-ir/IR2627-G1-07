@@ -19,7 +19,7 @@
       <trace target="Ku6wgw9eNSL3" traceType=":Proteus-dependency"/>
       <trace target="qoCeYjPUbC54" traceType=":Proteus-dependency"/>
     </traceProperty>
-    <markdownProperty name="comments" category="comments"><![CDATA[Casos de uso asociados: CU-015 a CU-018. El plazo para confirmar el turno está pendiente de concretar (PRON-004).]]></markdownProperty>
+    <markdownProperty name="comments" category="comments"><![CDATA[Casos de uso asociados: CU-016 a CU-020. El plazo para confirmar el turno está pendiente de concretar (PRON-004).]]></markdownProperty>
   </properties>
   <children/>
 </object>

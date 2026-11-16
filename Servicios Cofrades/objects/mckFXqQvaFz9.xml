@@ -13,7 +13,7 @@
       <trace target="4rUALYcRDsQ3" traceType=":Proteus-author"/>
     </traceProperty>
     <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
-    <markdownProperty name="description" category="detail"><![CDATA[Listado de trabajadores con sus capacitaciones, talla y disponibilidad, con filtros para planificar. Permite: buscar y filtrar por rol y día; consultar y editar la ficha del trabajador; dar de alta y ver la matriz de disponibilidad. Perfil: Coordinador (Panel web).]]></markdownProperty>
+    <markdownProperty name="description" category="detail"><![CDATA[Listado de trabajadores con sus capacitaciones, talla y disponibilidad, con filtros para planificar. Permite: buscar y filtrar por rol y día; consultar y editar la ficha del trabajador; dar de alta y ver la matriz de disponibilidad. Perfil: Coordinador (Panel web). El botón «Ver ficha» abre la ficha completa del trabajador (MOCK-024).]]></markdownProperty>
     <fileProperty name="diagram" category="detail" tooltip="file-info"><![CDATA[MOCK-009.png]]></fileProperty>
     <integerProperty name="width" category="detail" tooltip="width-info">70</integerProperty>
     <traceProperty name="dependencies" category="dependencies" acceptedTargets="traceable-object business-requirement software-requirement model-element" traceType=":Proteus-dependency">

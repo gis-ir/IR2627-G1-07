@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="mcklmP4bx1kQ" classes="model-element mockup" acceptedChildren=":Proteus-none" acceptedParents=":Proteus-any">
+  <properties>
+    <codeProperty name=":Proteus-code" category="general" inmutable="true">
+      <prefix><![CDATA[MOCK-]]></prefix>
+      <number>021</number>
+      <suffix><![CDATA[]]></suffix>
+    </codeProperty>
+    <stringProperty name=":Proteus-name" category="general"><![CDATA[Cuadrante del cortejo]]></stringProperty>
+    <dateProperty name=":Proteus-date" category="general">2026-11-11</dateProperty>
+    <stringProperty name="version" category="general"><![CDATA[1.0]]></stringProperty>
+    <traceProperty name="authors" category="general" acceptedTargets="stakeholder" traceType=":Proteus-author">
+      <trace target="4rUALYcRDsQ3" traceType=":Proteus-author"/>
+    </traceProperty>
+    <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
+    <markdownProperty name="description" category="detail"><![CDATA[La hermandad consulta qué personal irá a su cortejo, a qué hora está citado y si ha confirmado. Permite: puesto, trabajador y citación; estado de confirmación; descargar PDF y comunicar incidencias. Perfil: Hermandad (Portal web).]]></markdownProperty>
+    <fileProperty name="diagram" category="detail" tooltip="file-info"><![CDATA[MOCK-021.png]]></fileProperty>
+    <integerProperty name="width" category="detail" tooltip="width-info">70</integerProperty>
+    <traceProperty name="dependencies" category="dependencies" acceptedTargets="traceable-object business-requirement software-requirement model-element" traceType=":Proteus-dependency">
+      <trace target="xckYHaFEfD3B" traceType=":Proteus-dependency"/>
+      <trace target="c2wo7qfog2YG" traceType=":Proteus-dependency"/>
+    </traceProperty>
+    <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children/>
+</object>

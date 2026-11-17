@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="VRaAKwTuWjhr" classes="attribute" acceptedChildren=":Proteus-none" acceptedParents="entity-class association">
+  <properties>
+    <stringProperty name=":Proteus-name" category="general"><![CDATA[pagoHoraTrabajador]]></stringProperty>
+    <stringProperty name="type" category="general"><![CDATA[Double]]></stringProperty>
+    <markdownProperty name="description" category="detail"><![CDATA[Importe por hora que recibe el trabajador por desempeñar dicha función]]></markdownProperty>
+    <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children/>
+</object>

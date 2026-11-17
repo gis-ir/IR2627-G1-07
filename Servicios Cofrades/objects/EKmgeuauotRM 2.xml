@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="EKmgeuauotRM" classes="section" acceptedChildren=":Proteus-any" acceptedParents=":Proteus-document section">
+  <properties>
+    <stringProperty name=":Proteus-name" category="general"><![CDATA[SUB-03 Vacantes y sustituciones urgentes]]></stringProperty>
+    <markdownProperty name="comments" category="general"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children>
+    <child id="i7LWUSzSbPzE"/>
+    <child id="zRk5gjtpJDrL"/>
+    <child id="UuKkVcTHL4Qz"/>
+    <child id="wNsJjFiXcrsn"/>
+    <child id="daNfHKAUosXo"/>
+  </children>
+</object>

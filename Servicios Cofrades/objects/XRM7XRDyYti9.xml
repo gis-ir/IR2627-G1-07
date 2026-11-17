@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="XRM7XRDyYti9" classes="enum-value" acceptedChildren=":Proteus-none" acceptedParents="enumeration">
+  <properties>
+    <stringProperty name=":Proteus-name" category="general"><![CDATA[Enviado]]></stringProperty>
+    <markdownProperty name="description" category="detail"><![CDATA[La propuesta se ha enviado y está pendiente de respuesta]]></markdownProperty>
+    <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children/>
+</object>

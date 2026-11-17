@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="CuHKbKCLyAaf" classes="attribute" acceptedChildren=":Proteus-none" acceptedParents="entity-class association">
+  <properties>
+    <stringProperty name=":Proteus-name" category="general"><![CDATA[motivoBaja]]></stringProperty>
+    <stringProperty name="type" category="general"><![CDATA[string [0..1]]]></stringProperty>
+    <markdownProperty name="description" category="detail"><![CDATA[Motivo comunicado por el trabajador cuando no puede realizar el trabajo]]></markdownProperty>
+    <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children/>
+</object>

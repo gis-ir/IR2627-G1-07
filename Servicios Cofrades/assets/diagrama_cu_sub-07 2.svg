@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="20.0 -10.0 1030.0 655.0" width="1030" height="655">
+<rect x="20.0" y="-10.0" width="1030.0" height="655.0" fill="#ffffff"/>
+<line x1="126.0" y1="270.1" x2="443.8" y2="165.2" stroke="#000000" stroke-width="1"/>
+<line x1="126.0" y1="274.0" x2="395.8" y2="243.9" stroke="#000000" stroke-width="1"/>
+<line x1="126.0" y1="277.9" x2="394.7" y2="306.6" stroke="#000000" stroke-width="1"/>
+<line x1="126.0" y1="281.9" x2="443.0" y2="384.9" stroke="#000000" stroke-width="1"/>
+<polyline points="660.0,140.0 686.0,140.0 686.0,230.0 660.0,230.0" fill="none" stroke="#000000" stroke-width="1" stroke-dasharray="6 4"/>
+<polyline points="669.0,225.0 660.0,230.0 669.0,235.0" fill="none" stroke="#000000" stroke-width="1"/>
+<polyline points="660.0,320.0 700.0,320.0 700.0,230.0 660.0,230.0" fill="none" stroke="#000000" stroke-width="1" stroke-dasharray="6 4"/>
+<polyline points="669.0,225.0 660.0,230.0 669.0,235.0" fill="none" stroke="#000000" stroke-width="1"/>
+<polyline points="660.0,410.0 714.0,410.0 714.0,230.0 660.0,230.0" fill="none" stroke="#000000" stroke-width="1" stroke-dasharray="6 4"/>
+<polyline points="669.0,225.0 660.0,230.0 669.0,235.0" fill="none" stroke="#000000" stroke-width="1"/>
+<text x="240.0" y="37.9" font-family="Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" fill="#000000" font-weight="bold">Diagrama de casos de uso · SUB-07: Administración, seguridad y auditoría (Sección 6.2 del ERS)</text>
+<rect x="240.0" y="60.0" width="560.0" height="430.0" fill="none" stroke="#000000" stroke-width="1"/>
+<text x="520.0" y="80.9" font-family="Helvetica, Arial, sans-serif" font-size="14" text-anchor="middle" fill="#000000" font-weight="bold"><tspan x="520.0">SUB-07: Administración, seguridad y auditoría</tspan></text>
+<circle cx="108.0" cy="252.6" r="9.0" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+<line x1="108.0" y1="261.6" x2="108.0" y2="284.6" stroke="#000000" stroke-width="1.2"/>
+<line x1="94.3" y1="268.5" x2="121.7" y2="268.5" stroke="#000000" stroke-width="1.2"/>
+<line x1="108.0" y1="284.6" x2="97.2" y2="310.0" stroke="#000000" stroke-width="1.2"/>
+<line x1="108.0" y1="284.6" x2="118.8" y2="310.0" stroke="#000000" stroke-width="1.2"/>
+<text x="108.0" y="325.9" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" fill="#000000"><tspan x="108.0">ACT-01.1 Administrador</tspan></text>
+<ellipse cx="520.0" cy="140.0" rx="140.0" ry="30.0" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+<text x="520.0" y="136.9" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#000000"><tspan x="520.0">CU-28 Gestionar usuarios, roles y</tspan><tspan x="520.0" dy="14.6">permisos</tspan></text>
+<ellipse cx="520.0" cy="230.0" rx="140.0" ry="30.0" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+<text x="520.0" y="234.2" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#000000"><tspan x="520.0">CU-29 Iniciar y cerrar sesión</tspan></text>
+<ellipse cx="520.0" cy="320.0" rx="140.0" ry="30.0" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+<text x="520.0" y="324.2" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#000000"><tspan x="520.0">CU-30 Consultar registro de auditoría</tspan></text>
+<ellipse cx="520.0" cy="410.0" rx="140.0" ry="30.0" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+<text x="520.0" y="406.9" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#000000"><tspan x="520.0">CU-31 Supervisar estado y rendimiento del</tspan><tspan x="520.0" dy="14.6">sistema</tspan></text>
+<polygon points="240.0,510.0 786.0,510.0 800.0,524.0 800.0,580.0 240.0,580.0" fill="#fff2cc" stroke="#d6b656" stroke-width="1"/>
+<polyline points="786.0,510.0 786.0,524.0 800.0,524.0" fill="none" stroke="#d6b656" stroke-width="1"/>
+<text x="250.0" y="528.0" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" fill="#000000">Nota: ACT-01.1 Administrador es especialización de ACT-01 Coordinador. CU-29 Iniciar y cerrar</text>
+<text x="250.0" y="541.0" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" fill="#000000">sesión es incluido por todos los casos de uso autenticados de los subsistemas SUB-01 a SUB-06.</text>
+<text x="694.0" y="189.0" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" fill="#000000" font-style="italic">«include»</text>
+<text x="708.0" y="279.0" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" fill="#000000" font-style="italic">«include»</text>
+<text x="722.0" y="324.0" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" fill="#000000" font-style="italic">«include»</text>
+</svg>

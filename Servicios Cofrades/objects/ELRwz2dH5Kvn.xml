@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="ELRwz2dH5Kvn" classes="attribute" acceptedChildren=":Proteus-none" acceptedParents="entity-class association">
+  <properties>
+    <stringProperty name=":Proteus-name" category="general"><![CDATA[subTotal]]></stringProperty>
+    <stringProperty name="type" category="general"><![CDATA[integer]]></stringProperty>
+    <markdownProperty name="description" category="detail"><![CDATA[Resultado de multiplicar la cantidad por el precio unitario]]></markdownProperty>
+    <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children/>
+</object>

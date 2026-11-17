@@ -7,10 +7,10 @@
     <dateProperty name=":Proteus-date" category="general">2026-10-11</dateProperty>
     <markdownProperty name="description" category="detail"><![CDATA[Documento Especificación de Requisitos del Sistema basado en MADEJA para la asignatura Ingeniería de Requisitos]]></markdownProperty>
     <traceProperty name="prepared-for" category="dependencies" acceptedTargets="organization" traceType=":Proteus-dependency">
-      <trace target="omgzEdVFkgLf" traceType=":Proteus-dependency"/>
+      <trace target="RHtb5tn3BNBS" traceType=":Proteus-dependency"/>
     </traceProperty>
     <traceProperty name="prepared-by" category="dependencies" acceptedTargets="organization" traceType=":Proteus-author">
-      <trace target="i6XSHaREHBuL" traceType=":Proteus-author"/>
+      <trace target="tGBudd4La7e3" traceType=":Proteus-author"/>
     </traceProperty>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>
@@ -24,12 +24,5 @@
     <child id="7yB2aYH4rvEA"/>
     <child id="X5rcZbzu3DCJ"/>
     <child id="4PgE8QTYZG5o"/>
-    <child id="omgzEdVFkgLf"/>
-    <child id="xCZrb6VpPwt4"/>
-    <child id="P6wFWZV6s5G5"/>
-    <child id="6yp4FS3g3S4j"/>
-    <child id="zNkHZVPTRrky"/>
-    <child id="D2jkp7C2BU2g"/>
-    <child id="i6XSHaREHBuL"/>
   </children>
 </object>

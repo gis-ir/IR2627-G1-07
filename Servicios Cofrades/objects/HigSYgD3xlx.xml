@@ -27,6 +27,7 @@
       <trace target="YEFHZEGTj2kp" traceType=":Proteus-dependency"/>
       <trace target="uj8zuiEXAHRN" traceType=":Proteus-dependency"/>
       <trace target="bNsqnR3pvfsq" traceType=":Proteus-dependency"/>
+      <trace target="8ssV4FgmaMi6" traceType=":Proteus-dependency"/>
     </traceProperty>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>
@@ -35,5 +36,7 @@
     <child id="54Xv4aZRsRd"/>
     <child id="kanAyqGANwA"/>
     <child id="aVeYY5fKGss"/>
+    <child id="h3pSK58oKJhG"/>
+    <child id="zAvHOSaqQnCw"/>
   </children>
 </object>

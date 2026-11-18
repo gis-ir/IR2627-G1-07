@@ -1,8 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<object id="125DB5AP8hqp" classes="use-case-step" acceptedChildren=":Proteus-none" acceptedParents="use-case">
+<object id="125DB5AP8hqp" classes="use-case-step use-case-action system-action system-step" acceptedChildren="use-case-exception" acceptedParents="use-case conditional-branch">
   <properties>
-    <stringProperty name=":Proteus-name" category="general"><![CDATA[Paso 4]]></stringProperty>
-    <markdownProperty name="description" category="general"><![CDATA[El sistema valida que los datos obligatorios estén completos y que la fecha de fin no sea anterior a la de inicio.]]></markdownProperty>
+    <stringProperty name=":Proteus-name" category="general"><![CDATA[Paso del sistema]]></stringProperty>
+    <markdownProperty name="condition" category="general" tooltip="step-condition"><![CDATA[]]></markdownProperty>
+    <markdownProperty name="description" category="general" tooltip="system-action-description"><![CDATA[valida que los datos obligatorios estén completos y que la fecha de fin no sea anterior a la de inicio.]]></markdownProperty>
+    <stringProperty name="performance" category="general" tooltip="performance"><![CDATA[]]></stringProperty>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>
   <children/>

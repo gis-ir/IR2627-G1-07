@@ -25,6 +25,7 @@
       <trace target="R39XR7m3cYeY" traceType=":Proteus-dependency"/>
       <trace target="AnERVenF4Ks5" traceType=":Proteus-dependency"/>
       <trace target="bNsqnR3pvfsq" traceType=":Proteus-dependency"/>
+      <trace target="avQghjP5ndh" traceType=":Proteus-dependency"/>
     </traceProperty>
     <markdownProperty name="comments" category="comments"><![CDATA[Flujo alternativo: si la hermandad rechaza el presupuesto, el sistema solicita el motivo, registra el rechazo y avisa al Coordinador.]]></markdownProperty>
   </properties>

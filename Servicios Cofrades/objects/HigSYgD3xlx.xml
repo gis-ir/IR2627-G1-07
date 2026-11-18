@@ -13,7 +13,7 @@
     <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source">
       <trace target="WAzr6R2fLUkx" traceType=":Proteus-information-source"/>
     </traceProperty>
-    <markdownProperty name="description" category="detail"><![CDATA[El sistema deberá almacenar la información correspondiente a las personas que usan el sistema: trabajadores, coordinadores y representantes de hermandad. En concreto:]]></markdownProperty>
+    <markdownProperty name="description" category="detail"><![CDATA[El sistema deberá almacenar la información correspondiente a las personas que usan el sistema: trabajadores, coordinadores y representantes de hermandad, así como el registro de las acciones que realizan en él para su auditoría. En concreto:]]></markdownProperty>
     <enumProperty name="importance" category="priority" tooltip="importance" choices="tbd critical high medium low optional">critical</enumProperty>
     <enumProperty name="urgency" category="priority" tooltip="urgency" choices="tbd high medium low">high</enumProperty>
     <enumProperty name="status" category="priority" tooltip="status" choices="tbd draft awaiting-qa awaiting-validation validated">tbd</enumProperty>
@@ -28,6 +28,7 @@
       <trace target="uj8zuiEXAHRN" traceType=":Proteus-dependency"/>
       <trace target="bNsqnR3pvfsq" traceType=":Proteus-dependency"/>
       <trace target="8ssV4FgmaMi6" traceType=":Proteus-dependency"/>
+      <trace target="GByC5nfbfX5Y" traceType=":Proteus-dependency"/>
     </traceProperty>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>
@@ -38,5 +39,9 @@
     <child id="aVeYY5fKGss"/>
     <child id="h3pSK58oKJhG"/>
     <child id="zAvHOSaqQnCw"/>
+    <child id="ywoHAmWbrMiw"/>
+    <child id="JqiqRL77C2AJ"/>
+    <child id="rKqmPXsKx6NE"/>
+    <child id="ZR6N4JqUH6qv"/>
   </children>
 </object>

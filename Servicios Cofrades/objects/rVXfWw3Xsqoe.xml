@@ -22,6 +22,11 @@
       <trace target="9xaksjxhhy6W" traceType=":Proteus-dependency"/>
       <trace target="TyYSPwVNgG8n" traceType=":Proteus-dependency"/>
       <trace target="bNsqnR3pvfsq" traceType=":Proteus-dependency"/>
+      <trace target="MmVKP1wG2o0" traceType=":Proteus-dependency"/>
+      <trace target="oLij85nt5w4" traceType=":Proteus-dependency"/>
+      <trace target="tE13hfxtLGe" traceType=":Proteus-dependency"/>
+      <trace target="AoqQ1znbPnw" traceType=":Proteus-dependency"/>
+      <trace target="enDUp3HFpBD" traceType=":Proteus-dependency"/>
     </traceProperty>
     <markdownProperty name="comments" category="comments"><![CDATA[Excepción: si existe algún conflicto de solape, habilitación o desplazamiento, el sistema rechaza la asignación y muestra el motivo.]]></markdownProperty>
   </properties>

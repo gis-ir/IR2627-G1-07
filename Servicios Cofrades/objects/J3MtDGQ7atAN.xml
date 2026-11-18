@@ -1,8 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<object id="J3MtDGQ7atAN" classes="use-case-step" acceptedChildren=":Proteus-none" acceptedParents="use-case">
+<object id="J3MtDGQ7atAN" classes="use-case-step use-case-action actor-action actor-system-action actor-system-step" acceptedChildren="use-case-exception" acceptedParents="use-case conditional-branch">
   <properties>
-    <stringProperty name=":Proteus-name" category="general"><![CDATA[Paso 1]]></stringProperty>
-    <markdownProperty name="description" category="general"><![CDATA[El candidato abre la alerta recibida.]]></markdownProperty>
+    <stringProperty name=":Proteus-name" category="general"><![CDATA[Paso actor-sistema]]></stringProperty>
+    <markdownProperty name="condition" category="general" tooltip="step-condition"><![CDATA[]]></markdownProperty>
+    <traceProperty name="actor" category="general" acceptedTargets="system-actor" traceType=":Proteus-dependency" maxTargetsNumber="1">
+      <trace target="xpuSkbPeDaDS" traceType=":Proteus-dependency"/>
+    </traceProperty>
+    <markdownProperty name="description" category="general" tooltip="actor-action-description"><![CDATA[abre la alerta recibida.]]></markdownProperty>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>
   <children/>

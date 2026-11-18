@@ -13,7 +13,7 @@
     <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source">
       <trace target="WAzr6R2fLUkx" traceType=":Proteus-information-source"/>
     </traceProperty>
-    <markdownProperty name="description" category="detail"><![CDATA[El sistema deberá respetar la siguiente regla de negocio o restricción: si un servicio empieza más tarde de la hora acordada, el sistema deberá aplicar la penalización o el suplemento económico que figure en las condiciones pactadas con la hermandad.]]></markdownProperty>
+    <markdownProperty name="description" category="detail"><![CDATA[El sistema deberá respetar la siguiente regla de negocio o restricción: cuando un servicio empiece más tarde de la hora acordada, el Coordinador revisará las condiciones pactadas con la hermandad y el sistema registrará la penalización o el suplemento económico que corresponda.]]></markdownProperty>
     <enumProperty name="importance" category="priority" tooltip="importance" choices="tbd critical high medium low optional">high</enumProperty>
     <enumProperty name="urgency" category="priority" tooltip="urgency" choices="tbd high medium low">medium</enumProperty>
     <enumProperty name="status" category="priority" tooltip="status" choices="tbd draft awaiting-qa awaiting-validation validated">tbd</enumProperty>

@@ -14,7 +14,7 @@
       <trace target="WAzr6R2fLUkx" traceType=":Proteus-information-source"/>
     </traceProperty>
     <markdownProperty name="description" category="detail"><![CDATA[El sistema deberá almacenar la información correspondiente a las capacitaciones que solicitan los trabajadores. En concreto:]]></markdownProperty>
-    <enumProperty name="importance" category="priority" tooltip="importance" choices="tbd critical high medium low optional">medium</enumProperty>
+    <enumProperty name="importance" category="priority" tooltip="importance" choices="tbd critical high medium low optional">critical</enumProperty>
     <enumProperty name="urgency" category="priority" tooltip="urgency" choices="tbd high medium low">medium</enumProperty>
     <enumProperty name="status" category="priority" tooltip="status" choices="tbd draft awaiting-qa awaiting-validation validated">tbd</enumProperty>
     <enumProperty name="stability" category="priority" tooltip="stability" choices="tbd low medium high">tbd</enumProperty>
@@ -42,5 +42,6 @@
     <child id="O3U2Y9gXLKh"/>
     <child id="RLhSTIqwPGl"/>
     <child id="B2CxrJDyzmf"/>
+    <child id="wyvk6xzSs6i"/>
   </children>
 </object>

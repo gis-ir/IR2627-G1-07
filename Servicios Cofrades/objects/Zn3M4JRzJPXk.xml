@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="Zn3M4JRzJPXk" classes="specific-data" acceptedChildren=":Proteus-none" acceptedParents="information-requirement">
+  <properties>
+    <stringProperty name=":Proteus-name" category="general"><![CDATA[Tiempo de respuesta]]></stringProperty>
+    <markdownProperty name="description" category="general"><![CDATA[tiempo que tarda el servidor en responder, que se usa para supervisar el rendimiento]]></markdownProperty>
+    <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children/>
+</object>

@@ -2,7 +2,7 @@
 <object id="aHcZHqw5kzpo" classes="use-case-step" acceptedChildren=":Proteus-none" acceptedParents="use-case">
   <properties>
     <stringProperty name=":Proteus-name" category="general"><![CDATA[Paso 6]]></stringProperty>
-    <markdownProperty name="description" category="general"><![CDATA[El sistema actualiza el estado del presupuesto y avisa al Coordinador.]]></markdownProperty>
+    <markdownProperty name="description" category="general"><![CDATA[El sistema habilita la generación del cuadrante (CU-006).]]></markdownProperty>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>
   <children/>

@@ -20,7 +20,7 @@
       <trace target="kKDP26dNugAE" traceType=":Proteus-dependency"/>
       <trace target="rDaUtvRiUb3v" traceType=":Proteus-dependency"/>
     </traceProperty>
-    <markdownProperty name="comments" category="comments"><![CDATA[Casos de uso asociados: CU-028 a CU-031. El Administrador (ACT-001.1) es una especialización del Coordinador (ACT-001) y hereda sus casos de uso.]]></markdownProperty>
+    <markdownProperty name="comments" category="comments"><![CDATA[Casos de uso asociados: CU-030 a CU-033. El Administrador (ACT-001.1) es una especialización del Coordinador (ACT-001) y hereda sus casos de uso.]]></markdownProperty>
   </properties>
   <children/>
 </object>

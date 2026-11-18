@@ -10,9 +10,9 @@
     <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
     <markdownProperty name="text" category="detail"><![CDATA[A continuación se presentan los diagramas de navegación del sistema mediante diagramas de estados UML simplificados. Se dividen según los tres perfiles de usuario:
 
-* **Coordinador (Web):** Gestión de cuadrantes, atención a bajas urgentes, emisión de presupuestos y catálogo de personal.
-* **Operario / Trabajador (App Móvil):** Consulta de servicios asignados, confirmación de turnos, aviso de baja y disponibilidad.
-* **Hermandades (Web):** Solicitud formal de servicios, revisión de presupuestos y consulta del personal asignado.]]></markdownProperty>
+* **Coordinador (Web):** Gestión de cuadrantes, registro de eventos con trabajo, atención a bajas urgentes, emisión de presupuestos y catálogo de personal con acceso a la ficha de cada trabajador.
+* **Operario / Trabajador (App Móvil):** Consulta de servicios asignados, confirmación de turnos, aviso de baja, disponibilidad y consulta del tablón de avisos.
+* **Hermandades (Web):** Solicitud formal de servicios (eligiendo las funciones en un desplegable), revisión de presupuestos y consulta del personal asignado.]]></markdownProperty>
     <traceProperty name="dependencies" category="dependencies" acceptedTargets="traceable-object" traceType=":Proteus-dependency">
       <trace target="rAJvmtjxafv2" traceType=":Proteus-dependency"/>
       <trace target="wVu2FsDEHMSH" traceType=":Proteus-dependency"/>

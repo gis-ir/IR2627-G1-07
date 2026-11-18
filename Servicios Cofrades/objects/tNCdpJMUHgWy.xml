@@ -2,7 +2,7 @@
 <object id="tNCdpJMUHgWy" classes="use-case-step" acceptedChildren=":Proteus-none" acceptedParents="use-case">
   <properties>
     <stringProperty name=":Proteus-name" category="general"><![CDATA[Paso 3]]></stringProperty>
-    <markdownProperty name="description" category="general"><![CDATA[El sistema calcula el coste del personal y los conceptos aplicables.]]></markdownProperty>
+    <markdownProperty name="description" category="general"><![CDATA[El sistema aplica a cada puesto la tarifa horaria de la función correspondiente y calcula el importe de la línea junto con los conceptos aplicables.]]></markdownProperty>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>
   <children/>

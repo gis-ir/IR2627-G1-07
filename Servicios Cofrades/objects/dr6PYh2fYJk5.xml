@@ -1,8 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<object id="dr6PYh2fYJk5" classes="use-case-step" acceptedChildren=":Proteus-none" acceptedParents="use-case">
+<object id="dr6PYh2fYJk5" classes="use-case-step use-case-action system-action system-step" acceptedChildren="use-case-exception" acceptedParents="use-case conditional-branch">
   <properties>
-    <stringProperty name=":Proteus-name" category="general"><![CDATA[Paso 6]]></stringProperty>
-    <markdownProperty name="description" category="general"><![CDATA[Si el presupuesto está pendiente de decisión, el sistema permite aceptarlo o rechazarlo (CU-023).]]></markdownProperty>
+    <stringProperty name=":Proteus-name" category="general"><![CDATA[Paso del sistema]]></stringProperty>
+    <markdownProperty name="condition" category="general" tooltip="step-condition"><![CDATA[el presupuesto está pendiente de decisión]]></markdownProperty>
+    <markdownProperty name="description" category="general" tooltip="system-action-description"><![CDATA[permite aceptarlo o rechazarlo (CU-023).]]></markdownProperty>
+    <stringProperty name="performance" category="general" tooltip="performance"><![CDATA[]]></stringProperty>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>
   <children/>

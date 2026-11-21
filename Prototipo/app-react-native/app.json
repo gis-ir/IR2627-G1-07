@@ -1,0 +1,26 @@
+{
+  "expo": {
+    "name": "Servicios Cofrades",
+    "slug": "servicios-cofrades-trabajador",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "primaryColor": "#3B1D4A",
+    "splash": {
+      "backgroundColor": "#3B1D4A"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "es.chamorrocofrades.trabajador"
+    },
+    "android": {
+      "package": "es.chamorrocofrades.trabajador",
+      "adaptiveIcon": {
+        "backgroundColor": "#3B1D4A"
+      }
+    },
+    "plugins": [
+      "expo-status-bar"
+    ]
+  }
+}

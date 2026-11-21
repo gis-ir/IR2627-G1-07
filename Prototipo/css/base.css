@@ -1,0 +1,92 @@
+/* Chamorro Servicios Cofrades — tokens y componentes comunes */
+:root {
+  --morado: #3B1D4A;        /* morado nazareno: navegación y acción principal */
+  --morado-2: #55306A;
+  --morado-claro: #EEE8F2;
+  --oro: #A8822A;           /* oro viejo: solo como filete/acento */
+  --oro-claro: #F3EBD6;
+  --burdeos: #8C1D2C;       /* urgente: bajas, solapes, rechazos */
+  --burdeos-claro: #F8E6E8;
+  --romero: #2E6A4C;        /* confirmado, aceptado */
+  --romero-claro: #E3F0E8;
+  --azul: #2C4E7A;
+  --azul-claro: #E5ECF5;
+  --ambar: #8A5A00;
+  --ambar-claro: #FBF0D9;
+  --papel: #F6F5F8;
+  --blanco: #FFFFFF;
+  --tinta: #22192A;
+  --tinta-2: #5B5163;
+  --tinta-3: #8A8291;
+  --linea: #E2DEE6;
+  --linea-2: #CFC9D5;
+  --r-s: 6px;
+  --r-m: 10px;
+  --sombra: 0 1px 2px rgba(59, 29, 74, .06), 0 4px 16px rgba(59, 29, 74, .06);
+  --f-ui: 'Source Sans 3', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --f-titulo: 'Cormorant Garamond', Georgia, serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { font-family: var(--f-ui); font-size: 15px; line-height: 1.45; color: var(--tinta); background: var(--papel); -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4 { margin: 0; font-weight: 600; }
+p { margin: 0; }
+a { color: var(--morado-2); }
+button, input, select, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--oro); outline-offset: 2px; border-radius: 4px; }
+.titulo-serif { font-family: var(--f-titulo); font-weight: 600; letter-spacing: -.01em; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.muted { color: var(--tinta-2); }
+.tenue { color: var(--tinta-3); font-size: 13px; }
+.num { font-variant-numeric: tabular-nums; }
+
+/* Botones */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 8px 14px; border-radius: var(--r-s); border: 1px solid var(--linea-2); background: var(--blanco); cursor: pointer; font-weight: 600; font-size: 14px; white-space: nowrap; text-decoration: none; color: var(--tinta); }
+.btn:hover { background: var(--morado-claro); }
+.btn-pri { background: var(--morado); border-color: var(--morado); color: #fff; }
+.btn-pri:hover { background: var(--morado-2); }
+.btn-urg { background: var(--burdeos); border-color: var(--burdeos); color: #fff; }
+.btn-urg:hover { background: #A32436; }
+.btn-ok { background: var(--romero); border-color: var(--romero); color: #fff; }
+.btn-ok:hover { background: #377B59; }
+.btn-txt { border-color: transparent; background: transparent; color: var(--morado-2); padding-left: 6px; padding-right: 6px; }
+.btn-txt:hover { background: var(--morado-claro); }
+.btn-peq { padding: 5px 10px; font-size: 13px; }
+.btn[disabled] { opacity: .45; cursor: not-allowed; }
+.icono-btn { border: 0; background: transparent; cursor: pointer; width: 32px; height: 32px; border-radius: 50%; color: var(--tinta-2); }
+.icono-btn:hover { background: var(--morado-claro); }
+
+/* Chips de estado */
+.chip { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: 12.5px; font-weight: 600; white-space: nowrap; }
+.chip-ok { background: var(--romero-claro); color: var(--romero); }
+.chip-aviso { background: var(--ambar-claro); color: var(--ambar); }
+.chip-info { background: var(--azul-claro); color: var(--azul); }
+.chip-urgente { background: var(--burdeos-claro); color: var(--burdeos); }
+.chip-neutro { background: #EFEDF1; color: var(--tinta-2); }
+
+/* Formularios */
+.campo { display: flex; flex-direction: column; gap: 5px; }
+.campo > label, .etq { font-size: 13px; font-weight: 600; color: var(--tinta-2); }
+.campo input, .campo select, .campo textarea, .input { padding: 9px 11px; border: 1px solid var(--linea-2); border-radius: var(--r-s); background: var(--blanco); width: 100%; }
+.campo textarea { min-height: 90px; resize: vertical; }
+.campo input:focus, .campo select:focus, .campo textarea:focus, .input:focus { outline: none; border-color: var(--morado-2); box-shadow: 0 0 0 3px var(--morado-claro); }
+.campo .error { color: var(--burdeos); font-size: 13px; }
+.campo.invalido input, .campo.invalido select, .campo.invalido textarea { border-color: var(--burdeos); }
+.check { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+.check input { width: 17px; height: 17px; accent-color: var(--morado); }
+
+/* Modal y avisos */
+.modal-fondo { position: fixed; inset: 0; background: rgba(34, 25, 42, .45); display: grid; place-items: center; padding: 20px; z-index: 50; animation: aparecer .15s ease-out; }
+.modal { background: var(--blanco); border-radius: var(--r-m); width: 100%; max-width: 520px; max-height: 90vh; overflow: auto; box-shadow: 0 20px 60px rgba(34, 25, 42, .3); }
+.modal-cab { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px 0; }
+.modal-cab h2 { font-size: 19px; }
+.modal-cuerpo { padding: 14px 20px; display: flex; flex-direction: column; gap: 14px; }
+.modal-pie { padding: 12px 20px 18px; display: flex; justify-content: flex-end; gap: 8px; flex-wrap: wrap; }
+#toasts { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; gap: 8px; z-index: 60; width: max-content; max-width: 92vw; }
+.toast { background: var(--tinta); color: #fff; padding: 10px 16px; border-radius: var(--r-s); box-shadow: var(--sombra); font-weight: 600; font-size: 14px; animation: subir .2s ease-out; transition: opacity .4s, transform .4s; }
+.toast-ok { border-left: 4px solid #6FBF95; }
+.toast-urg { border-left: 4px solid #E07A88; }
+.toast.fuera { opacity: 0; transform: translateY(6px); }
+@keyframes aparecer { from { opacity: 0; } }
+@keyframes subir { from { opacity: 0; transform: translateY(8px); } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }

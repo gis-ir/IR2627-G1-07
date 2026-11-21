@@ -403,7 +403,7 @@
   });
   P.accion('cambiar-solicitud', el => { const p = DB.presupuesto(el.dataset.p); S().presupuestos.splice(S().presupuestos.indexOf(p), 1); DB.guardar(); P.ir('coord-presupuesto-nuevo-' + el.value); });
   P.accion('linea', el => { const p = DB.presupuesto(el.dataset.p); const l = p.lineas[+el.dataset.i]; const k = el.dataset.k; l[k] = k === 'funcion' ? el.value : Math.max(0, parseFloat(el.value) || 0); if (k === 'funcion') l.tarifa = S().tarifas[el.value]; DB.guardar(); P.pintar(); });
-  P.accion('linea-mas', b => { const p = DB.presupuesto(b.dataset.p); p.lineas.push({ funcion: 'Auxiliar de cortejo', cantidad: 1, horas: p.lineas[0] ? p.lineas[0].horas : 4, tarifa: S().tarifas['Auxiliar de cortejo'] }); DB.guardar(); P.pintar(); });
+  P.accion('linea-mas', b => { const p = DB.presupuesto(b.dataset.p); const libre = DB.FUNCIONES.find(f => !p.lineas.some(l => l.funcion === f)) || DB.FUNCIONES[0]; p.lineas.push({ funcion: libre, cantidad: 1, horas: p.lineas[0] ? p.lineas[0].horas : 4, tarifa: S().tarifas[libre] }); DB.guardar(); P.pintar(); });
   P.accion('linea-menos', b => { const p = DB.presupuesto(b.dataset.p); p.lineas.splice(+b.dataset.i, 1); DB.guardar(); P.pintar(); });
   P.accion('descartar-presupuesto', b => { const p = DB.presupuesto(b.dataset.p); S().presupuestos.splice(S().presupuestos.indexOf(p), 1); DB.guardar(); UI.toast('Borrador descartado'); P.ir('coord-presupuestos'); });
   P.accion('guardar-presupuesto', b => { const p = DB.presupuesto(b.dataset.p); delete p.nuevo; DB.auditar('Guardar presupuesto', p.codigo); DB.guardar(); UI.toast('Borrador guardado'); P.ir('coord-presupuestos'); });

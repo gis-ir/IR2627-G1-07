@@ -4,7 +4,7 @@ import React, { createContext, useContext, useEffect, useMemo, useState, useCall
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { SEMILLA } from './semilla';
 
-const CLAVE = 'csc-app-trabajador-v1';
+const CLAVE = 'csc-app-trabajador-v2'; // v2: funciones del ERS (TipoFuncion)
 const Ctx = createContext(null);
 const copia = o => JSON.parse(JSON.stringify(o));
 const pad = n => String(n).padStart(2, '0');

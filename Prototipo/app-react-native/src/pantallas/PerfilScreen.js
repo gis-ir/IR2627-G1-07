@@ -74,6 +74,7 @@ export default function PerfilScreen({ navigation }) {
         <View style={est.tallas}>{libres.map(f => (
           <Pressable key={f} onPress={() => setForm({ ...form, rol: f })} style={[est.talla, { paddingHorizontal: 12 }, form.rol === f && est.tallaOn]} accessibilityRole="radio" accessibilityState={{ checked: form.rol === f }}><Text style={{ fontWeight: '600', color: form.rol === f ? '#fff' : C.tinta }}>{f}</Text></Pressable>
         ))}</View>
+        {form.rol ? <Text style={{ color: C.tinta2, fontSize: 14, marginTop: 6 }}>{api.s.descripcionFunciones?.[form.rol]}</Text> : null}
         <Text style={est.etq}>Tu experiencia</Text>
         <TextInput style={[est.input, { minHeight: 90, textAlignVertical: 'top' }]} multiline placeholder="Dónde y cuánto tiempo lo has hecho" placeholderTextColor={C.tinta3} value={form.experiencia} onChangeText={v => setForm({ ...form, experiencia: v })} />
         <Boton tipo="pri" titulo="Enviar solicitud" style={{ marginTop: 12 }} onPress={() => {

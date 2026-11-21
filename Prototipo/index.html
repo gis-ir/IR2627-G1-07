@@ -36,6 +36,10 @@
   .mapa td { padding: 4px 10px; line-height: 1.3; border-bottom: 1px solid var(--linea); }
   .mapa td:nth-child(2) { white-space: nowrap; }
   .mapa .nueva { color: var(--oro); font-weight: 700; }
+  .funciones { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px 18px; align-content: start; }
+  .funcion { background: #fff; border: 1px solid var(--linea); border-left: 4px solid var(--oro); border-radius: 8px; padding: 12px 16px; }
+  .funcion b { display: block; font-size: 17px; color: var(--morado); }
+  .funcion span { font-size: 14.5px; color: var(--tinta-2); }
   /* Láminas de pantalla */
   .l-pantalla { grid-template-columns: 330px 1fr; }
   .ficha { padding: 48px 34px 40px 52px; display: flex; flex-direction: column; gap: 14px; border-right: 1px solid var(--linea); background: #fff; }
@@ -107,7 +111,7 @@ const PANTALLAS = [
   { tipo: W, ruta: 'admin-sistema', perfil: 'Administrador', t: 'Estado del sistema', d: 'Disponibilidad, tiempo de respuesta, usuarios conectados, errores, carga por hora y estado de cada servicio. La consulta queda en la auditoría.', mock: null, cu: 'CU-033' },
   { sec: 'Portal de hermandades' },
   { tipo: W, ruta: 'herm-panel', perfil: 'Hermandad', t: 'Panel de la hermandad', d: 'Solicitudes de la hermandad con su estado y la acción que toca en cada una: revisar presupuesto, ver cuadrante o esperar.', mock: 'MOCK-019', cu: 'CU-028' },
-  { tipo: W, ruta: 'herm-solicitud', perfil: 'Hermandad', t: 'Solicitar un servicio', d: 'Acto, fecha, horario y lugar. Las funciones se añaden desde un desplegable y la cantidad se ajusta con − y +, con el total de personal.', mock: 'MOCK-005', cu: 'CU-027', nueva: true },
+  { tipo: W, ruta: 'herm-solicitud', perfil: 'Hermandad', t: 'Solicitar un servicio', d: 'Acto, fecha, horario y lugar. El desplegable ofrece las 12 funciones del modelo conceptual; cada una se añade a la lista con su descripción y la cantidad se ajusta con − y +.', mock: 'MOCK-005', cu: 'CU-027', nueva: true },
   { tipo: W, ruta: 'herm-presupuesto', perfil: 'Hermandad', t: 'Revisar presupuesto', d: 'Desglose por puesto, horas y tarifa, con base, IVA y total. Aceptar, rechazar con motivo o descargar en PDF.', mock: 'MOCK-020', cu: 'CU-023' },
   { tipo: W, ruta: 'herm-cuadrante', perfil: 'Hermandad', t: 'Cuadrante del cortejo', d: 'Personal asignado, hora de citación y confirmación. Descarga en PDF y comunicación de incidencias contractuales.', mock: 'MOCK-021', cu: 'CU-024, CU-028' },
   { tipo: W, ruta: 'herm-historial', perfil: 'Hermandad', t: 'Historial de servicios', d: 'Servicios contratados por año con el personal y el importe, y acceso a cada presupuesto.', mock: 'MOCK-019', cu: 'CU-029', nueva: true },
@@ -133,6 +137,9 @@ laminas.push(`<section class="lamina l-texto"><h2>Qué incluye el prototipo</h2>
   <div class="caja"><h3>Datos simulados</h3><p>Semana Santa 2027 con 6 hermandades, 10 trabajadores, presupuestos y cuadrantes. Los cambios se guardan en el navegador: una baja comunicada en la app aparece en el portal del coordinador.</p></div>
   <div class="caja"><h3>Cobertura</h3><p>${pant.length} pantallas cubren los 33 casos de uso del ERS. ${nuevas.length} de ellas son nuevas o se han rehecho a partir de los mockups del primer entregable.</p></div>
   </div></section>`);
+
+laminas.push(`<section class="lamina l-texto" style="gap:22px"><div><h2>Funciones de los trabajadores</h2><p style="font-size:17px;color:var(--tinta-2);margin-top:10px">Las 12 funciones de la enumeración TipoFuncion del modelo conceptual. Son las que aparecen en los desplegables de solicitudes, presupuestos, capacitaciones, cuadrantes y avisos.</p></div>
+  <div class="funciones">${DB.FUNCIONES.map(f => `<div class="funcion"><b>${f}</b><span>${DB.DESCRIPCION_FUNCIONES[f]}</span></div>`).join('')}</div></section>`);
 
 const filas = pant.map(p => `<tr><td><b>${p.t}</b><br><span style="color:var(--tinta-3)">${p.perfil}</span></td><td>${p.mock ? p.mock.replace(', ', '<br>') : '<span class="nueva">Nueva</span>'}${p.mock && p.nueva ? '<br><span class="nueva">rehecha</span>' : ''}</td><td>${p.cu.split(', ').map(c => `<span style="white-space:nowrap">${c}</span>`).join(' ')}</td></tr>`);
 const tercio = Math.ceil(filas.length / 3);

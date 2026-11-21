@@ -1,15 +1,36 @@
 /* Datos de ejemplo de la app (mismos que el portal web del prototipo).
+   Las funciones son la enumeración TipoFuncion del modelo conceptual del ERS.
    En producción vendrían de la API del sistema. */
 export const SEMILLA = {
   "hoy": "2027-03-15",
   "funciones": [
+    "Acólito",
     "Acólito de cirial",
-    "Acólito incensario",
+    "Acólito de incensario",
+    "Acólito de naveta",
     "Pertiguero",
-    "Aguador",
+    "Portainsignia",
     "Encendedor",
-    "Auxiliar de cortejo"
+    "Aguador",
+    "Auxiliar de carro",
+    "Escalera",
+    "Auxiliar vallas",
+    "Camarero"
   ],
+  "descripcionFunciones": {
+    "Acólito": "Realiza las tareas de acompañamiento y asistencia litúrgica asignadas",
+    "Acólito de cirial": "Porta el cirial (candelero con vela) durante el servicio",
+    "Acólito de incensario": "Se encarga del incensario durante el servicio",
+    "Acólito de naveta": "Se encarga de la naveta con el incienso durante el servicio",
+    "Pertiguero": "Coordina al grupo de acólitos durante el servicio",
+    "Portainsignia": "Porta la insignia que le asigna la hermandad",
+    "Encendedor": "Se encarga de encender y mantener las velas durante el servicio",
+    "Aguador": "Reparte agua a quienes participan en el servicio",
+    "Auxiliar de carro": "Ayuda en el traslado y manejo del carro de apoyo",
+    "Escalera": "Se encarga del transporte y colocación de la escalera de apoyo",
+    "Auxiliar vallas": "Ayuda a colocar y retirar las vallas",
+    "Camarero": "Atiende el servicio de bebidas y comidas"
+  },
   "usuarios": [
     {
       "id": "u5",
@@ -51,12 +72,17 @@ export const SEMILLA = {
       "alta": "2023-02-10",
       "capacitaciones": [
         {
+          "rol": "Acólito",
+          "estado": "Aprobada",
+          "por": "Luis Chamorro"
+        },
+        {
           "rol": "Acólito de cirial",
           "estado": "Aprobada",
           "por": "Luis Chamorro"
         },
         {
-          "rol": "Acólito incensario",
+          "rol": "Acólito de incensario",
           "estado": "Aprobada",
           "por": "Luis Chamorro"
         },
@@ -103,6 +129,11 @@ export const SEMILLA = {
       "alta": "2022-01-15",
       "capacitaciones": [
         {
+          "rol": "Acólito",
+          "estado": "Aprobada",
+          "por": "Luis Chamorro"
+        },
+        {
           "rol": "Acólito de cirial",
           "estado": "Aprobada",
           "por": "Luis Chamorro"
@@ -140,7 +171,7 @@ export const SEMILLA = {
       "alta": "2024-03-01",
       "capacitaciones": [
         {
-          "rol": "Acólito incensario",
+          "rol": "Acólito de incensario",
           "estado": "Aprobada",
           "por": "Luis Chamorro"
         },
@@ -184,6 +215,11 @@ export const SEMILLA = {
           "rol": "Acólito de cirial",
           "estado": "Aprobada",
           "por": "Luis Chamorro"
+        },
+        {
+          "rol": "Portainsignia",
+          "estado": "Aprobada",
+          "por": "Luis Chamorro"
         }
       ],
       "disponibilidad": {
@@ -217,7 +253,12 @@ export const SEMILLA = {
           "por": "Luis Chamorro"
         },
         {
-          "rol": "Auxiliar de cortejo",
+          "rol": "Portainsignia",
+          "estado": "Aprobada",
+          "por": "Luis Chamorro"
+        },
+        {
+          "rol": "Acólito de naveta",
           "estado": "Aprobada",
           "por": "Luis Chamorro"
         }
@@ -252,7 +293,7 @@ export const SEMILLA = {
           "por": "Luis Chamorro"
         },
         {
-          "rol": "Acólito incensario",
+          "rol": "Acólito de incensario",
           "estado": "Pendiente",
           "experiencia": "Monaguillo en la parroquia de San Bernardo desde niño."
         }
@@ -293,6 +334,11 @@ export const SEMILLA = {
           "por": "Luis Chamorro"
         },
         {
+          "rol": "Escalera",
+          "estado": "Aprobada",
+          "por": "Luis Chamorro"
+        },
+        {
           "rol": "Pertiguero",
           "estado": "Rechazada",
           "por": "Luis Chamorro",
@@ -323,7 +369,12 @@ export const SEMILLA = {
       "alta": "2023-12-01",
       "capacitaciones": [
         {
-          "rol": "Auxiliar de cortejo",
+          "rol": "Auxiliar de carro",
+          "estado": "Aprobada",
+          "por": "Luis Chamorro"
+        },
+        {
+          "rol": "Auxiliar vallas",
           "estado": "Aprobada",
           "por": "Luis Chamorro"
         },
@@ -363,7 +414,12 @@ export const SEMILLA = {
       "baja": true,
       "capacitaciones": [
         {
-          "rol": "Acólito incensario",
+          "rol": "Acólito de incensario",
+          "estado": "Aprobada",
+          "por": "Luis Chamorro"
+        },
+        {
+          "rol": "Camarero",
           "estado": "Aprobada",
           "por": "Luis Chamorro"
         }
@@ -381,7 +437,7 @@ export const SEMILLA = {
       "alta": "2022-02-19",
       "capacitaciones": [
         {
-          "rol": "Acólito incensario",
+          "rol": "Acólito de incensario",
           "estado": "Aprobada",
           "por": "Luis Chamorro"
         },
@@ -558,7 +614,7 @@ export const SEMILLA = {
           "cantidad": 4
         },
         {
-          "funcion": "Acólito incensario",
+          "funcion": "Acólito de incensario",
           "cantidad": 2
         },
         {
@@ -582,12 +638,20 @@ export const SEMILLA = {
           "cantidad": 6
         },
         {
-          "funcion": "Acólito incensario",
+          "funcion": "Acólito de incensario",
           "cantidad": 2
+        },
+        {
+          "funcion": "Acólito de naveta",
+          "cantidad": 1
         },
         {
           "funcion": "Aguador",
           "cantidad": 3
+        },
+        {
+          "funcion": "Escalera",
+          "cantidad": 1
         }
       ],
       "estado": "Presupuesto enviado",
@@ -606,7 +670,7 @@ export const SEMILLA = {
           "cantidad": 2
         },
         {
-          "funcion": "Acólito incensario",
+          "funcion": "Acólito de incensario",
           "cantidad": 1
         }
       ],
@@ -626,7 +690,11 @@ export const SEMILLA = {
           "cantidad": 4
         },
         {
-          "funcion": "Auxiliar de cortejo",
+          "funcion": "Portainsignia",
+          "cantidad": 2
+        },
+        {
+          "funcion": "Auxiliar vallas",
           "cantidad": 2
         }
       ],
@@ -642,8 +710,12 @@ export const SEMILLA = {
       "horario": "10:00 – 21:00",
       "funciones": [
         {
-          "funcion": "Auxiliar de cortejo",
+          "funcion": "Acólito",
           "cantidad": 2
+        },
+        {
+          "funcion": "Camarero",
+          "cantidad": 1
         }
       ],
       "estado": "Presupuesto rechazado",
@@ -658,7 +730,7 @@ export const SEMILLA = {
       "horario": "10:00 – 21:00",
       "funciones": [
         {
-          "funcion": "Auxiliar de cortejo",
+          "funcion": "Acólito",
           "cantidad": 2
         }
       ],
@@ -674,11 +746,11 @@ export const SEMILLA = {
       "horario": "13:30 – 22:00",
       "funciones": [
         {
-          "funcion": "Acólito incensario",
+          "funcion": "Acólito de incensario",
           "cantidad": 1
         },
         {
-          "funcion": "Auxiliar de cortejo",
+          "funcion": "Auxiliar de carro",
           "cantidad": 1
         }
       ],
@@ -847,16 +919,16 @@ export const SEMILLA = {
         },
         {
           "id": "a15",
-          "puesto": "Acólito incensario 1",
-          "funcion": "Acólito incensario",
+          "puesto": "Acólito de incensario 1",
+          "funcion": "Acólito de incensario",
           "horario": "14:00 – 23:30",
           "trabajador": "t3",
           "acuse": "Pendiente"
         },
         {
           "id": "a16",
-          "puesto": "Acólito incensario 2",
-          "funcion": "Acólito incensario",
+          "puesto": "Acólito de incensario 2",
+          "funcion": "Acólito de incensario",
           "horario": "14:00 – 23:30",
           "trabajador": "t10",
           "acuse": "Pendiente"
@@ -880,16 +952,16 @@ export const SEMILLA = {
       "puestos": [
         {
           "id": "a21",
-          "puesto": "Acólito incensario",
-          "funcion": "Acólito incensario",
+          "puesto": "Acólito de incensario",
+          "funcion": "Acólito de incensario",
           "horario": "13:30 – 22:00",
           "trabajador": "t3",
           "acuse": "Baja"
         },
         {
           "id": "a22",
-          "puesto": "Auxiliar de cortejo",
-          "funcion": "Auxiliar de cortejo",
+          "puesto": "Auxiliar de carro",
+          "funcion": "Auxiliar de carro",
           "horario": "13:30 – 22:00",
           "trabajador": "t8",
           "acuse": "Pendiente"

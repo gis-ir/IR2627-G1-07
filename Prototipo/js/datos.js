@@ -3,17 +3,33 @@
    y la versión HTML de la app del trabajador. Se guarda en localStorage
    para que los cambios de un perfil se vean en el otro. */
 (function () {
-  const CLAVE = 'csc-prototipo-v1';
+  const CLAVE = 'csc-prototipo-v2';
   const HOY = '2027-03-15';
 
-  const FUNCIONES = ['Acólito de cirial', 'Acólito incensario', 'Pertiguero', 'Aguador', 'Encendedor', 'Auxiliar de cortejo'];
+  /* Funciones de los trabajadores: enumeración TipoFuncion del modelo conceptual del ERS */
+  const FUNCIONES = ['Acólito', 'Acólito de cirial', 'Acólito de incensario', 'Acólito de naveta', 'Pertiguero', 'Portainsignia', 'Encendedor', 'Aguador', 'Auxiliar de carro', 'Escalera', 'Auxiliar vallas', 'Camarero'];
+  const DESCRIPCION_FUNCIONES = {
+    'Acólito': 'Realiza las tareas de acompañamiento y asistencia litúrgica asignadas',
+    'Acólito de cirial': 'Porta el cirial (candelero con vela) durante el servicio',
+    'Acólito de incensario': 'Se encarga del incensario durante el servicio',
+    'Acólito de naveta': 'Se encarga de la naveta con el incienso durante el servicio',
+    'Pertiguero': 'Coordina al grupo de acólitos durante el servicio',
+    'Portainsignia': 'Porta la insignia que le asigna la hermandad',
+    'Encendedor': 'Se encarga de encender y mantener las velas durante el servicio',
+    'Aguador': 'Reparte agua a quienes participan en el servicio',
+    'Auxiliar de carro': 'Ayuda en el traslado y manejo del carro de apoyo',
+    'Escalera': 'Se encarga del transporte y colocación de la escalera de apoyo',
+    'Auxiliar vallas': 'Ayuda a colocar y retirar las vallas',
+    'Camarero': 'Atiende el servicio de bebidas y comidas'
+  };
 
   function semilla() {
     return {
       hoy: HOY,
       tarifas: {
-        'Acólito de cirial': 14, 'Acólito incensario': 15, 'Pertiguero': 18,
-        'Aguador': 12, 'Encendedor': 12, 'Auxiliar de cortejo': 13
+        'Acólito': 13, 'Acólito de cirial': 14, 'Acólito de incensario': 15, 'Acólito de naveta': 14,
+        'Pertiguero': 18, 'Portainsignia': 14, 'Encendedor': 12, 'Aguador': 12,
+        'Auxiliar de carro': 13, 'Escalera': 13, 'Auxiliar vallas': 12, 'Camarero': 12
       },
       usuarios: [
         { id: 'u1', nombre: 'Luis Chamorro', correo: 'luis@chamorrocofrades.es', rol: 'Coordinador', activo: true, clave: 'demo' },
@@ -34,34 +50,34 @@
       ],
       trabajadores: [
         { id: 't1', nombre: 'Juan Pérez', telefono: '611 203 455', correo: 'juan.perez@correo.es', zona: 'Triana', talla: 'M', calzado: 43, alta: '2023-02-10',
-          capacitaciones: [{ rol: 'Acólito de cirial', estado: 'Aprobada', por: 'Luis Chamorro' }, { rol: 'Acólito incensario', estado: 'Aprobada', por: 'Luis Chamorro' }, { rol: 'Pertiguero', estado: 'Pendiente', experiencia: 'Tres años de pertiguero en la Hdad. de la O.' }],
+          capacitaciones: [{ rol: 'Acólito', estado: 'Aprobada', por: 'Luis Chamorro' }, { rol: 'Acólito de cirial', estado: 'Aprobada', por: 'Luis Chamorro' }, { rol: 'Acólito de incensario', estado: 'Aprobada', por: 'Luis Chamorro' }, { rol: 'Pertiguero', estado: 'Pendiente', experiencia: 'Tres años de pertiguero en la Hdad. de la O.' }],
           disponibilidad: { '2027-03-21': ['tarde', 'noche'], '2027-03-22': ['tarde', 'noche'], '2027-03-23': ['mañana'], '2027-03-24': ['tarde'], '2027-03-25': ['tarde', 'noche'], '2027-03-26': ['mañana', 'tarde', 'noche'] } },
         { id: 't2', nombre: 'Manuel Ruiz', telefono: '622 118 902', correo: 'manuel.ruiz@correo.es', zona: 'Los Remedios', talla: 'L', calzado: 44, alta: '2022-01-15',
-          capacitaciones: [{ rol: 'Acólito de cirial', estado: 'Aprobada', por: 'Luis Chamorro' }, { rol: 'Encendedor', estado: 'Aprobada', por: 'Luis Chamorro' }],
+          capacitaciones: [{ rol: 'Acólito', estado: 'Aprobada', por: 'Luis Chamorro' }, { rol: 'Acólito de cirial', estado: 'Aprobada', por: 'Luis Chamorro' }, { rol: 'Encendedor', estado: 'Aprobada', por: 'Luis Chamorro' }],
           disponibilidad: { '2027-03-21': ['tarde'], '2027-03-22': ['tarde', 'noche'], '2027-03-25': ['noche'], '2027-03-26': ['noche'] } },
         { id: 't3', nombre: 'Carlos Benítez', telefono: '633 450 771', correo: 'carlos.b@correo.es', zona: 'Centro', talla: 'M', calzado: 42, alta: '2024-03-01',
-          capacitaciones: [{ rol: 'Acólito incensario', estado: 'Aprobada', por: 'Luis Chamorro' }, { rol: 'Aguador', estado: 'Aprobada', por: 'Luis Chamorro' }],
+          capacitaciones: [{ rol: 'Acólito de incensario', estado: 'Aprobada', por: 'Luis Chamorro' }, { rol: 'Aguador', estado: 'Aprobada', por: 'Luis Chamorro' }],
           disponibilidad: { '2027-03-21': ['tarde', 'noche'], '2027-03-22': ['tarde', 'noche'], '2027-03-24': ['tarde', 'noche'] } },
         { id: 't4', nombre: 'Antonio Gómez', telefono: '644 909 120', correo: 'agomez@correo.es', zona: 'Triana', talla: 'XL', calzado: 45, alta: '2019-02-20',
-          capacitaciones: [{ rol: 'Pertiguero', estado: 'Aprobada', por: 'Luis Chamorro' }, { rol: 'Acólito de cirial', estado: 'Aprobada', por: 'Luis Chamorro' }],
+          capacitaciones: [{ rol: 'Pertiguero', estado: 'Aprobada', por: 'Luis Chamorro' }, { rol: 'Acólito de cirial', estado: 'Aprobada', por: 'Luis Chamorro' }, { rol: 'Portainsignia', estado: 'Aprobada', por: 'Luis Chamorro' }],
           disponibilidad: { '2027-03-21': ['tarde', 'noche'], '2027-03-23': ['tarde', 'noche'], '2027-03-25': ['tarde', 'noche'] } },
         { id: 't5', nombre: 'Pablo Sanz', telefono: '655 321 004', correo: 'psanz@correo.es', zona: 'Triana', talla: 'S', calzado: 41, alta: '2025-01-12',
-          capacitaciones: [{ rol: 'Acólito de cirial', estado: 'Aprobada', por: 'Luis Chamorro' }, { rol: 'Auxiliar de cortejo', estado: 'Aprobada', por: 'Luis Chamorro' }],
+          capacitaciones: [{ rol: 'Acólito de cirial', estado: 'Aprobada', por: 'Luis Chamorro' }, { rol: 'Portainsignia', estado: 'Aprobada', por: 'Luis Chamorro' }, { rol: 'Acólito de naveta', estado: 'Aprobada', por: 'Luis Chamorro' }],
           disponibilidad: { '2027-03-21': ['tarde', 'noche'], '2027-03-22': ['tarde', 'noche'], '2027-03-26': ['tarde'] } },
         { id: 't6', nombre: 'Álvaro Moreno', telefono: '666 774 230', correo: 'amoreno@correo.es', zona: 'Nervión', talla: 'M', calzado: 42, alta: '2024-11-03',
-          capacitaciones: [{ rol: 'Acólito de cirial', estado: 'Aprobada', por: 'Luis Chamorro' }, { rol: 'Acólito incensario', estado: 'Pendiente', experiencia: 'Monaguillo en la parroquia de San Bernardo desde niño.' }],
+          capacitaciones: [{ rol: 'Acólito de cirial', estado: 'Aprobada', por: 'Luis Chamorro' }, { rol: 'Acólito de incensario', estado: 'Pendiente', experiencia: 'Monaguillo en la parroquia de San Bernardo desde niño.' }],
           disponibilidad: { '2027-03-22': ['tarde', 'noche'], '2027-03-23': ['tarde', 'noche'], '2027-03-24': ['tarde', 'noche'] } },
         { id: 't7', nombre: 'Javier Torres', telefono: '677 002 918', correo: 'jtorres@correo.es', zona: 'Macarena', talla: 'L', calzado: 43, alta: '2021-03-08',
-          capacitaciones: [{ rol: 'Aguador', estado: 'Aprobada', por: 'Luis Chamorro' }, { rol: 'Encendedor', estado: 'Aprobada', por: 'Luis Chamorro' }, { rol: 'Pertiguero', estado: 'Rechazada', por: 'Luis Chamorro', motivo: 'Sin experiencia acreditada' }],
+          capacitaciones: [{ rol: 'Aguador', estado: 'Aprobada', por: 'Luis Chamorro' }, { rol: 'Encendedor', estado: 'Aprobada', por: 'Luis Chamorro' }, { rol: 'Escalera', estado: 'Aprobada', por: 'Luis Chamorro' }, { rol: 'Pertiguero', estado: 'Rechazada', por: 'Luis Chamorro', motivo: 'Sin experiencia acreditada' }],
           disponibilidad: { '2027-03-21': ['noche'], '2027-03-22': ['noche'], '2027-03-26': ['mañana', 'noche'] } },
         { id: 't8', nombre: 'Sergio Navarro', telefono: '688 515 377', correo: 'snavarro@correo.es', zona: 'Cerro del Águila', talla: 'M', calzado: 42, alta: '2023-12-01',
-          capacitaciones: [{ rol: 'Auxiliar de cortejo', estado: 'Aprobada', por: 'Luis Chamorro' }, { rol: 'Aguador', estado: 'Aprobada', por: 'Luis Chamorro' }, { rol: 'Acólito de cirial', estado: 'Pendiente', experiencia: 'Acólito en su hermandad durante cuatro años.' }],
+          capacitaciones: [{ rol: 'Auxiliar de carro', estado: 'Aprobada', por: 'Luis Chamorro' }, { rol: 'Auxiliar vallas', estado: 'Aprobada', por: 'Luis Chamorro' }, { rol: 'Aguador', estado: 'Aprobada', por: 'Luis Chamorro' }, { rol: 'Acólito de cirial', estado: 'Pendiente', experiencia: 'Acólito en su hermandad durante cuatro años.' }],
           disponibilidad: { '2027-03-21': ['noche'], '2027-03-22': ['tarde'], '2027-03-23': ['tarde', 'noche'] } },
         { id: 't9', nombre: 'Pedro Lara', telefono: '699 230 115', correo: 'pedro.lara@correo.es', zona: 'Triana', talla: 'L', calzado: 44, alta: '2020-02-02', baja: true,
-          capacitaciones: [{ rol: 'Acólito incensario', estado: 'Aprobada', por: 'Luis Chamorro' }],
+          capacitaciones: [{ rol: 'Acólito de incensario', estado: 'Aprobada', por: 'Luis Chamorro' }, { rol: 'Camarero', estado: 'Aprobada', por: 'Luis Chamorro' }],
           disponibilidad: {} },
         { id: 't10', nombre: 'Diego Castaño', telefono: '610 884 562', correo: 'dcastano@correo.es', zona: 'Los Remedios', talla: 'M', calzado: 43, alta: '2022-02-19',
-          capacitaciones: [{ rol: 'Acólito incensario', estado: 'Aprobada', por: 'Luis Chamorro' }, { rol: 'Aguador', estado: 'Aprobada', por: 'Luis Chamorro' }, { rol: 'Pertiguero', estado: 'Pendiente', experiencia: 'Pertiguero suplente en la Hdad. del Baratillo.' }],
+          capacitaciones: [{ rol: 'Acólito de incensario', estado: 'Aprobada', por: 'Luis Chamorro' }, { rol: 'Aguador', estado: 'Aprobada', por: 'Luis Chamorro' }, { rol: 'Pertiguero', estado: 'Pendiente', experiencia: 'Pertiguero suplente en la Hdad. del Baratillo.' }],
           disponibilidad: { '2027-03-21': ['tarde', 'noche'], '2027-03-22': ['tarde', 'noche'] } }
       ],
       eventos: [
@@ -74,32 +90,32 @@
       ],
       solicitudes: [
         { id: 's1', hermandad: 'h1', evento: 'e1', acto: 'Estación de penitencia, Domingo de Ramos', fecha: '2027-03-21', horario: '14:15 – 01:30', funciones: [{ funcion: 'Acólito de cirial', cantidad: 4 }, { funcion: 'Pertiguero', cantidad: 1 }, { funcion: 'Aguador', cantidad: 2 }], estado: 'Cuadrante publicado', creada: '2027-01-20' },
-        { id: 's2', hermandad: 'h2', evento: 'e2', acto: 'Estación de penitencia, Lunes Santo', fecha: '2027-03-22', horario: '14:00 – 23:30', funciones: [{ funcion: 'Acólito de cirial', cantidad: 4 }, { funcion: 'Acólito incensario', cantidad: 2 }, { funcion: 'Pertiguero', cantidad: 1 }], estado: 'Presupuesto aceptado', creada: '2027-01-28' },
-        { id: 's3', hermandad: 'h3', evento: 'e3', acto: 'Estación de penitencia, Madrugá', fecha: '2027-03-26', horario: '00:00 – 14:00', funciones: [{ funcion: 'Acólito de cirial', cantidad: 6 }, { funcion: 'Acólito incensario', cantidad: 2 }, { funcion: 'Aguador', cantidad: 3 }], estado: 'Presupuesto enviado', creada: '2027-02-05' },
-        { id: 's4', hermandad: 'h1', evento: '', acto: 'Función principal de instituto', fecha: '2027-04-18', horario: '11:00 – 14:00', funciones: [{ funcion: 'Acólito de cirial', cantidad: 2 }, { funcion: 'Acólito incensario', cantidad: 1 }], estado: 'Presupuesto enviado', creada: '2027-03-02' },
-        { id: 's5', hermandad: 'h5', evento: 'e5', acto: 'Estación de penitencia, Martes Santo', fecha: '2027-03-23', horario: '15:00 – 00:30', funciones: [{ funcion: 'Acólito de cirial', cantidad: 4 }, { funcion: 'Auxiliar de cortejo', cantidad: 2 }], estado: 'Pendiente de presupuesto', creada: '2027-03-10' },
-        { id: 's6', hermandad: 'h1', evento: '', acto: 'Besamanos de la Virgen de la Estrella', fecha: '2027-04-10', horario: '10:00 – 21:00', funciones: [{ funcion: 'Auxiliar de cortejo', cantidad: 2 }], estado: 'Presupuesto rechazado', creada: '2027-02-20' },
-        { id: 's9', hermandad: 'h1', evento: '', acto: 'Besamanos de la Virgen de la Estrella', fecha: '2026-12-08', horario: '10:00 – 21:00', funciones: [{ funcion: 'Auxiliar de cortejo', cantidad: 2 }], estado: 'Finalizado', creada: '2026-11-10' },
-        { id: 's8', hermandad: 'h6', evento: '', acto: 'Estación de penitencia, Lunes Santo', fecha: '2027-03-22', horario: '13:30 – 22:00', funciones: [{ funcion: 'Acólito incensario', cantidad: 1 }, { funcion: 'Auxiliar de cortejo', cantidad: 1 }], estado: 'Cuadrante publicado', creada: '2027-01-30' },
+        { id: 's2', hermandad: 'h2', evento: 'e2', acto: 'Estación de penitencia, Lunes Santo', fecha: '2027-03-22', horario: '14:00 – 23:30', funciones: [{ funcion: 'Acólito de cirial', cantidad: 4 }, { funcion: 'Acólito de incensario', cantidad: 2 }, { funcion: 'Pertiguero', cantidad: 1 }], estado: 'Presupuesto aceptado', creada: '2027-01-28' },
+        { id: 's3', hermandad: 'h3', evento: 'e3', acto: 'Estación de penitencia, Madrugá', fecha: '2027-03-26', horario: '00:00 – 14:00', funciones: [{ funcion: 'Acólito de cirial', cantidad: 6 }, { funcion: 'Acólito de incensario', cantidad: 2 }, { funcion: 'Acólito de naveta', cantidad: 1 }, { funcion: 'Aguador', cantidad: 3 }, { funcion: 'Escalera', cantidad: 1 }], estado: 'Presupuesto enviado', creada: '2027-02-05' },
+        { id: 's4', hermandad: 'h1', evento: '', acto: 'Función principal de instituto', fecha: '2027-04-18', horario: '11:00 – 14:00', funciones: [{ funcion: 'Acólito de cirial', cantidad: 2 }, { funcion: 'Acólito de incensario', cantidad: 1 }], estado: 'Presupuesto enviado', creada: '2027-03-02' },
+        { id: 's5', hermandad: 'h5', evento: 'e5', acto: 'Estación de penitencia, Martes Santo', fecha: '2027-03-23', horario: '15:00 – 00:30', funciones: [{ funcion: 'Acólito de cirial', cantidad: 4 }, { funcion: 'Portainsignia', cantidad: 2 }, { funcion: 'Auxiliar vallas', cantidad: 2 }], estado: 'Pendiente de presupuesto', creada: '2027-03-10' },
+        { id: 's6', hermandad: 'h1', evento: '', acto: 'Besamanos de la Virgen de la Estrella', fecha: '2027-04-10', horario: '10:00 – 21:00', funciones: [{ funcion: 'Acólito', cantidad: 2 }, { funcion: 'Camarero', cantidad: 1 }], estado: 'Presupuesto rechazado', creada: '2027-02-20' },
+        { id: 's9', hermandad: 'h1', evento: '', acto: 'Besamanos de la Virgen de la Estrella', fecha: '2026-12-08', horario: '10:00 – 21:00', funciones: [{ funcion: 'Acólito', cantidad: 2 }], estado: 'Finalizado', creada: '2026-11-10' },
+        { id: 's8', hermandad: 'h6', evento: '', acto: 'Estación de penitencia, Lunes Santo', fecha: '2027-03-22', horario: '13:30 – 22:00', funciones: [{ funcion: 'Acólito de incensario', cantidad: 1 }, { funcion: 'Auxiliar de carro', cantidad: 1 }], estado: 'Cuadrante publicado', creada: '2027-01-30' },
         { id: 's7', hermandad: 'h1', evento: '', acto: 'Estación de penitencia, Domingo de Ramos', fecha: '2026-03-29', horario: '14:15 – 01:30', funciones: [{ funcion: 'Acólito de cirial', cantidad: 4 }, { funcion: 'Pertiguero', cantidad: 1 }], estado: 'Finalizado', creada: '2026-01-18' }
       ],
       presupuestos: [
         { id: 'p1', codigo: 'PRE-2027-014', solicitud: 's1', version: 1, iva: 21, estado: 'Aceptado', enviado: '2027-01-25', respuesta: '2027-01-29', exportado: true,
           lineas: [{ funcion: 'Acólito de cirial', cantidad: 4, horas: 11, tarifa: 14 }, { funcion: 'Pertiguero', cantidad: 1, horas: 11, tarifa: 18 }, { funcion: 'Aguador', cantidad: 2, horas: 11, tarifa: 12 }] },
         { id: 'p2', codigo: 'PRE-2027-017', solicitud: 's2', version: 2, iva: 21, estado: 'Aceptado', enviado: '2027-02-03', respuesta: '2027-02-06', exportado: false,
-          lineas: [{ funcion: 'Acólito de cirial', cantidad: 4, horas: 9.5, tarifa: 14 }, { funcion: 'Acólito incensario', cantidad: 2, horas: 9.5, tarifa: 15 }, { funcion: 'Pertiguero', cantidad: 1, horas: 9.5, tarifa: 18 }] },
+          lineas: [{ funcion: 'Acólito de cirial', cantidad: 4, horas: 9.5, tarifa: 14 }, { funcion: 'Acólito de incensario', cantidad: 2, horas: 9.5, tarifa: 15 }, { funcion: 'Pertiguero', cantidad: 1, horas: 9.5, tarifa: 18 }] },
         { id: 'p3', codigo: 'PRE-2027-021', solicitud: 's3', version: 1, iva: 21, estado: 'Enviado', enviado: '2027-02-12', respuesta: '', exportado: false,
-          lineas: [{ funcion: 'Acólito de cirial', cantidad: 6, horas: 14, tarifa: 14 }, { funcion: 'Acólito incensario', cantidad: 2, horas: 14, tarifa: 15 }, { funcion: 'Aguador', cantidad: 3, horas: 14, tarifa: 12 }] },
+          lineas: [{ funcion: 'Acólito de cirial', cantidad: 6, horas: 14, tarifa: 14 }, { funcion: 'Acólito de incensario', cantidad: 2, horas: 14, tarifa: 15 }, { funcion: 'Acólito de naveta', cantidad: 1, horas: 14, tarifa: 14 }, { funcion: 'Aguador', cantidad: 3, horas: 14, tarifa: 12 }, { funcion: 'Escalera', cantidad: 1, horas: 14, tarifa: 13 }] },
         { id: 'p4', codigo: 'PRE-2027-026', solicitud: 's4', version: 1, iva: 21, estado: 'Enviado', enviado: '2027-03-06', respuesta: '', exportado: false,
-          lineas: [{ funcion: 'Acólito de cirial', cantidad: 2, horas: 3, tarifa: 14 }, { funcion: 'Acólito incensario', cantidad: 1, horas: 3, tarifa: 15 }] },
+          lineas: [{ funcion: 'Acólito de cirial', cantidad: 2, horas: 3, tarifa: 14 }, { funcion: 'Acólito de incensario', cantidad: 1, horas: 3, tarifa: 15 }] },
         { id: 'p6', codigo: 'PRE-2027-018', solicitud: 's8', version: 1, iva: 21, estado: 'Aceptado', enviado: '2027-02-04', respuesta: '2027-02-08', exportado: true,
-          lineas: [{ funcion: 'Acólito incensario', cantidad: 1, horas: 8.5, tarifa: 15 }, { funcion: 'Auxiliar de cortejo', cantidad: 1, horas: 8.5, tarifa: 13 }] },
+          lineas: [{ funcion: 'Acólito de incensario', cantidad: 1, horas: 8.5, tarifa: 15 }, { funcion: 'Auxiliar de carro', cantidad: 1, horas: 8.5, tarifa: 13 }] },
         { id: 'p7', codigo: 'PRE-2026-031', solicitud: 's9', version: 1, iva: 21, estado: 'Aceptado', enviado: '2026-11-12', respuesta: '2026-11-14', exportado: true,
-          lineas: [{ funcion: 'Auxiliar de cortejo', cantidad: 2, horas: 11, tarifa: 13 }] },
+          lineas: [{ funcion: 'Acólito', cantidad: 2, horas: 11, tarifa: 13 }] },
         { id: 'p8', codigo: 'PRE-2026-004', solicitud: 's7', version: 1, iva: 21, estado: 'Aceptado', enviado: '2026-01-22', respuesta: '2026-01-26', exportado: true,
           lineas: [{ funcion: 'Acólito de cirial', cantidad: 4, horas: 11, tarifa: 13 }, { funcion: 'Pertiguero', cantidad: 1, horas: 11, tarifa: 17 }] },
         { id: 'p5', codigo: 'PRE-2027-009', solicitud: 's6', version: 1, iva: 21, estado: 'Rechazado', enviado: '2027-02-24', respuesta: '2027-02-27', motivo: 'Importe por encima de lo previsto', exportado: false,
-          lineas: [{ funcion: 'Auxiliar de cortejo', cantidad: 2, horas: 11, tarifa: 15 }] }
+          lineas: [{ funcion: 'Acólito', cantidad: 2, horas: 11, tarifa: 15 }, { funcion: 'Camarero', cantidad: 1, horas: 11, tarifa: 12 }] }
       ],
       cuadrantes: [
         { id: 'c1', presupuesto: 'p1', estado: 'Publicado', publicado: '2027-03-08', plazoAcuse: '2027-03-17',
@@ -118,14 +134,14 @@
             { id: 'a12', puesto: 'Acólito de cirial 2', funcion: 'Acólito de cirial', horario: '14:00 – 23:30', trabajador: 't2', acuse: 'Pendiente' },
             { id: 'a13', puesto: 'Acólito de cirial 3', funcion: 'Acólito de cirial', horario: '14:00 – 23:30', trabajador: 't5', acuse: 'Pendiente' },
             { id: 'a14', puesto: 'Acólito de cirial 4', funcion: 'Acólito de cirial', horario: '14:00 – 23:30', trabajador: 't6', acuse: 'Pendiente' },
-            { id: 'a15', puesto: 'Acólito incensario 1', funcion: 'Acólito incensario', horario: '14:00 – 23:30', trabajador: 't3', acuse: 'Pendiente' },
-            { id: 'a16', puesto: 'Acólito incensario 2', funcion: 'Acólito incensario', horario: '14:00 – 23:30', trabajador: 't10', acuse: 'Pendiente' },
+            { id: 'a15', puesto: 'Acólito de incensario 1', funcion: 'Acólito de incensario', horario: '14:00 – 23:30', trabajador: 't3', acuse: 'Pendiente' },
+            { id: 'a16', puesto: 'Acólito de incensario 2', funcion: 'Acólito de incensario', horario: '14:00 – 23:30', trabajador: 't10', acuse: 'Pendiente' },
             { id: 'a17', puesto: 'Pertiguero', funcion: 'Pertiguero', horario: '14:00 – 23:30', trabajador: '', acuse: 'Pendiente' }
           ] },
         { id: 'c3', presupuesto: 'p6', estado: 'Publicado', publicado: '2027-03-09', plazoAcuse: '2027-03-18',
           puestos: [
-            { id: 'a21', puesto: 'Acólito incensario', funcion: 'Acólito incensario', horario: '13:30 – 22:00', trabajador: 't3', acuse: 'Baja' },
-            { id: 'a22', puesto: 'Auxiliar de cortejo', funcion: 'Auxiliar de cortejo', horario: '13:30 – 22:00', trabajador: 't8', acuse: 'Pendiente' }
+            { id: 'a21', puesto: 'Acólito de incensario', funcion: 'Acólito de incensario', horario: '13:30 – 22:00', trabajador: 't3', acuse: 'Baja' },
+            { id: 'a22', puesto: 'Auxiliar de carro', funcion: 'Auxiliar de carro', horario: '13:30 – 22:00', trabajador: 't8', acuse: 'Pendiente' }
           ] }
       ],
       bajas: [
@@ -176,7 +192,7 @@
   }
 
   const DB = {
-    FUNCIONES,
+    FUNCIONES, DESCRIPCION_FUNCIONES,
     get s() { return estado; },
     guardar,
     reiniciar() { estado = semilla(); guardar(); },

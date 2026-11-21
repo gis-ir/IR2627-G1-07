@@ -169,27 +169,21 @@
       ${arte('Semana Santa 2027', 'Cuadrantes, sustituciones y presupuestos de los acólitos, pertigueros y auxiliares que acompañan a las hermandades.')}
       <section class="acceso-form"><form class="acceso-caja" data-form="login" novalidate>
         <h2>Iniciar sesión</h2>
-        <div class="campo"><span class="etq" id="perfil-l">Entro como</span>
-          <div class="perfiles" role="radiogroup" aria-labelledby="perfil-l">
-            <label><input type="radio" name="perfil" value="Coordinador" checked><span>Coordinador</span></label>
-            <label><input type="radio" name="perfil" value="Hermandad"><span>Hermandad</span></label>
-            <label><input type="radio" name="perfil" value="Trabajador"><span>Trabajador</span></label>
-          </div></div>
+        <p class="muted">Portal para el coordinador, el administrador y las hermandades. Los trabajadores entran desde la app móvil.</p>
         <div class="campo"><label for="correo">Correo electrónico</label><input id="correo" name="correo" type="email" autocomplete="username" required></div>
         <div class="campo"><label for="clave">Contraseña</label><input id="clave" name="clave" type="password" autocomplete="current-password" required></div>
         <button class="btn btn-pri" type="submit" style="padding:11px">Entrar</button>
         <div style="display:flex;justify-content:space-between;font-size:14px"><a href="#recuperar">He olvidado mi contraseña</a><a href="#registro">Registrar una hermandad</a></div>
         <div class="demo">Cuentas de prueba (contraseña <b>demo</b>):
-          <button type="button" data-act="demo" data-correo="luis@chamorrocofrades.es" data-perfil="Coordinador">coordinador</button>,
-          <button type="button" data-act="demo" data-correo="admin@chamorrocofrades.es" data-perfil="Coordinador">administrador</button>,
-          <button type="button" data-act="demo" data-correo="secretaria@hdadestrella.es" data-perfil="Hermandad">hermandad</button>.
+          <button type="button" data-act="demo" data-correo="luis@chamorrocofrades.es">coordinador</button>,
+          <button type="button" data-act="demo" data-correo="admin@chamorrocofrades.es">administrador</button>,
+          <button type="button" data-act="demo" data-correo="secretaria@hdadestrella.es">hermandad</button>.
           <br><button type="button" data-act="reiniciar">Restablecer datos de demostración</button></div>
       </form></section></div>`
   });
   P.accion('demo', b => {
     const f = document.querySelector('[data-form="login"]');
     f.correo.value = b.dataset.correo; f.clave.value = 'demo';
-    f.querySelector(`input[value="${b.dataset.perfil}"]`).checked = true;
   });
   P.formulario('login', (f, d) => {
     if (!d.correo) return P.errorCampo(f, 'correo', 'Escribe tu correo.');
@@ -197,13 +191,10 @@
     const u = S().usuarios.find(x => x.correo.toLowerCase() === d.correo.trim().toLowerCase());
     if (!u || u.clave !== d.clave) { DB.auditar('Iniciar sesión', d.correo, 'Fallido: credenciales incorrectas', 'desconocido'); DB.guardar(); return P.errorCampo(f, 'clave', 'El correo o la contraseña no son correctos.'); }
     if (!u.activo) return P.errorCampo(f, 'correo', 'Esta cuenta está desactivada. Contacta con el coordinador.');
-    if (u.rol === 'Trabajador' || d.perfil === 'Trabajador') {
-      if (u.rol !== 'Trabajador') return P.errorCampo(f, 'correo', 'Esta cuenta no es de trabajador.');
-      UI.modal({ titulo: 'Usa la app móvil', cuerpo: '<p>Los trabajadores consultan sus turnos, avisos y disponibilidad desde la app móvil de Chamorro Servicios Cofrades.</p>', acciones: [{ texto: 'Entendido', clase: 'btn-pri' }] });
-      return;
+    if (u.rol === 'Trabajador') {
+      DB.auditar('Iniciar sesión', 'Portal web', 'Fallido: cuenta de trabajador', u.nombre); DB.guardar();
+      return P.errorCampo(f, 'correo', 'Esta cuenta es de trabajador. Los trabajadores entran desde la app móvil.');
     }
-    const esperado = d.perfil === 'Hermandad' ? ['Hermandad'] : ['Coordinador', 'Administrador'];
-    if (!esperado.includes(u.rol)) return P.errorCampo(f, 'correo', `Esta cuenta es de ${u.rol.toLowerCase()}. Elige ese perfil.`);
     P.entrar(u); P.ir(inicio());
   });
 

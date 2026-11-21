@@ -31,7 +31,7 @@ Los cambios se guardan en el navegador (localStorage) y se comparten entre el po
 
 | Pantalla | Perfil | Mockup | Casos de uso |
 |---|---|---|---|
-| Inicio de sesión | Todos | MOCK-006 | CU-026, CU-031 |
+| Inicio de sesión (portal) | Coordinador, administrador, hermandad | MOCK-006 | CU-026, CU-031 |
 | Registrar una hermandad | Hermandad | Nueva | CU-026 |
 | Panel principal | Coordinador | MOCK-007 | CU-018, CU-019 |
 | Añadir evento con trabajo | Coordinador | MOCK-023 | CU-010 |

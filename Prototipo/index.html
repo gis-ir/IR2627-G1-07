@@ -87,7 +87,7 @@ const CIRIO = (h, c = '#C9A24A') => `<svg width="${Math.round(h * .45)}" height=
 const W = 'web', M = 'movil';
 const PANTALLAS = [
   { sec: 'Acceso y registro' },
-  { tipo: W, ruta: 'login', perfil: 'Todos los perfiles', t: 'Inicio de sesión', d: 'Entrada común con correo y contraseña. El sistema lleva a cada usuario a su vista según el rol. Las cuentas de prueba rellenan el formulario.', mock: 'MOCK-006', cu: 'CU-026, CU-031' },
+  { tipo: W, ruta: 'login', perfil: 'Coordinador, administrador y hermandad', t: 'Inicio de sesión', d: 'Entrada al portal con correo y contraseña. El sistema reconoce el rol de la cuenta y lleva a cada usuario a su vista. Los trabajadores entran desde la app móvil.', mock: 'MOCK-006', cu: 'CU-026, CU-031' },
   { tipo: W, ruta: 'registro', perfil: 'Hermandad', t: 'Registrar una hermandad', d: 'Alta de una hermandad nueva con su representante. Valida el correo, la contraseña y la aceptación de condiciones, y entra directamente al portal.', mock: null, cu: 'CU-026' },
   { sec: 'Portal del coordinador' },
   { tipo: W, ruta: 'coord-panel', perfil: 'Coordinador', t: 'Panel principal', d: 'Lo que necesita atención hoy: bajas abiertas, turnos sin confirmar, presupuestos y capacitaciones pendientes, con acceso directo a cada tarea.', mock: 'MOCK-007', cu: 'CU-018, CU-019' },

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prototipo funcional · Chamorro Servicios Cofrades</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<style>
+  html, body { height: 100%; overflow: hidden; background: #1E1226; }
+  #escenario { position: fixed; inset: 0 0 52px 0; display: grid; place-items: center; }
+  .lamina { width: 1280px; height: 720px; position: absolute; left: 50%; top: 50%; transform-origin: center; background: var(--papel); display: none; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,.4); }
+  .lamina.activa { display: grid; }
+  /* Portada y separadores */
+  .l-oscura { background: var(--morado); color: #EDE4F2; border-left: 6px solid var(--oro); padding: 72px 88px; grid-template-rows: auto 1fr auto; }
+  .l-oscura h1 { font-family: var(--f-titulo); font-weight: 500; font-size: 104px; line-height: .92; color: #fff; letter-spacing: -.02em; max-width: 11ch; }
+  .l-oscura .medio { align-self: end; padding-bottom: 40px; }
+  .l-oscura h2 { font-family: var(--f-titulo); font-weight: 500; font-size: 76px; line-height: 1; color: #fff; align-self: end; }
+  .l-oscura p { font-size: 22px; color: #CDBFD6; max-width: 50ch; margin-top: 18px; }
+  .l-oscura .pie { display: flex; justify-content: space-between; align-items: flex-end; font-size: 16px; color: #BFB0C9; }
+  .marca { display: flex; gap: 12px; align-items: center; }
+  .marca b { font-family: var(--f-titulo); font-size: 26px; color: #fff; font-weight: 600; }
+  .cirios { display: flex; gap: 18px; align-items: flex-end; }
+  /* Láminas de contenido */
+  .l-texto { padding: 60px 80px; grid-template-rows: auto 1fr; gap: 28px; }
+  .l-texto h2 { font-family: var(--f-titulo); font-size: 48px; font-weight: 600; line-height: 1; }
+  .dos { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-content: start; }
+  .caja { background: #fff; border: 1px solid var(--linea); border-radius: 12px; padding: 24px 26px; }
+  .caja h3 { font-size: 22px; margin-bottom: 8px; }
+  .caja p, .caja li { font-size: 17px; color: var(--tinta-2); }
+  .caja ul { margin: 8px 0 0; padding-left: 20px; display: grid; gap: 4px; }
+  .mapa { width: 100%; border-collapse: collapse; font-size: 13px; align-self: start; background: #fff; border: 1px solid var(--linea); border-radius: 12px; overflow: hidden; }
+  .mapa th { text-align: left; background: #FAF9FB; color: var(--tinta-2); font-weight: 600; padding: 6px 10px; border-bottom: 1px solid var(--linea); }
+  .mapa td { padding: 4px 10px; line-height: 1.3; border-bottom: 1px solid var(--linea); }
+  .mapa td:nth-child(2) { white-space: nowrap; }
+  .mapa .nueva { color: var(--oro); font-weight: 700; }
+  /* Láminas de pantalla */
+  .l-pantalla { grid-template-columns: 330px 1fr; }
+  .ficha { padding: 48px 34px 40px 52px; display: flex; flex-direction: column; gap: 14px; border-right: 1px solid var(--linea); background: #fff; }
+  .ficha .perfil { font-size: 15px; font-weight: 600; color: var(--morado-2); }
+  .ficha h2 { font-family: var(--f-titulo); font-size: 40px; line-height: 1.02; font-weight: 600; }
+  .ficha p { font-size: 17px; color: var(--tinta-2); line-height: 1.5; }
+  .ficha .refs { margin-top: auto; display: grid; gap: 6px; font-size: 14.5px; }
+  .ficha .refs span { color: var(--tinta-3); }
+  .etq-nueva { align-self: flex-start; background: var(--oro-claro); color: #6E5418; font-weight: 700; font-size: 13px; border-radius: 99px; padding: 3px 10px; }
+  .zona { display: grid; place-items: center; background: #ECE9EF; position: relative; }
+  .navegador { width: 884px; border-radius: 10px; overflow: hidden; box-shadow: 0 12px 40px rgba(34,25,42,.18); background: #fff; }
+  .navegador .barra { height: 30px; background: #E4E0E8; display: flex; align-items: center; gap: 6px; padding: 0 12px; }
+  .navegador .barra i { width: 10px; height: 10px; border-radius: 50%; background: #CFC9D5; }
+  .navegador .barra span { margin-left: 14px; background: #fff; border-radius: 6px; font-size: 12px; color: var(--tinta-3); padding: 2px 12px; flex: 1; max-width: 420px; }
+  .navegador .vista { width: 884px; height: 559px; overflow: hidden; position: relative; }
+  .navegador iframe { width: 1360px; height: 860px; border: 0; transform: scale(.65); transform-origin: 0 0; position: absolute; }
+  .telefono { width: 300px; height: 636px; border-radius: 42px; background: #1E1226; padding: 12px; box-shadow: 0 16px 40px rgba(34,25,42,.3); position: relative; }
+  .telefono .vista { width: 276px; height: 612px; border-radius: 31px; overflow: hidden; position: relative; background: #fff; }
+  .telefono iframe { width: 390px; height: 865px; border: 0; transform: scale(.7077); transform-origin: 0 0; position: absolute; }
+  .dos-telefonos { display: flex; gap: 48px; }
+  .pista { position: absolute; bottom: 14px; left: 0; right: 0; text-align: center; font-size: 13px; color: var(--tinta-3); }
+  /* Controles */
+  #controles { position: fixed; left: 0; right: 0; bottom: 0; height: 52px; display: flex; align-items: center; justify-content: center; gap: 10px; color: #CDBFD6; font-size: 14px; }
+  #controles button { background: rgba(255,255,255,.08); color: #fff; border: 1px solid rgba(255,255,255,.15); border-radius: 8px; padding: 6px 14px; cursor: pointer; font-weight: 600; }
+  #controles button:hover { background: rgba(255,255,255,.16); }
+  #controles select { background: rgba(255,255,255,.08); color: #fff; border: 1px solid rgba(255,255,255,.15); border-radius: 8px; padding: 5px 8px; max-width: 280px; }
+  #controles select option { color: var(--tinta); }
+  #num { min-width: 70px; text-align: center; font-variant-numeric: tabular-nums; }
+</style>
+</head>
+<body>
+<div id="escenario"></div>
+<div id="controles">
+  <button id="ant" aria-label="Lámina anterior">‹ Anterior</button>
+  <span id="num"></span>
+  <button id="sig" aria-label="Lámina siguiente">Siguiente ›</button>
+  <select id="indice" aria-label="Ir a la lámina"></select>
+  <button id="reset" title="Vuelve a cargar los datos de ejemplo en todas las pantallas">Restablecer datos</button>
+</div>
+<script src="js/datos.js"></script>
+<script>
+const CIRIO = (h, c = '#C9A24A') => `<svg width="${Math.round(h * .45)}" height="${h}" viewBox="0 0 18 40" aria-hidden="true"><path d="M9 1c2.6 3.4 3.4 5.6 3.4 7.4A3.4 3.4 0 0 1 9 11.8a3.4 3.4 0 0 1-3.4-3.4C5.6 6.6 6.4 4.4 9 1z" fill="${c}"/><rect x="5" y="14" width="8" height="22" rx="1.5" fill="#F4EEDD"/><rect x="2" y="36" width="14" height="3" rx="1" fill="${c}"/></svg>`;
+
+/* Pantallas del prototipo: perfil, título, descripción, mockup y casos de uso */
+const W = 'web', M = 'movil';
+const PANTALLAS = [
+  { sec: 'Acceso y registro' },
+  { tipo: W, ruta: 'login', perfil: 'Todos los perfiles', t: 'Inicio de sesión', d: 'Entrada común con correo y contraseña. El sistema lleva a cada usuario a su vista según el rol. Las cuentas de prueba rellenan el formulario.', mock: 'MOCK-006', cu: 'CU-026, CU-031' },
+  { tipo: W, ruta: 'registro', perfil: 'Hermandad', t: 'Registrar una hermandad', d: 'Alta de una hermandad nueva con su representante. Valida el correo, la contraseña y la aceptación de condiciones, y entra directamente al portal.', mock: null, cu: 'CU-026' },
+  { sec: 'Portal del coordinador' },
+  { tipo: W, ruta: 'coord-panel', perfil: 'Coordinador', t: 'Panel principal', d: 'Lo que necesita atención hoy: bajas abiertas, turnos sin confirmar, presupuestos y capacitaciones pendientes, con acceso directo a cada tarea.', mock: 'MOCK-007', cu: 'CU-018, CU-019' },
+  { tipo: W, ruta: 'coord-eventos', perfil: 'Coordinador', t: 'Añadir evento con trabajo', d: 'Registro de los días en los que habrá trabajo y lista de próximos eventos con su estado. Los cancelados se marcan en rojo.', mock: 'MOCK-023', cu: 'CU-010' },
+  { tipo: W, ruta: 'coord-cuadrantes', perfil: 'Coordinador', t: 'Cuadrantes vigentes', d: 'Todos los cuadrantes con su cobertura, acuses y estado. Avisa de los servicios aceptados que aún no tienen cuadrante.', mock: 'MOCK-008', cu: 'CU-006, CU-007' },
+  { tipo: W, ruta: 'coord-generar-c2', perfil: 'Coordinador', t: 'Generar cuadrante', d: 'Propuesta automática según capacitaciones y disponibilidad. Detecta solapes con otras hermandades y puestos sin cubrir, y no deja publicar hasta resolverlos.', mock: 'MOCK-008', cu: 'CU-006, CU-007, CU-008' },
+  { tipo: W, ruta: 'coord-generar-c1', clic: '[data-act="exportar-cuadrante"]', perfil: 'Coordinador', t: 'Exportar cuadrante', d: 'Vista previa en PDF o CSV, con la opción de incluir teléfonos. Pantalla nueva para cubrir la exportación del cuadrante.', mock: null, cu: 'CU-009' },
+  { tipo: W, ruta: 'coord-bajas', perfil: 'Coordinador', t: 'Cobertura de bajas urgentes', d: 'Detalle de la vacante y candidatos ordenados por disponibilidad y cercanía. Envía la alerta push a los elegidos o registra la sustitución directamente.', mock: 'MOCK-002', cu: 'CU-012, CU-013, CU-015', nueva: true },
+  { tipo: W, ruta: 'coord-acuses', perfil: 'Coordinador', t: 'Seguimiento de acuses', d: 'Quién ha confirmado su turno y quién no, con el plazo visible. Recordatorio individual o a todos los pendientes.', mock: 'MOCK-011', cu: 'CU-017, CU-018' },
+  { tipo: W, ruta: 'coord-tablon', perfil: 'Coordinador', t: 'Publicar aviso en el tablón', d: 'Comunicación oficial a toda la plantilla o por puesto, con notificación push opcional y recuento de lecturas.', mock: 'MOCK-012', cu: 'CU-019' },
+  { tipo: W, ruta: 'coord-presupuestos', perfil: 'Coordinador', t: 'Seguimiento de presupuestos', d: 'Solicitudes pendientes de presupuesto y lista de presupuestos con la acción que toca: reenviar, nueva versión o exportar a contabilidad.', mock: 'MOCK-013', cu: 'CU-022, CU-025' },
+  { tipo: W, ruta: 'coord-presupuesto-nuevo-s5', perfil: 'Coordinador', t: 'Elaborar presupuesto', d: 'Desglose por puesto generado desde la solicitud, con horas calculadas y tarifas vigentes editables. Vista previa en PDF y envío a la hermandad.', mock: 'MOCK-003', cu: 'CU-021, CU-022', nueva: true },
+  { tipo: W, ruta: 'coord-presupuestos', clic: '[data-act="exportar-contable"]', perfil: 'Coordinador', t: 'Exportar a contabilidad', d: 'Asiento contable del presupuesto aceptado (cliente, ingresos e IVA) listo para importar en la aplicación contable externa.', mock: 'MOCK-013', cu: 'CU-025' },
+  { tipo: W, ruta: 'coord-personal', perfil: 'Coordinador', t: 'Catálogo de personal', d: 'Trabajadores con sus capacitaciones, talla, zona y disponibilidad del día elegido. Búsqueda, filtros y alta de trabajadores.', mock: 'MOCK-009', cu: 'CU-001, CU-003' },
+  { tipo: W, ruta: 'coord-disponibilidad', perfil: 'Coordinador', t: 'Matriz de disponibilidad', d: 'Franjas de mañana, tarde y noche de toda la plantilla para cada día de la Semana Santa.', mock: 'MOCK-009', cu: 'CU-003' },
+  { tipo: W, ruta: 'coord-ficha-t1', perfil: 'Coordinador', t: 'Ficha del trabajador', d: 'Contacto, tallas, capacitaciones con quién las resolvió, disponibilidad declarada y próximos turnos. Permite editar o dar de baja.', mock: 'MOCK-024', cu: 'CU-001, CU-003' },
+  { tipo: W, ruta: 'coord-capacitaciones', perfil: 'Coordinador', t: 'Validar capacitaciones', d: 'Solicitudes de habilitación con la experiencia aportada. Aprobar o rechazar con motivo; el trabajador recibe el resultado en la app.', mock: 'MOCK-010', cu: 'CU-002' },
+  { sec: 'Administración' },
+  { tipo: W, ruta: 'admin-usuarios', perfil: 'Administrador', t: 'Usuarios y permisos', d: 'Alta, edición, cambio de rol, desactivación y reactivación de cuentas. Cada cambio queda registrado en la auditoría.', mock: 'MOCK-022', cu: 'CU-030' },
+  { tipo: W, ruta: 'admin-auditoria', perfil: 'Administrador', t: 'Registro de auditoría', d: 'Fecha y hora, usuario, acción, elemento afectado y resultado de cada acción, con filtros y exportación. Recoge los datos de RQI-001.', mock: 'MOCK-022', cu: 'CU-032', nueva: true },
+  { tipo: W, ruta: 'admin-sistema', perfil: 'Administrador', t: 'Estado del sistema', d: 'Disponibilidad, tiempo de respuesta, usuarios conectados, errores, carga por hora y estado de cada servicio. La consulta queda en la auditoría.', mock: null, cu: 'CU-033' },
+  { sec: 'Portal de hermandades' },
+  { tipo: W, ruta: 'herm-panel', perfil: 'Hermandad', t: 'Panel de la hermandad', d: 'Solicitudes de la hermandad con su estado y la acción que toca en cada una: revisar presupuesto, ver cuadrante o esperar.', mock: 'MOCK-019', cu: 'CU-028' },
+  { tipo: W, ruta: 'herm-solicitud', perfil: 'Hermandad', t: 'Solicitar un servicio', d: 'Acto, fecha, horario y lugar. Las funciones se añaden desde un desplegable y la cantidad se ajusta con − y +, con el total de personal.', mock: 'MOCK-005', cu: 'CU-027', nueva: true },
+  { tipo: W, ruta: 'herm-presupuesto', perfil: 'Hermandad', t: 'Revisar presupuesto', d: 'Desglose por puesto, horas y tarifa, con base, IVA y total. Aceptar, rechazar con motivo o descargar en PDF.', mock: 'MOCK-020', cu: 'CU-023' },
+  { tipo: W, ruta: 'herm-cuadrante', perfil: 'Hermandad', t: 'Cuadrante del cortejo', d: 'Personal asignado, hora de citación y confirmación. Descarga en PDF y comunicación de incidencias contractuales.', mock: 'MOCK-021', cu: 'CU-024, CU-028' },
+  { tipo: W, ruta: 'herm-historial', perfil: 'Hermandad', t: 'Historial de servicios', d: 'Servicios contratados por año con el personal y el importe, y acceso a cada presupuesto.', mock: 'MOCK-019', cu: 'CU-029', nueva: true },
+  { sec: 'App del trabajador' },
+  { tipo: M, rutas: ['login', 'turnos'], perfil: 'Trabajador', t: 'Acceso y mis turnos', d: 'Inicio de sesión y pantalla principal: alerta de cobertura urgente si la hay, próximo turno con confirmación en un toque y resto de turnos.', mock: 'MOCK-006', cu: 'CU-031, CU-016', nueva: true },
+  { tipo: M, rutas: ['detalle-a1', 'baja-a1'], perfil: 'Trabajador', t: 'Detalle del servicio y baja', d: 'Hermandad, acto, citación, lugar, uniformidad y compañeros. Confirmar recepción, ver ubicación o comunicar una baja con motivo.', mock: 'MOCK-014, MOCK-016', cu: 'CU-016, CU-017, CU-011' },
+  { tipo: M, rutas: ['alerta-b2', 'disponibilidad'], perfil: 'Trabajador', t: 'Cobertura urgente y disponibilidad', d: 'Oferta de sustitución con cuenta atrás y aceptación en un toque. Calendario de franjas para cada día de la Semana Santa.', mock: 'MOCK-017, MOCK-015', cu: 'CU-014, CU-004' },
+  { tipo: M, rutas: ['avisos', 'perfil'], perfil: 'Trabajador', t: 'Tablón de avisos y perfil', d: 'Avisos del coordinador con los no leídos marcados. Datos, tallas y capacitaciones, con solicitud de nuevas habilitaciones.', mock: 'MOCK-025, MOCK-018', cu: 'CU-020, CU-005, CU-002' }
+];
+
+const pant = PANTALLAS.filter(p => p.t);
+const nuevas = pant.filter(p => !p.mock || p.nueva);
+const laminas = [];
+
+laminas.push(`<section class="lamina l-oscura">
+  <div class="marca">${CIRIO(34)}<div><b>Chamorro</b><div>Servicios Cofrades</div></div></div>
+  <div class="medio"><h1>Prototipo funcional</h1><p>Portal web para el coordinador y las hermandades, y app móvil para los trabajadores. Todas las pantallas están hechas en HTML y CSS y se pueden usar en esta presentación.</p></div>
+  <div class="pie"><span>Ingeniería de Requisitos, grupo IR-G1-07. Segundo entregable.</span><div class="cirios">${[54, 80, 106, 80, 54].map(h => CIRIO(h)).join('')}</div></div></section>`);
+
+laminas.push(`<section class="lamina l-texto"><h2>Qué incluye el prototipo</h2><div class="dos">
+  <div class="caja"><h3>Portal web</h3><p>Una sola aplicación web con tres perfiles.</p><ul><li>Coordinador: eventos, cuadrantes, bajas, acuses, presupuestos, personal y tablón.</li><li>Administrador: lo del coordinador, más usuarios, auditoría y estado del sistema.</li><li>Hermandades: solicitudes, presupuestos, cuadrante del cortejo e historial.</li></ul></div>
+  <div class="caja"><h3>App móvil del trabajador</h3><p>Código en React Native con Expo, y una versión en HTML para esta presentación.</p><ul><li>Turnos, confirmación y bajas.</li><li>Alertas de cobertura urgente.</li><li>Disponibilidad, avisos y perfil.</li></ul></div>
+  <div class="caja"><h3>Datos simulados</h3><p>Semana Santa 2027 con 6 hermandades, 10 trabajadores, presupuestos y cuadrantes. Los cambios se guardan en el navegador: una baja comunicada en la app aparece en el portal del coordinador.</p></div>
+  <div class="caja"><h3>Cobertura</h3><p>${pant.length} pantallas cubren los 33 casos de uso del ERS. ${nuevas.length} de ellas son nuevas o se han rehecho a partir de los mockups del primer entregable.</p></div>
+  </div></section>`);
+
+const filas = pant.map(p => `<tr><td><b>${p.t}</b><br><span style="color:var(--tinta-3)">${p.perfil}</span></td><td>${p.mock ? p.mock.replace(', ', '<br>') : '<span class="nueva">Nueva</span>'}${p.mock && p.nueva ? '<br><span class="nueva">rehecha</span>' : ''}</td><td>${p.cu.split(', ').map(c => `<span style="white-space:nowrap">${c}</span>`).join(' ')}</td></tr>`);
+const tercio = Math.ceil(filas.length / 3);
+const cab = '<thead><tr><th>Pantalla</th><th>Mockup</th><th>Casos de uso</th></tr></thead>';
+laminas.push(`<section class="lamina l-texto" style="gap:18px;padding:44px 48px"><h2>Pantallas, mockups y casos de uso</h2><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:start">
+  ${[0, 1, 2].map(k => `<table class="mapa">${cab}<tbody>${filas.slice(k * tercio, (k + 1) * tercio).join('')}</tbody></table>`).join('')}</div></section>`);
+
+const vistas = [];
+PANTALLAS.forEach(p => {
+  if (p.sec) { laminas.push(`<section class="lamina l-oscura" style="grid-template-rows:1fr auto"><h2>${p.sec}</h2><div class="pie"><span>Chamorro Servicios Cofrades</span>${CIRIO(40)}</div></section>`); return; }
+  const ficha = `<div class="ficha"><span class="perfil">${p.perfil}${p.tipo === M ? ', app móvil' : ', portal web'}</span><h2>${p.t}</h2>${!p.mock || p.nueva ? '<span class="etq-nueva">Pantalla nueva</span>' : ''}<p>${p.d}</p>
+    <div class="refs"><div><span>Mockup:</span> ${p.mock || 'no existía'}</div><div><span>Casos de uso:</span> ${p.cu}</div></div></div>`;
+  let zona;
+  if (p.tipo === W) {
+    zona = `<div class="zona"><div class="navegador"><div class="barra"><i></i><i></i><i></i><span>portal.chamorrocofrades.es</span></div><div class="vista"><iframe data-src="portal.html#${p.ruta}" ${p.clic ? `data-clic='${p.clic}'` : ''} title="${p.t}" tabindex="-1"></iframe></div></div><div class="pista">La pantalla es interactiva: puedes hacer clic, rellenar formularios y navegar.</div></div>`;
+  } else {
+    zona = `<div class="zona"><div class="dos-telefonos">${p.rutas.map(r => `<div class="telefono"><div class="vista"><iframe data-src="app-trabajador.html#${r}" title="${p.t}" tabindex="-1"></iframe></div></div>`).join('')}</div><div class="pista">Pantallas interactivas de la app.</div></div>`;
+  }
+  laminas.push(`<section class="lamina l-pantalla">${ficha}${zona}</section>`);
+});
+
+laminas.push(`<section class="lamina l-oscura">
+  <div class="marca">${CIRIO(34)}<div><b>Chamorro</b><div>Servicios Cofrades</div></div></div>
+  <div class="medio"><h2>Pruébalo</h2><p>Portal web: portal.html. Cuentas de prueba con contraseña demo: luis@chamorrocofrades.es (coordinador), admin@chamorrocofrades.es (administrador) y secretaria@hdadestrella.es (hermandad).</p><p>App: app-trabajador.html en el navegador del móvil, o el proyecto app-react-native con Expo Go. Cuenta juan.perez@correo.es con contraseña demo.</p></div>
+  <div class="pie"><span>Ingeniería de Requisitos, grupo IR-G1-07</span><div class="cirios">${[54, 80, 106, 80, 54].map(h => CIRIO(h)).join('')}</div></div></section>`);
+
+const esc = document.getElementById('escenario');
+esc.innerHTML = laminas.join('');
+const els = [...esc.querySelectorAll('.lamina')];
+const sel = document.getElementById('indice');
+els.forEach((el, i) => { const t = el.querySelector('h1, h2'); sel.add(new Option(`${i + 1}. ${t ? t.textContent : ''}`, i)); });
+
+let actual = 0;
+function escalar() { const s = Math.min(innerWidth / 1280, (innerHeight - 52) / 720); els.forEach(el => { el.style.transform = `translate(-50%, -50%) scale(${s})`; }); }
+function mostrar(i) {
+  actual = Math.max(0, Math.min(els.length - 1, i));
+  els.forEach((el, k) => {
+    const on = k === actual; el.classList.toggle('activa', on);
+    el.querySelectorAll('iframe').forEach(f => {
+      if (on) {
+        f.src = f.dataset.src;
+        f.onload = () => { if (f.dataset.clic) setTimeout(() => { try { const b = f.contentDocument.querySelector(f.dataset.clic); if (b) b.click(); } catch (e) {} }, 150); };
+      } else if (f.getAttribute('src') && f.getAttribute('src') !== 'about:blank') { f.onload = null; f.src = 'about:blank'; }
+    });
+  });
+  document.getElementById('num').textContent = `${actual + 1} / ${els.length}`;
+  sel.value = actual;
+  try { history.replaceState(null, '', '#lamina-' + (actual + 1)); } catch (e) {}
+}
+document.getElementById('ant').onclick = () => mostrar(actual - 1);
+document.getElementById('sig').onclick = () => mostrar(actual + 1);
+sel.onchange = () => mostrar(+sel.value);
+document.getElementById('reset').onclick = () => { DB.reiniciar(); mostrar(actual); };
+document.addEventListener('keydown', e => {
+  if (['INPUT', 'SELECT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
+  if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') { e.preventDefault(); mostrar(actual + 1); }
+  if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); mostrar(actual - 1); }
+  if (e.key === 'Home') mostrar(0);
+  if (e.key === 'End') mostrar(els.length - 1);
+});
+addEventListener('resize', escalar);
+escalar();
+const m = location.hash.match(/lamina-(\d+)/);
+mostrar(m ? +m[1] - 1 : 0);
+</script>
+</body>
+</html>

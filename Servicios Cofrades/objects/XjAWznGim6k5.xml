@@ -19,7 +19,7 @@
       <trace target="dWprm3onJdd4" traceType=":Proteus-dependency"/>
       <trace target="SqBMCtgtdnfy" traceType=":Proteus-dependency"/>
     </traceProperty>
-    <markdownProperty name="description" category="detail"><![CDATA[Sistema externo que entrega a la aplicación móvil de los trabajadores las alertas de cobertura urgente, los avisos de turno y los recordatorios de confirmación.]]></markdownProperty>
+    <markdownProperty name="description" category="detail"><![CDATA[Sistema externo que entrega a la aplicación móvil de todos los usuarios las notificaciones del sistema: alertas de cobertura urgente, avisos de turno y recordatorios de confirmación a los trabajadores, avisos de bajas al coordinador y novedades de sus solicitudes y presupuestos a las hermandades.]]></markdownProperty>
     <traceProperty name="dependencies" category="dependencies" acceptedTargets="traceable-object business-requirement" traceType=":Proteus-dependency">
       <trace target="6Yz3yqynRo23" traceType=":Proteus-dependency"/>
       <trace target="Ku6wgw9eNSL3" traceType=":Proteus-dependency"/>

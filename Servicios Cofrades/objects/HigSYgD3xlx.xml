@@ -13,7 +13,7 @@
     <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source">
       <trace target="WAzr6R2fLUkx" traceType=":Proteus-information-source"/>
     </traceProperty>
-    <markdownProperty name="description" category="detail"><![CDATA[El sistema deberá almacenar la información correspondiente a las personas que usan el sistema: trabajadores, coordinadores y representantes de hermandad, así como el registro de las acciones que realizan en él para su auditoría. En concreto:]]></markdownProperty>
+    <markdownProperty name="description" category="detail"><![CDATA[El sistema deberá almacenar la información correspondiente a las personas que usan el sistema: trabajadores, coordinadores, administradores y representantes de hermandad, así como el registro de las acciones que realizan en él para su auditoría. En concreto:]]></markdownProperty>
     <enumProperty name="importance" category="priority" tooltip="importance" choices="tbd critical high medium low optional">critical</enumProperty>
     <enumProperty name="urgency" category="priority" tooltip="urgency" choices="tbd high medium low">high</enumProperty>
     <enumProperty name="status" category="priority" tooltip="status" choices="tbd draft awaiting-qa awaiting-validation validated">tbd</enumProperty>

@@ -9,7 +9,7 @@
     <fileProperty name="file" category="detail" tooltip="file-info"><![CDATA[MC IR-Página-1.drawio (1).svg]]></fileProperty>
     <urlProperty name="url" category="detail"><![CDATA[]]></urlProperty>
     <integerProperty name="width" category="detail" tooltip="width-info">80</integerProperty>
-    <markdownProperty name="description" category="detail"><![CDATA[Diagrama de clases]]></markdownProperty>
+    <markdownProperty name="description" category="detail"><![CDATA[Diagrama de clases del sistema. Incluye la clase Administrador como subclase de Usuario y la clase RegistroAuditoria, que guarda las acciones que realiza cada usuario.]]></markdownProperty>
     <traceProperty name="dependencies" category="dependencies" acceptedTargets="traceable-object" traceType=":Proteus-dependency"/>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>

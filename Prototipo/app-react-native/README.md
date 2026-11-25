@@ -38,18 +38,18 @@ En la misma pantalla puedes restablecer los datos de demostración.
 | Pantalla | Archivo | Mockup | Casos de uso |
 |---|---|---|---|
 | Inicio de sesión | `LoginScreen.js` | MOCK-006 | CU-031 |
-| Mis turnos | `TurnosScreen.js` | nueva | CU-016 |
+| Mis turnos | `TurnosScreen.js` | MOCK-004 | CU-016 |
 | Detalle del servicio | `DetalleScreen.js` | MOCK-014 | CU-016, CU-017 |
 | Comunicar baja | `BajaScreen.js` | MOCK-016 | CU-011 |
 | Alerta de cobertura urgente | `AlertaScreen.js` | MOCK-017 | CU-014 |
 | Disponibilidad | `DisponibilidadScreen.js` | MOCK-015 | CU-004 |
 | Tablón de avisos y aviso | `AvisosScreen.js` | MOCK-025 | CU-020 |
-| Notificaciones | `AvisosScreen.js` | nueva | CU-013, CU-018 |
+| Notificaciones | `AvisosScreen.js` | MOCK-017, MOCK-025 | CU-013, CU-018 |
 | Mi perfil | `PerfilScreen.js` | MOCK-018 | CU-005, CU-002 |
-| Hoy, bajas, cuadrantes | `GestionScreens.js` | nueva | CU-012, CU-013, CU-015, CU-016, CU-018 |
-| Más, tablón, presupuestos, personal, capacitaciones, eventos | `GestionMasScreens.js` | nueva | CU-002, CU-003, CU-019, CU-022 |
-| Usuarios, auditoría, estado del sistema | `GestionMasScreens.js` | nueva | CU-030, CU-032, CU-033 |
-| Inicio, cortejo, solicitar, historial de la hermandad | `HermandadScreens.js` | nueva | CU-023, CU-024, CU-027, CU-028, CU-029 |
+| Hoy, bajas, cuadrantes | `GestionScreens.js` | MOCK-036, MOCK-037 | CU-012, CU-013, CU-015, CU-016, CU-018 |
+| Más, tablón, presupuestos, personal, capacitaciones, eventos | `GestionMasScreens.js` | MOCK-037 | CU-002, CU-003, CU-019, CU-022 |
+| Usuarios, auditoría, estado del sistema | `GestionMasScreens.js` | MOCK-038 | CU-030, CU-032, CU-033 |
+| Inicio, cortejo, solicitar, historial de la hermandad | `HermandadScreens.js` | MOCK-039, MOCK-040 | CU-023, CU-024, CU-027, CU-028, CU-029 |
 
 ## Estructura
 

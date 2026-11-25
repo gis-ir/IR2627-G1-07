@@ -1,6 +1,16 @@
 # Prototipo funcional — Chamorro Servicios Cofrades
 
-Prototipo del segundo entregable (grupo IR-G1-07). Todas las pantallas están hechas en HTML, CSS y JavaScript sin librerías, con datos simulados de la Semana Santa de 2027.
+Prototipo funcional del grupo IR-G1-07 (Ingeniería de Requisitos). Tiene un portal web y una app móvil a los que entran los cuatro perfiles del sistema: coordinador, administrador, hermandad y trabajador. Las pantallas web están hechas en HTML, CSS y JavaScript sin librerías, y la app móvil también está hecha en React Native con Expo. Todo trabaja con datos de ejemplo de la Semana Santa de 2027.
+
+## Enlaces
+
+| Qué | Enlace |
+|---|---|
+| Presentación | https://chamorro-cofrades.netlify.app |
+| Portal web | https://chamorro-cofrades.netlify.app/portal.html |
+| App móvil (versión web) | https://chamorro-cofrades.netlify.app/app.html |
+
+La versión web de la app se puede abrir en el navegador del móvil. La app en React Native se prueba con Expo Go (ver `app-react-native/README.md`).
 
 ## Qué hay en esta carpeta
 
@@ -11,11 +21,12 @@ Prototipo del segundo entregable (grupo IR-G1-07). Todas las pantallas están he
 | `app.html` | Versión HTML de la app móvil, también para todos los perfiles (para la presentación y para probarla en el navegador del móvil). |
 | `app-trabajador.html` | Redirige a `app.html` (se mantiene para no romper enlaces antiguos). |
 | `app-react-native/` | Código de la app móvil en React Native con Expo, con los cuatro perfiles. Ver su README. |
-| `css/`, `js/` | Estilos y lógica compartidos. `js/datos.js` tiene los datos de ejemplo. |
+| `css/` | Estilos: `base.css` (común), `portal.css` (portal) y `app.css` (app). |
+| `js/` | Lógica: `datos.js` (datos de ejemplo y operaciones compartidas), `ui.js` (componentes), `portal.js` con `portal-coord.js`, `portal-admin-herm.js` y `portal-trab.js` (vistas del portal por perfil), y `app.js` con `app-gestion.js` (app del trabajador, de coordinación y de hermandades). |
 
-## Cómo abrirlo
+## Cómo abrirlo en local
 
-Basta con abrir `index.html` o `portal.html` en el navegador. Si el navegador bloquea algo al abrirlo como archivo, sirve la carpeta con un servidor local, por ejemplo `python -m http.server` dentro de esta carpeta, y entra en `http://localhost:8000`.
+Basta con abrir `index.html`, `portal.html` o `app.html` en el navegador. Si el navegador bloquea algo al abrirlo como archivo, sirve la carpeta con un servidor local, por ejemplo `python -m http.server` dentro de esta carpeta, y entra en `http://localhost:8000`.
 
 Cuentas de prueba (contraseña `demo` en todas):
 

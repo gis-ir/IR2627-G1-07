@@ -7,9 +7,10 @@ Prototipo del segundo entregable (grupo IR-G1-07). Todas las pantallas están he
 | Archivo o carpeta | Qué es |
 |---|---|
 | `index.html` | Presentación con todas las pantallas, interactivas, en marco de navegador o de móvil. Se pasa con las flechas del teclado. |
-| `portal.html` | Portal web del coordinador, el administrador y las hermandades. |
-| `app-trabajador.html` | Versión HTML de la app del trabajador (para la presentación y para probarla en el navegador del móvil). |
-| `app-react-native/` | Código de la app del trabajador en React Native con Expo. Ver su README. |
+| `portal.html` | Portal web para todos los perfiles: coordinador, administrador, hermandades y trabajadores. |
+| `app.html` | Versión HTML de la app móvil, también para todos los perfiles (para la presentación y para probarla en el navegador del móvil). |
+| `app-trabajador.html` | Redirige a `app.html` (se mantiene para no romper enlaces antiguos). |
+| `app-react-native/` | Código de la app móvil en React Native con Expo, con los cuatro perfiles. Ver su README. |
 | `css/`, `js/` | Estilos y lógica compartidos. `js/datos.js` tiene los datos de ejemplo. |
 
 ## Cómo abrirlo
@@ -21,17 +22,30 @@ Cuentas de prueba (contraseña `demo` en todas):
 - Coordinador: `luis@chamorrocofrades.es`
 - Administrador: `admin@chamorrocofrades.es`
 - Hermandad: `secretaria@hdadestrella.es`
-- Trabajador (app): `juan.perez@correo.es`
+- Trabajador: `juan.perez@correo.es`
 
-Los cambios se guardan en el navegador (localStorage) y se comparten entre el portal y la app HTML: si un trabajador comunica una baja en la app, aparece en «Bajas urgentes» del coordinador. El botón «Restablecer datos de demostración» del inicio de sesión vuelve a los datos iniciales.
+Las cuatro cuentas sirven tanto en el portal como en la app. En las dos pantallas de inicio de sesión hay botones para entrar directamente con cada una.
+
+## Cada perfil en cada canal
+
+| Perfil | Portal web (ordenador) | App móvil (calle) |
+|---|---|---|
+| Coordinador | Todo: eventos, cuadrantes, presupuestos, personal, tablón | Bajas urgentes (alertar y asignar), confirmaciones y recordatorios, tablón, capacitaciones, consulta de presupuestos y personal |
+| Administrador | Lo del coordinador, más usuarios, auditoría y estado del sistema | Lo del coordinador, más activar cuentas, auditoría y estado del sistema |
+| Hermandad | Solicitudes, presupuestos, cuadrante del cortejo, incidencias e historial | Lo mismo: solicitar, aceptar o rechazar presupuestos y seguir el cortejo |
+| Trabajador | Turnos, cuadrante completo en grande, disponibilidad, avisos y perfil | Turnos, confirmación, bajas, alertas de cobertura, disponibilidad, avisos y perfil |
+
+Las tareas largas de edición (generar un cuadrante, elaborar un presupuesto, editar usuarios) solo están en el portal.
+
+Los cambios se guardan en el navegador (localStorage) y se comparten entre el portal y la app HTML: si un trabajador comunica una baja en la app o en el portal, aparece en «Bajas urgentes» del coordinador en los dos canales. El botón «Restablecer datos de demostración» del inicio de sesión vuelve a los datos iniciales.
 
 ## Pantallas y casos de uso
 
-29 pantallas cubren los 33 casos de uso del ERS. Las marcadas como nuevas no tenían mockup o se han rehecho.
+37 pantallas y vistas cubren los 33 casos de uso del ERS. Las marcadas como nuevas no tenían mockup o se han rehecho.
 
 | Pantalla | Perfil | Mockup | Casos de uso |
 |---|---|---|---|
-| Inicio de sesión (portal) | Coordinador, administrador, hermandad | MOCK-006 | CU-026, CU-031 |
+| Inicio de sesión | Todos los perfiles | MOCK-006 | CU-026, CU-031 |
 | Registrar una hermandad | Hermandad | Nueva | CU-026 |
 | Panel principal | Coordinador | MOCK-007 | CU-018, CU-019 |
 | Añadir evento con trabajo | Coordinador | MOCK-023 | CU-010 |
@@ -60,3 +74,11 @@ Los cambios se guardan en el navegador (localStorage) y se comparten entre el po
 | Detalle del servicio y baja | Trabajador | MOCK-014, MOCK-016 | CU-016, CU-017, CU-011 |
 | Cobertura urgente y disponibilidad | Trabajador | MOCK-017, MOCK-015 | CU-014, CU-004 |
 | Tablón de avisos y perfil | Trabajador | MOCK-025, MOCK-018 | CU-020, CU-005, CU-002 |
+| Mis turnos en el ordenador | Trabajador (portal) | Nueva | CU-016, CU-017, CU-011, CU-014 |
+| Cuadrante del servicio en grande | Trabajador (portal) | Nueva | CU-016 |
+| Disponibilidad, avisos y perfil | Trabajador (portal) | MOCK-015 (rehecha) | CU-004, CU-020, CU-005 |
+| Hoy y bajas urgentes | Coordinador (app) | Nueva | CU-018, CU-012, CU-013, CU-015 |
+| Cuadrantes y más | Coordinador (app) | Nueva | CU-016, CU-018, CU-019, CU-002 |
+| Administración en el móvil | Administrador (app) | Nueva | CU-032, CU-033, CU-030 |
+| Solicitudes y cortejo | Hermandad (app) | Nueva | CU-028, CU-024 |
+| Presupuestos y nueva solicitud | Hermandad (app) | Nueva | CU-023, CU-027 |

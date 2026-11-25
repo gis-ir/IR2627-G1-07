@@ -87,7 +87,7 @@ const CIRIO = (h, c = '#C9A24A') => `<svg width="${Math.round(h * .45)}" height=
 const W = 'web', M = 'movil';
 const PANTALLAS = [
   { sec: 'Acceso y registro' },
-  { tipo: W, ruta: 'login', perfil: 'Coordinador, administrador y hermandad', t: 'Inicio de sesión', d: 'Entrada al portal con correo y contraseña. El sistema reconoce el rol de la cuenta y lleva a cada usuario a su vista. Los trabajadores entran desde la app móvil.', mock: 'MOCK-006', cu: 'CU-026, CU-031' },
+  { tipo: W, ruta: 'login', perfil: 'Todos los perfiles', t: 'Inicio de sesión', d: 'Entrada común con correo y contraseña. El sistema reconoce el rol de la cuenta y lleva a cada usuario a su vista: coordinación, hermandad o trabajador.', mock: 'MOCK-006', cu: 'CU-026, CU-031' },
   { tipo: W, ruta: 'registro', perfil: 'Hermandad', t: 'Registrar una hermandad', d: 'Alta de una hermandad nueva con su representante. Valida el correo, la contraseña y la aceptación de condiciones, y entra directamente al portal.', mock: null, cu: 'CU-026' },
   { sec: 'Portal del coordinador' },
   { tipo: W, ruta: 'coord-panel', perfil: 'Coordinador', t: 'Panel principal', d: 'Lo que necesita atención hoy: bajas abiertas, turnos sin confirmar, presupuestos y capacitaciones pendientes, con acceso directo a cada tarea.', mock: 'MOCK-007', cu: 'CU-018, CU-019' },
@@ -115,11 +115,22 @@ const PANTALLAS = [
   { tipo: W, ruta: 'herm-presupuesto', perfil: 'Hermandad', t: 'Revisar presupuesto', d: 'Desglose por puesto, horas y tarifa, con base, IVA y total. Aceptar, rechazar con motivo o descargar en PDF.', mock: 'MOCK-020', cu: 'CU-023' },
   { tipo: W, ruta: 'herm-cuadrante', perfil: 'Hermandad', t: 'Cuadrante del cortejo', d: 'Personal asignado, hora de citación y confirmación. Descarga en PDF y comunicación de incidencias contractuales.', mock: 'MOCK-021', cu: 'CU-024, CU-028' },
   { tipo: W, ruta: 'herm-historial', perfil: 'Hermandad', t: 'Historial de servicios', d: 'Servicios contratados por año con el personal y el importe, y acceso a cada presupuesto.', mock: 'MOCK-019', cu: 'CU-029', nueva: true },
+  { sec: 'Portal del trabajador' },
+  { tipo: W, ruta: 'trab-turnos', perfil: 'Trabajador', t: 'Mis turnos en el ordenador', d: 'El trabajador también entra en el portal desde el portátil: ve todos sus turnos, los confirma, comunica una baja y responde a las ofertas de cobertura urgente.', mock: null, cu: 'CU-016, CU-017, CU-011, CU-014' },
+  { tipo: W, ruta: 'trab-cuadrante', perfil: 'Trabajador', t: 'Cuadrante del servicio en grande', d: 'El cuadrante completo de cada servicio en el que trabaja: compañeros, puestos, citación, confirmaciones e indicaciones, con descarga en PDF y ubicación.', mock: null, cu: 'CU-016' },
+  { tipo: W, ruta: 'trab-disponibilidad', perfil: 'Trabajador', t: 'Disponibilidad, avisos y perfil', d: 'Las mismas funciones que en la app, en pantalla grande: marcar franjas de la Semana Santa, leer el tablón y mantener datos, tallas y capacitaciones.', mock: 'MOCK-015', cu: 'CU-004, CU-020, CU-005', nueva: true },
   { sec: 'App del trabajador' },
   { tipo: M, rutas: ['login', 'turnos'], perfil: 'Trabajador', t: 'Acceso y mis turnos', d: 'Inicio de sesión y pantalla principal: alerta de cobertura urgente si la hay, próximo turno con confirmación en un toque y resto de turnos.', mock: 'MOCK-006', cu: 'CU-031, CU-016', nueva: true },
   { tipo: M, rutas: ['detalle-a1', 'baja-a1'], perfil: 'Trabajador', t: 'Detalle del servicio y baja', d: 'Hermandad, acto, citación, lugar, uniformidad y compañeros. Confirmar recepción, ver ubicación o comunicar una baja con motivo.', mock: 'MOCK-014, MOCK-016', cu: 'CU-016, CU-017, CU-011' },
   { tipo: M, rutas: ['alerta-b2', 'disponibilidad'], perfil: 'Trabajador', t: 'Cobertura urgente y disponibilidad', d: 'Oferta de sustitución con cuenta atrás y aceptación en un toque. Calendario de franjas para cada día de la Semana Santa.', mock: 'MOCK-017, MOCK-015', cu: 'CU-014, CU-004' },
-  { tipo: M, rutas: ['avisos', 'perfil'], perfil: 'Trabajador', t: 'Tablón de avisos y perfil', d: 'Avisos del coordinador con los no leídos marcados. Datos, tallas y capacitaciones, con solicitud de nuevas habilitaciones.', mock: 'MOCK-025, MOCK-018', cu: 'CU-020, CU-005, CU-002' }
+  { tipo: M, rutas: ['avisos', 'perfil'], perfil: 'Trabajador', t: 'Tablón de avisos y perfil', d: 'Avisos del coordinador con los no leídos marcados. Datos, tallas y capacitaciones, con solicitud de nuevas habilitaciones.', mock: 'MOCK-025, MOCK-018', cu: 'CU-020, CU-005, CU-002' },
+  { sec: 'App de coordinación' },
+  { tipo: M, rutas: ['c-hoy', 'c-baja-b1'], perfil: 'Coordinador', t: 'Hoy y bajas urgentes', d: 'En la calle el coordinador ve lo que necesita atención y cubre una baja desde el móvil: candidatos, llamada, alerta o asignación directa.', mock: null, cu: 'CU-018, CU-012, CU-013, CU-015' },
+  { tipo: M, rutas: ['c-cuadrante-c1', 'c-mas'], perfil: 'Coordinador', t: 'Cuadrantes y más', d: 'Cada cuadrante con sus confirmaciones, el teléfono de cada persona y el recordatorio a los pendientes. Desde «Más», tablón, presupuestos, personal y capacitaciones.', mock: null, cu: 'CU-016, CU-018, CU-019, CU-002' },
+  { tipo: M, rutas: ['c-auditoria', 'c-sistema'], perfil: 'Administrador', t: 'Administración en el móvil', d: 'El administrador consulta la auditoría y el estado del sistema, y activa o desactiva cuentas, también fuera de la oficina.', mock: null, cu: 'CU-032, CU-033, CU-030' },
+  { sec: 'App de hermandades' },
+  { tipo: M, rutas: ['h-inicio', 'h-cortejo'], perfil: 'Hermandad', t: 'Solicitudes y cortejo', d: 'La hermandad sigue sus solicitudes y, el día de la salida, ve quién va a su cortejo y si ha confirmado, y comunica incidencias.', mock: null, cu: 'CU-028, CU-024' },
+  { tipo: M, rutas: ['h-presupuesto-p4', 'h-solicitar'], perfil: 'Hermandad', t: 'Presupuestos y nueva solicitud', d: 'Acepta o rechaza presupuestos con el desglose completo y solicita servicios con las 12 funciones, desde el móvil.', mock: null, cu: 'CU-023, CU-027' }
 ];
 
 const pant = PANTALLAS.filter(p => p.t);
@@ -128,24 +139,34 @@ const laminas = [];
 
 laminas.push(`<section class="lamina l-oscura">
   <div class="marca">${CIRIO(34)}<div><b>Chamorro</b><div>Servicios Cofrades</div></div></div>
-  <div class="medio"><h1>Prototipo funcional</h1><p>Portal web para el coordinador y las hermandades, y app móvil para los trabajadores. Todas las pantallas están hechas en HTML y CSS y se pueden usar en esta presentación.</p></div>
+  <div class="medio"><h1>Prototipo funcional</h1><p>Portal web y app móvil para todos los perfiles: coordinación, hermandades y trabajadores. Todas las pantallas están hechas en HTML y CSS y se pueden usar en esta presentación.</p></div>
   <div class="pie"><span>Ingeniería de Requisitos, grupo IR-G1-07. Segundo entregable.</span><div class="cirios">${[54, 80, 106, 80, 54].map(h => CIRIO(h)).join('')}</div></div></section>`);
 
 laminas.push(`<section class="lamina l-texto"><h2>Qué incluye el prototipo</h2><div class="dos">
-  <div class="caja"><h3>Portal web</h3><p>Una sola aplicación web con tres perfiles.</p><ul><li>Coordinador: eventos, cuadrantes, bajas, acuses, presupuestos, personal y tablón.</li><li>Administrador: lo del coordinador, más usuarios, auditoría y estado del sistema.</li><li>Hermandades: solicitudes, presupuestos, cuadrante del cortejo e historial.</li></ul></div>
-  <div class="caja"><h3>App móvil del trabajador</h3><p>Código en React Native con Expo, y una versión en HTML para esta presentación.</p><ul><li>Turnos, confirmación y bajas.</li><li>Alertas de cobertura urgente.</li><li>Disponibilidad, avisos y perfil.</li></ul></div>
-  <div class="caja"><h3>Datos simulados</h3><p>Semana Santa 2027 con 6 hermandades, 10 trabajadores, presupuestos y cuadrantes. Los cambios se guardan en el navegador: una baja comunicada en la app aparece en el portal del coordinador.</p></div>
-  <div class="caja"><h3>Cobertura</h3><p>${pant.length} pantallas cubren los 33 casos de uso del ERS. ${nuevas.length} de ellas son nuevas o se han rehecho a partir de los mockups del primer entregable.</p></div>
+  <div class="caja"><h3>Portal web</h3><p>Una sola aplicación con cuatro perfiles, para trabajar desde el ordenador.</p><ul><li>Coordinador y administrador: eventos, cuadrantes, bajas, presupuestos, personal, usuarios y auditoría.</li><li>Hermandades: solicitudes, presupuestos, cortejo e historial.</li><li>Trabajadores: sus turnos y cuadrantes en grande, disponibilidad, avisos y perfil.</li></ul></div>
+  <div class="caja"><h3>App móvil para todos</h3><p>En Semana Santa casi todos están en la calle, así que todos los perfiles entran también desde el móvil. Código en React Native con Expo y una versión en HTML para esta presentación.</p></div>
+  <div class="caja"><h3>Datos compartidos</h3><p>Semana Santa 2027 con 6 hermandades y 10 trabajadores. Portal y app usan los mismos datos: una baja comunicada desde el portátil aparece en el móvil del coordinador.</p></div>
+  <div class="caja"><h3>Cobertura</h3><p>${pant.length} pantallas y vistas cubren los 33 casos de uso del ERS. ${nuevas.length} son nuevas o rehechas respecto a los mockups del primer entregable.</p></div>
   </div></section>`);
+
+laminas.push(`<section class="lamina l-texto" style="gap:22px"><div><h2>Cada perfil, en el ordenador y en el móvil</h2><p style="font-size:17px;color:var(--tinta-2);margin-top:10px">El portal es para el trabajo con calma y en pantalla grande; la app, para lo urgente en la calle. Las tareas largas de edición solo están en el portal.</p></div>
+  <table class="mapa" style="font-size:15px"><thead><tr><th style="width:16%">Perfil</th><th>Portal web (ordenador)</th><th>App móvil (calle)</th></tr></thead><tbody>
+  <tr><td><b>Coordinador</b></td><td>Todo: eventos, generar y publicar cuadrantes, elaborar presupuestos, personal, tablón</td><td>Bajas urgentes (alertar y asignar), confirmaciones y recordatorios, tablón, capacitaciones, consulta de presupuestos y personal</td></tr>
+  <tr><td><b>Administrador</b></td><td>Lo del coordinador, más usuarios y permisos, auditoría y estado del sistema</td><td>Lo del coordinador, más activar cuentas, auditoría y estado del sistema</td></tr>
+  <tr><td><b>Hermandad</b></td><td>Solicitudes, presupuestos, cuadrante del cortejo, incidencias e historial</td><td>Lo mismo: solicitar, aceptar o rechazar presupuestos y seguir su cortejo el día de la salida</td></tr>
+  <tr><td><b>Trabajador</b></td><td>Turnos, cuadrante completo en grande, disponibilidad, avisos y perfil</td><td>Turnos, confirmación, bajas, alertas de cobertura, disponibilidad, avisos y perfil</td></tr></tbody></table></section>`);
 
 laminas.push(`<section class="lamina l-texto" style="gap:22px"><div><h2>Funciones de los trabajadores</h2><p style="font-size:17px;color:var(--tinta-2);margin-top:10px">Las 12 funciones de la enumeración TipoFuncion del modelo conceptual. Son las que aparecen en los desplegables de solicitudes, presupuestos, capacitaciones, cuadrantes y avisos.</p></div>
   <div class="funciones">${DB.FUNCIONES.map(f => `<div class="funcion"><b>${f}</b><span>${DB.DESCRIPCION_FUNCIONES[f]}</span></div>`).join('')}</div></section>`);
 
 const filas = pant.map(p => `<tr><td><b>${p.t}</b><br><span style="color:var(--tinta-3)">${p.perfil}</span></td><td>${p.mock ? p.mock.replace(', ', '<br>') : '<span class="nueva">Nueva</span>'}${p.mock && p.nueva ? '<br><span class="nueva">rehecha</span>' : ''}</td><td>${p.cu.split(', ').map(c => `<span style="white-space:nowrap">${c}</span>`).join(' ')}</td></tr>`);
-const tercio = Math.ceil(filas.length / 3);
 const cab = '<thead><tr><th>Pantalla</th><th>Mockup</th><th>Casos de uso</th></tr></thead>';
-laminas.push(`<section class="lamina l-texto" style="gap:18px;padding:44px 48px"><h2>Pantallas, mockups y casos de uso</h2><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:start">
-  ${[0, 1, 2].map(k => `<table class="mapa">${cab}<tbody>${filas.slice(k * tercio, (k + 1) * tercio).join('')}</tbody></table>`).join('')}</div></section>`);
+const mitad = Math.ceil(filas.length / 2);
+[filas.slice(0, mitad), filas.slice(mitad)].forEach((grupo, n) => {
+  const cuarto = Math.ceil(grupo.length / 2);
+  laminas.push(`<section class="lamina l-texto" style="gap:18px;padding:44px 48px"><h2>Pantallas, mockups y casos de uso <span style="color:var(--tinta-3);font-weight:400">(${n + 1}/2)</span></h2><div style="display:grid;grid-template-columns:repeat(2,1fr);gap:18px;align-items:start">
+  ${[0, 1].map(k => `<table class="mapa" style="font-size:14px">${cab}<tbody>${grupo.slice(k * cuarto, (k + 1) * cuarto).join('')}</tbody></table>`).join('')}</div></section>`);
+});
 
 const vistas = [];
 PANTALLAS.forEach(p => {
@@ -156,14 +177,14 @@ PANTALLAS.forEach(p => {
   if (p.tipo === W) {
     zona = `<div class="zona"><div class="navegador"><div class="barra"><i></i><i></i><i></i><span>portal.chamorrocofrades.es</span></div><div class="vista"><iframe data-src="portal.html#${p.ruta}" ${p.clic ? `data-clic='${p.clic}'` : ''} title="${p.t}" tabindex="-1"></iframe></div></div><div class="pista">La pantalla es interactiva: puedes hacer clic, rellenar formularios y navegar.</div></div>`;
   } else {
-    zona = `<div class="zona"><div class="dos-telefonos">${p.rutas.map(r => `<div class="telefono"><div class="vista"><iframe data-src="app-trabajador.html#${r}" title="${p.t}" tabindex="-1"></iframe></div></div>`).join('')}</div><div class="pista">Pantallas interactivas de la app.</div></div>`;
+    zona = `<div class="zona"><div class="dos-telefonos">${p.rutas.map(r => `<div class="telefono"><div class="vista"><iframe data-src="app.html#${r}" title="${p.t}" tabindex="-1"></iframe></div></div>`).join('')}</div><div class="pista">Pantallas interactivas de la app.</div></div>`;
   }
   laminas.push(`<section class="lamina l-pantalla">${ficha}${zona}</section>`);
 });
 
 laminas.push(`<section class="lamina l-oscura">
   <div class="marca">${CIRIO(34)}<div><b>Chamorro</b><div>Servicios Cofrades</div></div></div>
-  <div class="medio"><h2>Pruébalo</h2><p>Portal web: portal.html. Cuentas de prueba con contraseña demo: luis@chamorrocofrades.es (coordinador), admin@chamorrocofrades.es (administrador) y secretaria@hdadestrella.es (hermandad).</p><p>App: app-trabajador.html en el navegador del móvil, o el proyecto app-react-native con Expo Go. Cuenta juan.perez@correo.es con contraseña demo.</p></div>
+  <div class="medio"><h2>Pruébalo</h2><p>Portal web: portal.html. Cuentas de prueba con contraseña demo: luis@chamorrocofrades.es (coordinador), admin@chamorrocofrades.es (administrador) y secretaria@hdadestrella.es (hermandad).</p><p>App: app.html en el navegador del móvil, o el proyecto app-react-native con Expo Go. Las mismas cuentas, más juan.perez@correo.es (trabajador), entran en el portal y en la app.</p></div>
   <div class="pie"><span>Ingeniería de Requisitos, grupo IR-G1-07</span><div class="cirios">${[54, 80, 106, 80, 54].map(h => CIRIO(h)).join('')}</div></div></section>`);
 
 const esc = document.getElementById('escenario');

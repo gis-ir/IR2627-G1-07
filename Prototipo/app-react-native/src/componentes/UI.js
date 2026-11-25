@@ -1,6 +1,6 @@
 /* Componentes de interfaz reutilizables */
 import React from 'react';
-import { View, Text, Pressable, StyleSheet, ScrollView } from 'react-native';
+import { View, Text, Pressable, StyleSheet, ScrollView, Modal, KeyboardAvoidingView, Platform, Linking } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { C, R, SERIF } from '../tema';
 
@@ -14,11 +14,49 @@ export function Boton({ titulo, onPress, tipo = 'sec', peq, disabled, style }) {
   );
 }
 
-const CHIP = { Confirmado: 'ok', Aprobada: 'ok', Aceptada: 'ok', Pendiente: 'aviso', Enviada: 'info', Rechazada: 'urg', Baja: 'urg', Caducada: 'neutro' };
+const CHIP = { Confirmado: 'ok', Aprobada: 'ok', Aceptada: 'ok', Aceptado: 'ok', Publicado: 'ok', Cubierta: 'ok', Activa: 'ok', Correcto: 'ok', 'Con servicio': 'ok', 'Cuadrante publicado': 'ok', Operativo: 'ok',
+  Pendiente: 'aviso', 'Pendiente de presupuesto': 'aviso', 'En revisión': 'aviso', Degradado: 'aviso', Enviada: 'info', Enviado: 'info', 'Presupuesto enviado': 'info', 'Presupuesto aceptado': 'info',
+  Rechazada: 'urg', Rechazado: 'urg', Baja: 'urg', Abierta: 'urg', Cancelado: 'urg', Fallido: 'urg', 'Presupuesto rechazado': 'urg', Caducada: 'neutro', Borrador: 'neutro', Inactiva: 'neutro', Finalizado: 'neutro' };
 export function Chip({ estado, texto }) {
   const k = CHIP[estado] || 'neutro';
   const col = { ok: [C.romeroClaro, C.romero], aviso: [C.ambarClaro, C.ambar], info: [C.azulClaro, C.azul], urg: [C.burdeosClaro, C.burdeos], neutro: ['#EFEDF1', C.tinta2] }[k];
   return <View style={[est.chip, { backgroundColor: col[0] }]}><Text style={[est.chipTxt, { color: col[1] }]}>{texto || estado}</Text></View>;
+}
+
+/* Fila de una lista: título, detalle y elemento a la derecha */
+export function Fila({ titulo, detalle, derecha, izquierda, onPress, ultimo, children }) {
+  const C2 = onPress ? Pressable : View;
+  return (
+    <C2 onPress={onPress} accessibilityRole={onPress ? 'button' : undefined} style={[est.fila, ultimo && { borderBottomWidth: 0 }]}>
+      <View style={{ flexDirection: 'row', alignItems: 'center', gap: 12 }}>
+        {izquierda}
+        <View style={{ flex: 1 }}>
+          <Text style={{ fontWeight: '700', color: C.tinta, fontSize: 15 }}>{titulo}</Text>
+          {detalle ? <Text style={{ color: C.tinta2, fontSize: 13.5, marginTop: 2 }}>{detalle}</Text> : null}
+        </View>
+        {derecha}
+      </View>
+      {children}
+    </C2>
+  );
+}
+export const Lista = ({ children }) => <View style={[est.tarjeta, { padding: 0 }]}>{children}</View>;
+export const Telefono = ({ numero }) => numero ? <Text onPress={() => Linking.openURL(`tel:${numero.replace(/\s/g, '')}`)} style={{ color: C.morado2, fontWeight: '700' }} accessibilityRole="link">{numero}</Text> : null;
+export const SoloWeb = ({ children }) => <View style={est.soloWeb}><Text style={{ color: C.tinta2, fontSize: 13.5 }}>{children}</Text></View>;
+
+/* Hoja inferior para formularios cortos */
+export function Hoja({ visible, titulo, onCerrar, children }) {
+  return (
+    <Modal visible={visible} transparent animationType="slide" onRequestClose={onCerrar}>
+      <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined} style={{ flex: 1, backgroundColor: 'rgba(34,25,42,.45)' }}>
+        <Pressable style={{ flex: 1 }} onPress={onCerrar} accessibilityLabel="Cerrar" />
+        <View style={est.hoja}>
+          <Text style={{ fontSize: 19, fontWeight: '700', color: C.tinta, marginBottom: 6 }}>{titulo}</Text>
+          {children}
+        </View>
+      </KeyboardAvoidingView>
+    </Modal>
+  );
 }
 
 export const Tarjeta = ({ children, style }) => <View style={[est.tarjeta, style]}>{children}</View>;
@@ -89,5 +127,10 @@ export const est = StyleSheet.create({
   cabT: { color: '#fff', fontFamily: SERIF, fontSize: 26, fontWeight: '600' },
   cabS: { color: '#CDBFD6', fontSize: 14, marginTop: 2 },
   volver: { color: '#E9E1EE', fontWeight: '600', fontSize: 15, marginBottom: 6 },
-  contenido: { padding: 16, gap: 14, paddingBottom: 32 }
+  contenido: { padding: 16, gap: 14, paddingBottom: 32 },
+  fila: { padding: 14, paddingHorizontal: 16, borderBottomWidth: 1, borderBottomColor: C.linea, gap: 10 },
+  soloWeb: { backgroundColor: C.oroClaro, borderLeftWidth: 3, borderLeftColor: C.oro, padding: 12, borderTopRightRadius: 10, borderBottomRightRadius: 10 },
+  hoja: { backgroundColor: '#fff', borderTopLeftRadius: 18, borderTopRightRadius: 18, padding: 20, paddingBottom: 36, gap: 8 },
+  input: { borderWidth: 1, borderColor: C.linea2, borderRadius: 8, paddingHorizontal: 12, paddingVertical: 10, fontSize: 16, color: C.tinta, backgroundColor: '#fff' },
+  etq: { fontSize: 13, fontWeight: '600', color: C.tinta2, marginTop: 6 }
 });

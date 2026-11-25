@@ -16,7 +16,7 @@ export function Cirio({ alto = 30 }) {
 }
 
 /* Glifos simples para la barra inferior */
-const GLIFO = { Turnos: '▦', Disponibilidad: '◷', Avisos: '✉', Perfil: '◉' };
+const GLIFO = { Turnos: '▦', Disponibilidad: '◷', Avisos: '✉', Perfil: '◉', Hoy: '⌂', Bajas: '△', Cuadrantes: '▦', 'Más': '⋯', Inicio: '⌂', Cortejo: '☰', Presupuestos: '€' };
 export function IconoTab({ nombre, color, punto }) {
   return (
     <View>

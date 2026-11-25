@@ -90,10 +90,22 @@
       ${l('herm-historial', 'Historial de servicios')}`;
   }
 
+  function navTrabajador(activo) {
+    const s = P.sesion(); const of = DB.ofertasPara(s.trabajador).length;
+    const sin = DB.avisosPara(s.trabajador).filter(v => !v.leidos.includes(s.trabajador)).length;
+    const l = (h, t, n, urg) => `<a href="#${h}" class="${activo === h ? 'activo' : ''}">${t}${n ? `<span class="cuenta ${urg ? '' : 'suave'}">${n}</span>` : ''}</a>`;
+    return `<span class="nav-grupo">Mi trabajo</span>
+      ${l('trab-turnos', 'Mis turnos', of, true)}
+      ${l('trab-cuadrante', 'Cuadrantes')}
+      ${l('trab-disponibilidad', 'Disponibilidad')}
+      ${l('trab-avisos', 'Tablón de avisos', sin)}
+      ${l('trab-perfil', 'Mi perfil')}`;
+  }
+
   function maquetar(def, contenido) {
     const s = P.sesion();
     const sub = s.rol === 'Hermandad' ? (DB.hermandad(s.hermandad) || {}).nombre : s.rol;
-    const nav = s.rol === 'Hermandad' ? navHermandad(def.nav) : navCoordinador(def.nav, s.rol === 'Administrador');
+    const nav = s.rol === 'Hermandad' ? navHermandad(def.nav) : s.rol === 'Trabajador' ? navTrabajador(def.nav) : navCoordinador(def.nav, s.rol === 'Administrador');
     return `<div class="app">
       <aside class="lateral">
         <div class="marca">${CIRIO(32)}<div><div class="marca-nombre">Chamorro</div><div class="marca-sub">Servicios Cofrades</div></div></div>
@@ -106,12 +118,12 @@
   }
 
   /* Sesión de demostración: si se entra directamente a una pantalla (p. ej. desde la presentación) */
-  const DEMO = { Coordinador: 'u1', Administrador: 'u2', Hermandad: 'u3' };
+  const DEMO = { Coordinador: 'u1', Administrador: 'u2', Hermandad: 'u3', Trabajador: 'u5' };
   function asegurarSesion(roles) {
     const s = P.sesion();
     if (s && roles.includes(s.rol)) return true;
     const u = S().usuarios.find(x => x.id === DEMO[roles[0]]);
-    S().sesion = { id: u.id, nombre: u.nombre, rol: u.rol, hermandad: u.hermandad || '', trabajador: '' };
+    S().sesion = { id: u.id, nombre: u.nombre, rol: u.rol, hermandad: u.hermandad || '', trabajador: u.trabajador || '' };
     DB.guardar();
     return true;
   }
@@ -132,7 +144,7 @@
     if (def.despues) def.despues();
     window.scrollTo(0, 0);
   };
-  function inicio() { const s = P.sesion(); return s.rol === 'Hermandad' ? 'herm-panel' : 'coord-panel'; }
+  function inicio() { const s = P.sesion(); return s.rol === 'Hermandad' ? 'herm-panel' : s.rol === 'Trabajador' ? 'trab-turnos' : 'coord-panel'; }
   P.inicio = inicio;
 
   /* Delegación de eventos */
@@ -169,7 +181,7 @@
       ${arte('Semana Santa 2027', 'Cuadrantes, sustituciones y presupuestos de los acólitos, pertigueros y auxiliares que acompañan a las hermandades.')}
       <section class="acceso-form"><form class="acceso-caja" data-form="login" novalidate>
         <h2>Iniciar sesión</h2>
-        <p class="muted">Portal para el coordinador, el administrador y las hermandades. Los trabajadores entran desde la app móvil.</p>
+        <p class="muted">Entra con tu cuenta de Chamorro: coordinación, hermandades o trabajadores. También puedes usar la app móvil.</p>
         <div class="campo"><label for="correo">Correo electrónico</label><input id="correo" name="correo" type="email" autocomplete="username" required></div>
         <div class="campo"><label for="clave">Contraseña</label><input id="clave" name="clave" type="password" autocomplete="current-password" required></div>
         <button class="btn btn-pri" type="submit" style="padding:11px">Entrar</button>
@@ -177,7 +189,8 @@
         <div class="demo">Cuentas de prueba (contraseña <b>demo</b>):
           <button type="button" data-act="demo" data-correo="luis@chamorrocofrades.es">coordinador</button>,
           <button type="button" data-act="demo" data-correo="admin@chamorrocofrades.es">administrador</button>,
-          <button type="button" data-act="demo" data-correo="secretaria@hdadestrella.es">hermandad</button>.
+          <button type="button" data-act="demo" data-correo="secretaria@hdadestrella.es">hermandad</button>,
+          <button type="button" data-act="demo" data-correo="juan.perez@correo.es">trabajador</button>.
           <br><button type="button" data-act="reiniciar">Restablecer datos de demostración</button></div>
       </form></section></div>`
   });
@@ -191,10 +204,6 @@
     const u = S().usuarios.find(x => x.correo.toLowerCase() === d.correo.trim().toLowerCase());
     if (!u || u.clave !== d.clave) { DB.auditar('Iniciar sesión', d.correo, 'Fallido: credenciales incorrectas', 'desconocido'); DB.guardar(); return P.errorCampo(f, 'clave', 'El correo o la contraseña no son correctos.'); }
     if (!u.activo) return P.errorCampo(f, 'correo', 'Esta cuenta está desactivada. Contacta con el coordinador.');
-    if (u.rol === 'Trabajador') {
-      DB.auditar('Iniciar sesión', 'Portal web', 'Fallido: cuenta de trabajador', u.nombre); DB.guardar();
-      return P.errorCampo(f, 'correo', 'Esta cuenta es de trabajador. Los trabajadores entran desde la app móvil.');
-    }
     P.entrar(u); P.ir(inicio());
   });
 

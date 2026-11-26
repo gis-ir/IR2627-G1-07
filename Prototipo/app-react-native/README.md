@@ -5,13 +5,15 @@ Prototipo funcional de la app móvil de Chamorro Servicios Cofrades. La usan los
 ## Cómo ejecutarla
 
 1. Instala [Node.js](https://nodejs.org) (versión LTS).
-2. En esta carpeta:
+2. En esta carpeta (`Prototipo/app-react-native`):
    ```bash
    npm install
-   npx expo install --fix   # ajusta las versiones a la del SDK de Expo instalado
-   npx expo start -c        # -c borra la caché de Metro tras cambios grandes
+   npx expo start -c --tunnel
    ```
-3. Escanea el código QR con la app **Expo Go** (Android o iOS), o pulsa `a` para abrir el emulador de Android. Si el móvil no está en la misma wifi, usa `npx expo start --tunnel`.
+   `-c` borra la caché de Metro y `--tunnel` permite abrir la app desde el móvil aunque no esté en la misma wifi que el ordenador (la primera vez puede pedir instalar `@expo/ngrok`; di que sí). Si el móvil y el ordenador comparten wifi, basta con `npx expo start -c`. Si Expo avisa de que alguna versión no coincide con el SDK, ejecuta `npx expo install --fix`.
+3. Escanea el código QR con la app **Expo Go** (Android: desde la propia app; iPhone: con la cámara), o pulsa `a` para abrir el emulador de Android.
+
+La misma app, en su versión HTML, se puede abrir en el navegador del móvil en https://chamorro-cofrades.netlify.app/app.html. El resto del prototipo está descrito en el README general del repositorio.
 
 Cuentas de prueba (contraseña `demo` en todas). En la pantalla de inicio de sesión hay un botón para cada una:
 
@@ -47,9 +49,10 @@ En la misma pantalla puedes restablecer los datos de demostración.
 | Notificaciones | `AvisosScreen.js` | MOCK-017, MOCK-025 | CU-013, CU-018 |
 | Mi perfil | `PerfilScreen.js` | MOCK-018 | CU-005, CU-002 |
 | Hoy, bajas, cuadrantes | `GestionScreens.js` | MOCK-036, MOCK-037 | CU-012, CU-013, CU-015, CU-016, CU-018 |
-| Más, tablón, presupuestos, personal, capacitaciones, eventos | `GestionMasScreens.js` | MOCK-037 | CU-002, CU-003, CU-019, CU-022 |
+| Más, tablón, personal, capacitaciones, eventos | `GestionMasScreens.js` | MOCK-037 | CU-002, CU-003, CU-019 |
+| Presupuestos y detalle del presupuesto (el coordinador los consulta; la hermandad los acepta o rechaza) | `GestionMasScreens.js` | MOCK-037, MOCK-040 | CU-022, CU-023 |
 | Usuarios, auditoría, estado del sistema | `GestionMasScreens.js` | MOCK-038 | CU-030, CU-032, CU-033 |
-| Inicio, cortejo, solicitar, historial de la hermandad | `HermandadScreens.js` | MOCK-039, MOCK-040 | CU-023, CU-024, CU-027, CU-028, CU-029 |
+| Inicio, cortejo, solicitar servicio, más e historial de la hermandad | `HermandadScreens.js` | MOCK-039, MOCK-040 | CU-024, CU-027, CU-028, CU-029 |
 
 ## Estructura
 

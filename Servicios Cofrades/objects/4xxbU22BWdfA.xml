@@ -20,7 +20,7 @@
       <trace target="GByC5nfbfX5Y" traceType=":Proteus-dependency"/>
       <trace target="43cnT82AkWQs" traceType=":Proteus-dependency"/>
     </traceProperty>
-    <markdownProperty name="description" category="detail"><![CDATA[Especialización del Coordinador que añade las capacidades de administración de cuentas, roles y permisos, la consulta del registro de auditoría y la supervisión del estado y rendimiento del sistema. Hereda los casos de uso del Coordinador y no puede privarse a sí mismo del acceso al sistema.]]></markdownProperty>
+    <markdownProperty name="description" category="detail"><![CDATA[Usuario con todos los permisos del Coordinador que, además, administra las cuentas, roles y permisos, consulta el registro de auditoría y supervisa el estado y rendimiento del sistema. Hereda los casos de uso del Coordinador y no puede privarse a sí mismo del acceso al sistema. El Coordinador no tiene acceso a estas funciones. Usa el portal web y la app móvil.]]></markdownProperty>
     <traceProperty name="dependencies" category="dependencies" acceptedTargets="traceable-object business-requirement" traceType=":Proteus-dependency">
       <trace target="cvHKHyCgcFvb" traceType=":Proteus-dependency"/>
       <trace target="kKDP26dNugAE" traceType=":Proteus-dependency"/>

@@ -79,3 +79,25 @@ body { background: #E9E6EC; }
 .acceso-app form { background: var(--papel); color: var(--tinta); border-radius: 22px 22px 0 0; padding: 26px 22px 34px; display: flex; flex-direction: column; gap: 14px; border-top: 3px solid var(--oro); }
 .modal-fondo { align-items: end; padding: 0; }
 .movil-modal .modal, .modal-fondo .modal { border-radius: 18px 18px 0 0; max-width: 430px; }
+
+/* Acceso: cuentas de prueba */
+.acceso-app .demo { font-size: 13px; color: var(--tinta-2); background: #fff; border: 1px dashed var(--linea-2); border-radius: 10px; padding: 10px 12px; }
+.acceso-app .demo button { border: 0; background: none; color: var(--morado-2); font-weight: 600; cursor: pointer; padding: 0; text-decoration: underline; }
+
+/* Gestión desde el móvil (coordinador, administrador, hermandad) */
+.kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.kpi { background: #fff; border: 1px solid var(--linea); border-radius: 14px; padding: 14px; text-decoration: none; color: var(--tinta); display: flex; flex-direction: column; gap: 2px; }
+.kpi b { font-size: 28px; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.kpi span { font-size: 13.5px; color: var(--tinta-2); }
+.kpi.alerta { background: var(--burdeos); border-color: var(--burdeos); color: #fff; }
+.kpi.alerta span { color: #F6D9DD; }
+.lista .item-v { display: flex; flex-direction: column; gap: 10px; padding: 14px 16px; }
+.lista .fila-v { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.botones { display: flex; gap: 8px; flex-wrap: wrap; }
+.aviso-web { font-size: 13.5px; color: var(--tinta-2); background: var(--oro-claro); border-left: 3px solid var(--oro); padding: 10px 12px; border-radius: 0 10px 10px 0; }
+.buscar-app { width: 100%; padding: 11px 12px; border: 1px solid var(--linea-2); border-radius: 10px; font-size: 15px; background: #fff; }
+.menu-mas a { grid-template-columns: 1fr auto !important; }
+.contador-app { display: inline-flex; align-items: center; border: 1px solid var(--linea-2); border-radius: 10px; overflow: hidden; }
+.contador-app button { border: 0; background: #FAF9FB; width: 38px; height: 38px; font-size: 18px; cursor: pointer; }
+.contador-app span { min-width: 34px; text-align: center; font-weight: 700; }
+.tel { color: var(--morado-2); font-weight: 600; text-decoration: none; }

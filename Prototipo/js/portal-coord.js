@@ -235,14 +235,7 @@
     DB.auditar('Enviar alerta de cobertura', `${a.puesto} (${ids.length} candidatos)`); DB.guardar();
     UI.toast(`Alerta enviada a ${ids.length} candidato${ids.length > 1 ? 's' : ''}`); P.pintar();
   });
-  P.cubrirBaja = (b, tid, quien) => {
-    const c = DB.cuadrante(b.cuadrante); const a = c.puestos.find(x => x.id === b.puesto); const so = solDe(c);
-    a.trabajador = tid; a.acuse = 'Confirmado';
-    b.estado = 'Cubierta'; b.sustituto = tid;
-    b.ofertas.forEach(o => { if (o.trabajador === tid) o.estado = 'Aceptada'; else if (o.estado === 'Enviada') o.estado = 'Caducada'; });
-    DB.notificar(tid, 'Sustitución asignada', `Cubres el puesto de ${a.puesto.toLowerCase()} con la ${DB.hermandad(so.hermandad).nombre} el ${UI.fechaLarga(so.fecha)}.`, 'turno', a.id);
-    DB.auditar('Registrar sustitución', `${a.puesto}, ${DB.hermandad(so.hermandad).nombre}: ${nombreT(tid)}`, 'Correcto', quien);
-  };
+  P.cubrirBaja = (b, tid, quien) => DB.cubrirBaja(b, tid, quien || P.sesion().nombre);
   P.accion('sustituir', bt => {
     const b = S().bajas.find(x => x.id === bt.dataset.b); const t = DB.trabajador(bt.dataset.t);
     UI.modal({ titulo: 'Registrar sustitución', cuerpo: `<p><b>${esc(t.nombre)}</b> pasará a ocupar el puesto y se actualizará el cuadrante. Se le enviará una notificación y las demás ofertas quedarán caducadas.</p>`,

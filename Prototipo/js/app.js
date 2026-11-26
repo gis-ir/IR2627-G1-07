@@ -11,37 +11,59 @@
     disp: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
     avisos: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H7l-3 3z"/></svg>',
     perfil: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>',
+    hoy: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>',
+    bajas: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>',
+    cuadrante: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>',
+    presupuesto: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>',
+    mas: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="5" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="19" cy="12" r="1.5"/></svg>',
     campana: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 1 1 12 0c0 7 3 8 3 8H3s3-1 3-8"/><path d="M10 20a2 2 0 0 0 4 0"/></svg>'
   };
 
   const yo = () => DB.trabajador(S().sesionApp.trabajador);
+  const ses = () => S().sesionApp;
   const ofertasPendientes = () => S().bajas.filter(b => b.estado === 'Abierta' && b.ofertas.some(o => o.trabajador === yo().id && o.estado === 'Enviada'));
   const avisosParaMi = () => S().avisos.filter(v => v.destinatarios.includes('Todos') || yo().capacitaciones.some(c => c.estado === 'Aprobada' && v.destinatarios.includes(c.rol)));
   const sinLeer = () => avisosParaMi().filter(v => !v.leidos.includes(yo().id)).length;
   const misNotif = () => S().notificaciones.filter(n => n.trabajador === yo().id);
 
+  /* Pestañas inferiores de cada perfil */
+  const TABS = {
+    Trabajador: () => [['turnos', 'Turnos', ICON.turnos, DB.ofertasPara(yo().id).length], ['disponibilidad', 'Disponibilidad', ICON.disp], ['avisos', 'Avisos', ICON.avisos, sinLeer()], ['perfil', 'Perfil', ICON.perfil]],
+    Gestion: () => [['c-hoy', 'Hoy', ICON.hoy], ['c-bajas', 'Bajas', ICON.bajas, S().bajas.filter(b => b.estado === 'Abierta').length], ['c-cuadrantes', 'Cuadrantes', ICON.cuadrante], ['c-mas', 'Más', ICON.mas]],
+    Hermandad: () => [['h-inicio', 'Inicio', ICON.hoy], ['h-cortejo', 'Cortejo', ICON.cuadrante], ['h-presupuestos', 'Presupuestos', ICON.presupuesto, S().presupuestos.filter(p => p.estado === 'Enviado' && DB.solicitud(p.solicitud).hermandad === ses().hermandad).length], ['h-mas', 'Más', ICON.mas]]
+  };
+  const grupo = rol => (rol === 'Coordinador' || rol === 'Administrador') ? 'Gestion' : rol;
+
   function marco({ titulo, sub = '', volver = '', tab = '', cuerpo, clase = '' }) {
-    const n = misNotif().filter(x => !x.leida).length;
+    const s = ses(); const g = grupo(s.rol);
+    const n = g === 'Trabajador' ? misNotif().filter(x => !x.leida).length : 0;
     return `<div class="movil ${clase}">
       <header class="barra-sup">${volver ? `<a class="volver" href="#${volver}">‹ Volver</a>` : ''}
         <div class="fila"><div><h1>${esc(titulo)}</h1>${sub ? `<div class="sub">${sub}</div>` : ''}</div>
-        ${volver ? '' : `<button class="campana" data-act="notificaciones" aria-label="Notificaciones${n ? `, ${n} sin leer` : ''}">${ICON.campana}${n ? `<span class="punto">${n}</span>` : ''}</button>`}</div></header>
+        ${volver || g !== 'Trabajador' ? '' : `<button class="campana" data-act="notificaciones" aria-label="Notificaciones${n ? `, ${n} sin leer` : ''}">${ICON.campana}${n ? `<span class="punto">${n}</span>` : ''}</button>`}</div></header>
       <main class="contenido">${cuerpo}</main>
-      ${tab ? `<nav class="pestanas-app" aria-label="Secciones">
-        <a href="#turnos" class="${tab === 'turnos' ? 'activo' : ''}">${ICON.turnos}Turnos${ofertasPendientes().length ? '<span class="punto"></span>' : ''}</a>
-        <a href="#disponibilidad" class="${tab === 'disp' ? 'activo' : ''}">${ICON.disp}Disponibilidad</a>
-        <a href="#avisos" class="${tab === 'avisos' ? 'activo' : ''}">${ICON.avisos}Avisos${sinLeer() ? '<span class="punto"></span>' : ''}</a>
-        <a href="#perfil" class="${tab === 'perfil' ? 'activo' : ''}">${ICON.perfil}Perfil</a></nav>` : ''}
+      ${tab ? `<nav class="pestanas-app" aria-label="Secciones">${TABS[g]().map(([h, txt, ic, aviso]) => `<a href="#${h}" class="${tab === h || (tab === 'disp' && h === 'disponibilidad') ? 'activo' : ''}">${ic}${txt}${aviso ? '<span class="punto"></span>' : ''}</a>`).join('')}</nav>` : ''}
     </div>`;
   }
 
+  /* Rol que necesita cada pantalla; entrar directamente (p. ej. desde la presentación) abre una sesión de demostración */
+  const ROL = {}; const DEMO = { Trabajador: 'u5', Gestion: 'u1', Admin: 'u2', Hermandad: 'u3' };
+  const inicioDe = rol => ({ Trabajador: 'turnos', Gestion: 'c-hoy', Hermandad: 'h-inicio' })[grupo(rol)];
+  function asegurar(req) {
+    const s = ses();
+    const ok = s && (req === 'Admin' ? s.rol === 'Administrador' : grupo(s.rol) === req);
+    if (ok) return;
+    const u = S().usuarios.find(x => x.id === DEMO[req]);
+    S().sesionApp = { id: u.id, nombre: u.nombre, rol: u.rol, trabajador: u.trabajador || '', hermandad: u.hermandad || '' }; DB.guardar();
+  }
   function pintar() {
     DB.recargar(); UI.cerrarModal();
-    let h = location.hash.slice(1) || (S().sesionApp ? 'turnos' : 'login');
+    if (S().sesionApp && !S().sesionApp.rol) S().sesionApp = null;
+    let h = location.hash.slice(1) || (ses() ? inicioDe(ses().rol) : 'login');
     param = '';
     if (!rutas[h]) { const i = h.lastIndexOf('-'); if (i > 0 && rutas[h.slice(0, i)]) { param = h.slice(i + 1); h = h.slice(0, i); } }
-    if (!rutas[h]) h = 'turnos';
-    if (h !== 'login' && !S().sesionApp) { const u = S().usuarios.find(x => x.id === 'u5'); S().sesionApp = { id: u.id, nombre: u.nombre, trabajador: u.trabajador }; DB.guardar(); }
+    if (!rutas[h]) h = ses() ? inicioDe(ses().rol) : 'login';
+    if (h !== 'login') asegurar(ROL[h] || 'Trabajador');
     document.getElementById('raiz').innerHTML = rutas[h]();
     if (A.despues) { A.despues(); A.despues = null; }
     window.scrollTo(0, 0);
@@ -55,21 +77,23 @@
 
   /* ---------- Acceso (MOCK-006) ---------- */
   rutas.login = () => `<div class="movil"><div class="acceso-app">
-    <div class="arriba">${P_CIRIO(46)}<h1>Servicios Cofrades</h1><p style="color:#CDBFD6">Tus turnos, avisos y disponibilidad para esta Semana Santa.</p></div>
+    <div class="arriba">${P_CIRIO(46)}<h1>Servicios Cofrades</h1><p style="color:#CDBFD6">Turnos, cuadrantes, bajas y presupuestos desde el móvil, también en plena calle.</p></div>
     <form data-form="entrar" novalidate>
-      <div class="campo"><label for="c">Correo electrónico</label><input id="c" name="correo" type="email" value="juan.perez@correo.es" autocomplete="username"></div>
-      <div class="campo"><label for="k">Contraseña</label><input id="k" name="clave" type="password" value="demo" autocomplete="current-password"></div>
+      <div class="campo"><label for="c">Correo electrónico</label><input id="c" name="correo" type="email" autocomplete="username"></div>
+      <div class="campo"><label for="k">Contraseña</label><input id="k" name="clave" type="password" autocomplete="current-password"></div>
       <p class="error texto-urgente" id="err" role="alert"></p>
       <button class="btn btn-pri btn-bloque" type="submit">Entrar</button>
-      <a href="#login" class="tenue" style="text-align:center">He olvidado mi contraseña</a></form></div></div>`;
+      <a href="#login" class="tenue" style="text-align:center">He olvidado mi contraseña</a>
+      <p class="demo">Cuentas de prueba (contraseña <b>demo</b>): ${[['juan.perez@correo.es', 'trabajador'], ['luis@chamorrocofrades.es', 'coordinador'], ['admin@chamorrocofrades.es', 'administrador'], ['secretaria@hdadestrella.es', 'hermandad']].map(([c, n]) => `<button type="button" data-act="demo" data-c="${c}">${n}</button>`).join(', ')}.<br><button type="button" data-act="reiniciar">Restablecer datos de demostración</button></p></form></div></div>`;
+  acciones.demo = b => { const f = document.querySelector('[data-form="entrar"]'); f.correo.value = b.dataset.c; f.clave.value = 'demo'; };
+  acciones.reiniciar = () => { DB.reiniciar(); UI.toast('Datos de demostración restablecidos'); pintar(); };
   acciones.entrar = f => {
     const u = S().usuarios.find(x => x.correo === f.correo.value.trim().toLowerCase());
     const err = document.getElementById('err');
     if (!u || u.clave !== f.clave.value) { err.textContent = 'El correo o la contraseña no son correctos.'; return; }
-    if (u.rol !== 'Trabajador') { err.textContent = 'Esta app es para trabajadores. Usa el portal web.'; return; }
     if (!u.activo) { err.textContent = 'Tu cuenta está desactivada. Habla con el coordinador.'; return; }
-    S().sesionApp = { id: u.id, nombre: u.nombre, trabajador: u.trabajador };
-    DB.auditar('Iniciar sesión', 'App móvil', 'Correcto', u.nombre); DB.guardar(); ir('turnos');
+    S().sesionApp = { id: u.id, nombre: u.nombre, rol: u.rol, trabajador: u.trabajador || '', hermandad: u.hermandad || '' };
+    DB.auditar('Iniciar sesión', 'App móvil', 'Correcto', u.nombre); DB.guardar(); ir(inicioDe(u.rol));
   };
   acciones.salir = () => { DB.auditar('Cerrar sesión', 'App móvil', 'Correcto', S().sesionApp.nombre); S().sesionApp = null; DB.guardar(); ir('login'); };
 
@@ -230,4 +254,6 @@
 
   const P_CIRIO = h => `<svg width="${Math.round(h * .45)}" height="${h}" viewBox="0 0 18 40" aria-hidden="true"><path d="M9 1c2.6 3.4 3.4 5.6 3.4 7.4A3.4 3.4 0 0 1 9 11.8a3.4 3.4 0 0 1-3.4-3.4C5.6 6.6 6.4 4.4 9 1z" fill="#C9A24A"/><rect x="5" y="14" width="8" height="22" rx="1.5" fill="#F4EEDD"/><rect x="2" y="36" width="14" height="3" rx="1" fill="#C9A24A"/></svg>`;
   A.pintar = pintar;
+  Object.assign(A, { rutas, acciones, ROL, marco, ir, ICON, ses, esc, chip });
+  Object.defineProperty(A, 'param', { get: () => param });
 })();

@@ -20,7 +20,7 @@
       <trace target="3nkpNWfQCrug" traceType=":Proteus-dependency"/>
       <trace target="bNsqnR3pvfsq" traceType=":Proteus-dependency"/>
     </traceProperty>
-    <markdownProperty name="description" category="detail"><![CDATA[Entidad cliente que contrata los servicios de la empresa. Se registra y accede al portal, consulta la oferta, formaliza solicitudes de servicio con los puestos por rol, sigue el estado de sus solicitudes y presupuestos, acepta o rechaza los presupuestos y consulta su historial de servicios contratados.]]></markdownProperty>
+    <markdownProperty name="description" category="detail"><![CDATA[Entidad cliente que contrata los servicios de la empresa. Se registra y accede al sistema desde el portal web o la app móvil, formaliza solicitudes de servicio con los puestos por función, sigue el estado de sus solicitudes y presupuestos, acepta o rechaza los presupuestos, consulta el cuadrante de su cortejo y su historial de servicios contratados.]]></markdownProperty>
     <traceProperty name="dependencies" category="dependencies" acceptedTargets="traceable-object business-requirement" traceType=":Proteus-dependency">
       <trace target="VvZq2UpQVsYk" traceType=":Proteus-dependency"/>
       <trace target="Xyq8iWkkh27g" traceType=":Proteus-dependency"/>

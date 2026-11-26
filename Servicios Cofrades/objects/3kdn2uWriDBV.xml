@@ -8,11 +8,12 @@
       <trace target="4rUALYcRDsQ3" traceType=":Proteus-author"/>
     </traceProperty>
     <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
-    <markdownProperty name="text" category="detail"><![CDATA[A continuación se presentan los diagramas de navegación del sistema mediante diagramas de estados UML simplificados. Se dividen según los tres perfiles de usuario:
+    <markdownProperty name="text" category="detail"><![CDATA[A continuación se presentan los diagramas de navegación del sistema mediante diagramas de estados UML simplificados. Todos los perfiles pueden usar el portal web y la app móvil con la misma cuenta; el portal está pensado para el trabajo en pantalla grande y la app para lo urgente en la calle:
 
-* **Coordinador (Web):** Gestión de cuadrantes, registro de eventos con trabajo, atención a bajas urgentes, emisión de presupuestos y catálogo de personal con acceso a la ficha de cada trabajador.
-* **Operario / Trabajador (App Móvil):** Consulta de servicios asignados, confirmación de turnos, aviso de baja, disponibilidad y consulta del tablón de avisos.
-* **Hermandades (Web):** Solicitud formal de servicios (eligiendo las funciones en un desplegable), revisión de presupuestos y consulta del personal asignado.]]></markdownProperty>
+* **Coordinador (portal web y app):** en el portal, gestión de cuadrantes, registro de eventos con trabajo, atención a bajas urgentes, emisión de presupuestos y catálogo de personal con acceso a la ficha de cada trabajador. En la app, bajas urgentes, confirmaciones, cuadrantes, tablón, presupuestos, personal y capacitaciones.
+* **Administrador (portal web y app):** todo lo del coordinador y, además, usuarios y permisos, registro de auditoría y estado del sistema.
+* **Trabajador (app y portal web):** consulta y confirmación de turnos, aviso de baja, cobertura urgente, disponibilidad, tablón de avisos y perfil. En el portal, además, el cuadrante completo de cada servicio en pantalla grande.
+* **Hermandades (portal web y app):** solicitud de servicios (eligiendo las funciones en un desplegable), revisión de presupuestos, consulta del personal asignado a su cortejo e historial.]]></markdownProperty>
     <traceProperty name="dependencies" category="dependencies" acceptedTargets="traceable-object" traceType=":Proteus-dependency">
       <trace target="rAJvmtjxafv2" traceType=":Proteus-dependency"/>
       <trace target="wVu2FsDEHMSH" traceType=":Proteus-dependency"/>

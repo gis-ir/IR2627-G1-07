@@ -23,9 +23,8 @@ La comunicación entre las capas se realiza mediante interfaces bien definidas:
 ### 2.2.2 Descripción de las Capas del Sistema
 
 #### 1. Capa de Presentación
-* **App Móvil (Operarios / Acólitos):** Aplicación orientada a los trabajadores de la empresa. Permite consultar servicios asignados, confirmar asistencia a turnos, comunicar disponibilidad horaria, notificar incidencias o bajas de última hora y consultar el tablón de avisos del coordinador.
-* **Portal Web del Coordinador:** Aplicación web de administración para el gestor de la empresa (Luis Chamorro García). Proporciona herramientas para el registro de eventos con trabajo, la confección y ajuste de cuadrantes, la activación de coberturas urgentes ante bajas, la gestión de presupuestos y el control del catálogo de trabajadores.
-* **Portal Web de Hermandades:** Portal de autoservicio para los clientes (hermandades y cofradías). Permite solicitar servicios procesionales y cultos, consultar el estado de tramitación de presupuestos y visualizar el personal asignado a sus cortejos.
+* **App Móvil:** aplicación para smartphone que usan todos los perfiles. Los trabajadores consultan sus turnos, confirman su recepción, declaran su disponibilidad, comunican bajas de última hora, aceptan sustituciones y leen el tablón de avisos; el coordinador y el administrador atienden en la calle las bajas urgentes, las confirmaciones y los avisos, y el administrador consulta la auditoría y el estado del sistema; las hermandades siguen sus solicitudes, responden a los presupuestos y consultan su cortejo.
+* **Portal Web:** aplicación web única con una vista para cada rol. El coordinador registra eventos, confecciona y ajusta cuadrantes, activa coberturas urgentes, gestiona presupuestos y el catálogo de trabajadores; el administrador tiene además la gestión de usuarios, la auditoría y el estado del sistema; las hermandades solicitan servicios, siguen sus presupuestos y ven el personal de su cortejo; los trabajadores consultan sus turnos y los cuadrantes completos en pantalla grande. Las tareas largas de edición solo están en el portal.
 
 #### 2. Capa de Lógica de Negocio
 * **API Gateway / Controlador:** Actúa como punto de entrada centralizado para las peticiones de los clientes frontend, gestionando la autenticación, la autorización por perfiles y la validación de peticiones.
@@ -52,14 +51,14 @@ La comunicación entre las capas se realiza mediante interfaces bien definidas:
 | :--- | :--- | :--- |
 | **Modularidad del sistema** | RQNF-010 | Organización en subsistemas desacoplados con comunicación estructurada vía API REST. |
 | **Despliegue mediante contenedores** | RQNF-018 | Infraestructura modular empaquetada en contenedores (Servidor Web, API Backend, Base de Datos, Caché). |
-| **Operabilidad en redes saturadas** | RQNF-025 | App móvil con soporte local y peticiones ligeras de baja sobrecarga en situaciones de aglomeración. |
+| **Operabilidad en redes saturadas** | RQNF-025 | App móvil de todos los perfiles con datos en local y reintento automático de las operaciones en situaciones de aglomeración. |
 | **Bajo consumo de datos y recursos** | RQNF-013 / RQNF-026 | Interfaces simplificadas y transferencia eficiente de datos adaptada a terminales móviles estándar. |
 | **Copias de seguridad periódicas** | RQNF-002 | Proceso automatizado de respaldo diario de la base de datos hacia volúmenes independientes. |
 | **Límite de pérdida de datos** | RQNF-004 | Persistencia transaccional que asegura la durabilidad de las confirmaciones de turnos. |
 | **Seguridad y protección de datos (RGPD)** | RQNF-020 | Comunicaciones cifradas bajo protocolo seguro HTTPS y control de accesos basado en roles. |
 | **Búsqueda inmediata de sustitutos** | RQNF-016 | Procesamiento eficiente en el módulo de contingencias para responder en menos de un segundo ante imprevistos. |
 | **Alertas Push en tiempo real** | RQNF-028 | Canal dedicado de mensajería push para la recepción de sustituciones urgentes en movilidad. |
-| **Accesibilidad web** | RQNF-007 | Portal web para hermandades desarrollado conforme a directrices internacionales de accesibilidad. |]]></markdownProperty>
+| **Accesibilidad web** | RQNF-007 | Portal web, para todos los perfiles, desarrollado conforme a las pautas WCAG 2.1 nivel AA. |]]></markdownProperty>
     <traceProperty name="dependencies" category="dependencies" acceptedTargets="traceable-object" traceType=":Proteus-dependency">
       <trace target="EVM4sAKcGLA3" traceType=":Proteus-dependency"/>
       <trace target="BQeu8craH4bB" traceType=":Proteus-dependency"/>

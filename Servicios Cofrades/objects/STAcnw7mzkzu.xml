@@ -8,7 +8,7 @@
       <trace target="4rUALYcRDsQ3" traceType=":Proteus-author"/>
     </traceProperty>
     <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
-    <markdownProperty name="text" category="detail"><![CDATA[En este apartado se recogen los esquemas visuales (*mockups*) de las pantallas principales del sistema. Los diseños priorizan la simplicidad operativa, la claridad en la asignación de turnos y la rapidez de respuesta ante contingencias de última hora.]]></markdownProperty>
+    <markdownProperty name="text" category="detail"><![CDATA[En este apartado se recogen los esquemas visuales (*mockups*) de todas las pantallas del sistema, del portal web y de la app móvil, para todos los perfiles. Cada pantalla del prototipo funcional tiene su mockup (MOCK-001 a MOCK-040). Los diseños priorizan la simplicidad operativa, la claridad en la asignación de turnos y la rapidez de respuesta ante contingencias de última hora.]]></markdownProperty>
     <traceProperty name="dependencies" category="dependencies" acceptedTargets="traceable-object" traceType=":Proteus-dependency">
       <trace target="rAJvmtjxafv2" traceType=":Proteus-dependency"/>
       <trace target="wVu2FsDEHMSH" traceType=":Proteus-dependency"/>

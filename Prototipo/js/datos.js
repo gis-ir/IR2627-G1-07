@@ -3,7 +3,7 @@
    y la versión HTML de la app del trabajador. Se guarda en localStorage
    para que los cambios de un perfil se vean en el otro. */
 (function () {
-  const CLAVE = 'csc-prototipo-v2';
+  const CLAVE = 'csc-prototipo-v3';
   const HOY = '2027-03-15';
 
   /* Funciones de los trabajadores: enumeración TipoFuncion del modelo conceptual del ERS */
@@ -219,6 +219,78 @@
       estado.notificaciones.unshift({ id: DB.id('n'), trabajador, titulo, texto, tipo, ref, fecha: ahora(), leida: false });
     },
     habilitado(t, funcion) { return t.capacitaciones.some(c => c.rol === funcion && c.estado === 'Aprobada'); },
+
+    /* ---------- Operaciones compartidas por el portal y la app (mismas reglas en los dos canales) ---------- */
+    sol(c) { return DB.solicitud(DB.presupuesto(c.presupuesto).solicitud); },
+    servicioTexto(c) { const s = DB.sol(c); return `${DB.hermandad(s.hermandad).nombre}, ${s.acto.replace('Estación de penitencia, ', '')}`; },
+    buscarTurno(aid) {
+      for (const c of estado.cuadrantes) { const a = c.puestos.find(x => x.id === aid); if (a) { const so = DB.sol(c); return { c, a, so, h: DB.hermandad(so.hermandad) }; } }
+      return null;
+    },
+    avisosPara(tid) {
+      const t = DB.trabajador(tid);
+      return estado.avisos.filter(v => v.destinatarios.includes('Todos') || t.capacitaciones.some(c => c.estado === 'Aprobada' && v.destinatarios.includes(c.rol)));
+    },
+    ofertasPara(tid) { return estado.bajas.filter(b => b.estado === 'Abierta' && b.ofertas.some(o => o.trabajador === tid && o.estado === 'Enviada')); },
+    confirmarTurno(aid, quien) { const x = DB.buscarTurno(aid); x.a.acuse = 'Confirmado'; DB.auditar('Confirmar recepción de turno', `${x.a.puesto}, ${x.h.nombre}`, 'Correcto', quien); },
+    comunicarBaja(aid, tid, motivo, explicacion, justificante, quien) {
+      const x = DB.buscarTurno(aid); x.a.acuse = 'Baja';
+      estado.bajas.unshift({ id: DB.id('b'), cuadrante: x.c.id, puesto: aid, trabajador: tid, motivo, explicacion: explicacion || '', justificante: justificante || '', fecha: ahora(), estado: 'Abierta', ofertas: [], sustituto: '' });
+      DB.auditar('Comunicar baja', `${x.a.puesto}, ${x.h.nombre}`, 'Correcto', quien);
+    },
+    enviarAlerta(b, ids, quien) {
+      const c = DB.cuadrante(b.cuadrante); const a = c.puestos.find(x => x.id === b.puesto); const so = DB.sol(c);
+      const env = ahora(); const h = +env.slice(11, 13);
+      const caduca = `${env.slice(0, 11)}${String(Math.min(h + 12, 23)).padStart(2, '0')}${env.slice(13)}`;
+      ids.forEach(id => {
+        b.ofertas = b.ofertas.filter(o => o.trabajador !== id);
+        b.ofertas.push({ trabajador: id, estado: 'Enviada', enviada: env, caduca });
+        DB.notificar(id, 'Cobertura urgente', `Se busca ${a.funcion.toLowerCase()} para la ${DB.hermandad(so.hermandad).nombre} el ${so.fecha.split('-').reverse().join('/')}.`, 'urgente', b.id);
+      });
+      DB.auditar('Enviar alerta de cobertura', `${a.puesto} (${ids.length} candidatos)`, 'Correcto', quien);
+    },
+    cubrirBaja(b, tid, quien, accion = 'Registrar sustitución') {
+      const c = DB.cuadrante(b.cuadrante); const a = c.puestos.find(x => x.id === b.puesto); const so = DB.sol(c);
+      a.trabajador = tid; a.acuse = 'Confirmado';
+      b.estado = 'Cubierta'; b.sustituto = tid;
+      b.ofertas.forEach(o => { if (o.trabajador === tid) o.estado = 'Aceptada'; else if (o.estado === 'Enviada') o.estado = 'Caducada'; });
+      DB.notificar(tid, 'Sustitución asignada', `Cubres el puesto de ${a.puesto.toLowerCase()} con la ${DB.hermandad(so.hermandad).nombre}.`, 'turno', a.id);
+      DB.auditar(accion, `${a.puesto}, ${DB.hermandad(so.hermandad).nombre}: ${DB.trabajador(tid).nombre}`, 'Correcto', quien);
+    },
+    rechazarOferta(b, tid, quien) { const o = b.ofertas.find(x => x.trabajador === tid); if (o) o.estado = 'Rechazada'; DB.auditar('Rechazar sustitución', b.id, 'Correcto', quien); },
+    recordarAcuses(c, aids, quien) {
+      const so = DB.sol(c); const lista = c.puestos.filter(a => aids ? aids.includes(a.id) : a.acuse === 'Pendiente');
+      lista.forEach(a => { a.recordado = ahora(); DB.notificar(a.trabajador, 'Confirma tu turno', `Aún no has confirmado tu turno con la ${DB.hermandad(so.hermandad).nombre}.`, 'turno', a.id); });
+      DB.auditar('Enviar recordatorio de acuse', `${DB.servicioTexto(c)} (${lista.length})`, 'Correcto', quien);
+      return lista.length;
+    },
+    publicarAviso(titulo, texto, destinatarios, push, quien) {
+      estado.avisos.unshift({ id: DB.id('v'), titulo, texto, destinatarios, fecha: ahora(), autor: quien, push, leidos: [] });
+      estado.trabajadores.filter(t => !t.baja && (destinatarios.includes('Todos') || t.capacitaciones.some(c => c.estado === 'Aprobada' && destinatarios.includes(c.rol))))
+        .forEach(t => DB.notificar(t.id, 'Nuevo aviso', titulo, 'aviso'));
+      DB.auditar('Publicar aviso', titulo, 'Correcto', quien);
+    },
+    resolverCapacitacion(t, i, aprobar, motivo, quien) {
+      const c = t.capacitaciones[i]; c.estado = aprobar ? 'Aprobada' : 'Rechazada'; c.por = quien; if (!aprobar) c.motivo = motivo;
+      DB.notificar(t.id, aprobar ? 'Capacitación aprobada' : 'Capacitación rechazada', aprobar ? `Ya puedes ser asignado como ${c.rol.toLowerCase()}.` : `${c.rol}: ${motivo}`, 'info');
+      DB.auditar(aprobar ? 'Aprobar capacitación' : 'Rechazar capacitación', `${t.nombre}: ${c.rol}`, 'Correcto', quien);
+    },
+    responderPresupuesto(p, aceptar, motivo, quien) {
+      const so = DB.solicitud(p.solicitud);
+      p.estado = aceptar ? 'Aceptado' : 'Rechazado'; p.respuesta = estado.hoy;
+      if (aceptar) { so.estado = 'Presupuesto aceptado'; const ev = estado.eventos.find(e => e.id === so.evento); if (ev) ev.situacion = 'Con servicio'; }
+      else { p.motivo = motivo; so.estado = 'Pendiente de presupuesto'; }
+      DB.auditar(aceptar ? 'Aceptar presupuesto' : 'Rechazar presupuesto', p.codigo, 'Correcto', quien);
+    },
+    comunicarIncidencia(hid, cid, tipo, descripcion, quien) {
+      estado.incidencias.unshift({ id: DB.id('i'), hermandad: hid, cuadrante: cid, tipo, descripcion, fecha: estado.hoy, estado: 'En revisión' });
+      DB.auditar('Registrar incidencia', `${DB.hermandad(hid).nombre}: ${tipo}`, 'Correcto', quien);
+    },
+    solicitarServicio(hid, datos, quien) {
+      const so = { id: DB.id('s'), hermandad: hid, evento: '', estado: 'Pendiente de presupuesto', creada: estado.hoy, ...datos };
+      estado.solicitudes.push(so); DB.auditar('Solicitar servicio', `${DB.hermandad(hid).nombre}: ${so.acto}`, 'Correcto', quien); return so;
+    },
+    /* Turnos de un trabajador en cuadrantes publicados, incluidos los de baja si se pide */
     /* Turnos asignados a un trabajador en cuadrantes publicados */
     turnosDe(tid) {
       const out = [];
